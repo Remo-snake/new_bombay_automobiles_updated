@@ -46,104 +46,108 @@ from .models import (
 from django.contrib.auth.decorators import login_required
 
 
+# @login_required
+# def dashboard(request):
+#     today = timezone.now().date()
+#     last_7_days = today - timedelta(days=7)
+
+#     # =========================
+#     # BASIC COUNTS
+#     # =========================
+#     total_customers = Customer.objects.count()
+#     total_products = Product.objects.count()
+#     total_stock = Product.objects.aggregate(
+#         total=Sum('stock')
+#     )['total'] or 0
+
+#     total_sales = Billing.objects.aggregate(
+#         total=Sum('total_amount')
+#     )['total'] or 0
+
+#     recent_bills = Billing.objects.select_related(
+#         'customer'
+#     ).order_by('-date')[:5]
+
+#     # =========================
+#     # SALES LAST 7 DAYS
+#     # =========================
+#     sales_last_7_days = (
+#         Billing.objects
+#         .filter(date__date__gte=last_7_days)
+#         .values('date__date')
+#         .annotate(total=Sum('total_amount'))
+#         .order_by('date__date')
+#     )
+
+#     sales_labels = [
+#         row['date__date'].strftime('%d %b')
+#         for row in sales_last_7_days
+#     ]
+#     sales_values = [
+#         float(row['total']) for row in sales_last_7_days
+#     ]
+
+
+#     # =========================
+#     # TOP PRODUCTS
+#     # =========================
+#     top_products = (
+#         BillItem.objects
+#         .values('product__name')
+#         .annotate(quantity=Sum('quantity'))
+#         .order_by('-quantity')[:5]
+#     )
+
+#     # =========================
+#     # PAYMENT MODE PIE (TODAY)
+#     # =========================
+#     payment_qs = (
+#         Payment.objects
+#         .filter(payment_date__date=today)
+#         .values('mode')
+#         .annotate(total=Sum('amount'))
+#     )
+
+#     payment_labels = []
+#     payment_values = []
+
+#     for row in payment_qs:
+#         payment_labels.append(row['mode'])
+#         payment_values.append(float(row['total']))
+
+#     # =========================
+#     # AVG DAILY SALES (SLIDER)
+#     # =========================
+#     avg_daily_sales = (
+#         Billing.objects
+#         .filter(date__date__gte=last_7_days)
+#         .aggregate(avg=Sum('total_amount'))['avg'] or 0
+#     )
+
+#     avg_daily_sales = float(avg_daily_sales) / 7 if avg_daily_sales else 0
+
+#     context = {
+#         'total_customers': total_customers,
+#         'total_products': total_products,
+#         'total_stock': total_stock,
+#         'total_sales': total_sales,
+#         'recent_bills': recent_bills,
+
+#         # charts
+#         'sales_labels': sales_labels,
+#         'sales_values': sales_values,
+#         'payment_labels': payment_labels,
+#         'payment_values': payment_values,
+#         'avg_daily_sales': round(avg_daily_sales, 2),
+#         'top_products': list(top_products),
+#     }
+
+#     return render(request, 'store/dashboard.html', context)
+
+
 @login_required
 def dashboard(request):
-    today = timezone.now().date()
-    last_7_days = today - timedelta(days=7)
-
-    # =========================
-    # BASIC COUNTS
-    # =========================
-    total_customers = Customer.objects.count()
-    total_products = Product.objects.count()
-    total_stock = Product.objects.aggregate(
-        total=Sum('stock')
-    )['total'] or 0
-
-    total_sales = Billing.objects.aggregate(
-        total=Sum('total_amount')
-    )['total'] or 0
-
-    recent_bills = Billing.objects.select_related(
-        'customer'
-    ).order_by('-date')[:5]
-
-    # =========================
-    # SALES LAST 7 DAYS
-    # =========================
-    sales_last_7_days = (
-        Billing.objects
-        .filter(date__date__gte=last_7_days)
-        .values('date__date')
-        .annotate(total=Sum('total_amount'))
-        .order_by('date__date')
-    )
-
-    sales_labels = [
-        row['date__date'].strftime('%d %b')
-        for row in sales_last_7_days
-    ]
-    sales_values = [
-        float(row['total']) for row in sales_last_7_days
-    ]
-
-
-    # =========================
-    # TOP PRODUCTS
-    # =========================
-    top_products = (
-        BillItem.objects
-        .values('product__name')
-        .annotate(quantity=Sum('quantity'))
-        .order_by('-quantity')[:5]
-    )
-
-    # =========================
-    # PAYMENT MODE PIE (TODAY)
-    # =========================
-    payment_qs = (
-        Payment.objects
-        .filter(payment_date__date=today)
-        .values('mode')
-        .annotate(total=Sum('amount'))
-    )
-
-    payment_labels = []
-    payment_values = []
-
-    for row in payment_qs:
-        payment_labels.append(row['mode'])
-        payment_values.append(float(row['total']))
-
-    # =========================
-    # AVG DAILY SALES (SLIDER)
-    # =========================
-    avg_daily_sales = (
-        Billing.objects
-        .filter(date__date__gte=last_7_days)
-        .aggregate(avg=Sum('total_amount'))['avg'] or 0
-    )
-
-    avg_daily_sales = float(avg_daily_sales) / 7 if avg_daily_sales else 0
-
-    context = {
-        'total_customers': total_customers,
-        'total_products': total_products,
-        'total_stock': total_stock,
-        'total_sales': total_sales,
-        'recent_bills': recent_bills,
-
-        # charts
-        'sales_labels': sales_labels,
-        'sales_values': sales_values,
-        'payment_labels': payment_labels,
-        'payment_values': payment_values,
-        'avg_daily_sales': round(avg_daily_sales, 2),
-        'top_products': list(top_products),
-    }
-
-    return render(request, 'store/dashboard.html', context)
-
+    return render(request, 'store/ticktak.html')
 
 # Customer View
 

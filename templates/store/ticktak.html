@@ -1,0 +1,293 @@
+{% extends 'base.html' %}
+{% block title %}Games{% endblock %}
+
+{% block content %}
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800;900&display=swap');
+
+body {
+    background: radial-gradient(circle at top,
+        #e8fff7 0%,
+        #c6f3e4 30%,
+        #8fd3c7 60%,
+        #5bbfa9 100%);
+}
+
+.page-wrapper {
+    min-height: calc(100vh - 70px);
+    padding: 16px;
+    text-align: center;
+}
+
+/* Marquee */
+marquee {
+    font-size: 18px;
+    font-weight: 700;
+    color: #064635;
+    margin-bottom: 12px;
+}
+
+
+/* Clock */
+.clock {
+    font-family: 'Orbitron', monospace;
+    font-size: 44px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: #043d30;
+    margin-bottom: 20px;
+    font-variant-numeric: tabular-nums;
+    text-shadow:
+        0 0 8px rgba(0, 200, 150, 0.6),
+        0 0 16px rgba(0, 200, 150, 0.4);
+}
+
+/* Game Card */
+.game-container {
+    max-width: 360px;
+    margin: auto;
+    background: rgba(255,255,255,0.78);
+    backdrop-filter: blur(12px);
+    border-radius: 22px;
+    padding: 22px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.game-title {
+    font-weight: 800;
+    color: #0b3d2e;
+}
+
+.status {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #2f6f62;
+}
+
+.mode {
+    font-size: 13px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: #0b5f4a;
+    cursor: pointer;
+}
+
+/* Board */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.cell {
+    aspect-ratio: 1/1;
+    background: linear-gradient(145deg, #f9fefe, #e2f1ee);
+    border-radius: 14px;
+    font-size: 42px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+    transition: 0.15s;
+}
+
+.cell:hover {
+    transform: translateY(-2px);
+}
+
+.cell.x { color: #0d6efd; }
+.cell.o { color: #ff6b4a; }
+
+/* Owner */
+.owner-info {
+    margin-top: 26px;
+    color: #053c31;
+    line-height: 1.7;
+}
+
+.owner-info strong {
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: #022c22;
+}
+
+.owner-info .name {
+    font-size: 18px;
+    font-weight: 800;
+    color: #0b5f4a;
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.modal-box {
+    background: linear-gradient(160deg, #ffffff, #eafff8);
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 320px;
+    text-align: center;
+}
+
+.modal-box h2 {
+    font-weight: 900;
+    color: #0b5f4a;
+}
+
+.modal-box button {
+    margin-top: 18px;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #00c48c, #00a87d);
+    color: #fff;
+    font-weight: 800;
+    cursor: pointer;
+}
+</style>
+
+<div class="page-wrapper">
+
+<marquee scrollamount="6">
+Welcome to New Bombay Automobiles • Welcome to New Bombay Automobiles • Welcome to New Bombay Automobiles •
+</marquee>
+
+<div class="clock" id="clock">00:00:00</div>
+
+<div class="game-container">
+    <div class="game-title">🎮 Tic Tac Toe</div>
+    <div class="mode" onclick="toggleMode()">Mode: <span id="modeText">Player vs Player</span></div>
+    <div class="status" id="status">Player X's Turn</div>
+
+    <div class="board">
+        {% for i in "123456789" %}
+            <div class="cell"></div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="owner-info">
+    <strong>Proprietor</strong><br>
+    <div class="name">Mr. Mohammad Imran</div>
+    <p class="text-danger">Owner of NBA</p>
+    Nanded Road, Mudkhed
+</div>
+
+</div>
+
+<!-- Modal -->
+<div class="modal-overlay" id="winModal">
+    <div class="modal-box">
+        <h2 id="winnerText"></h2>
+        <button onclick="restartGame()">Play Again</button>
+    </div>
+</div>
+
+<script>
+/* Clock */
+setInterval(() => {
+    document.getElementById('clock').innerText = new Date().toLocaleTimeString();
+}, 1000);
+
+/* Game */
+const cells = document.querySelectorAll('.cell');
+const statusText = document.getElementById('status');
+const modal = document.getElementById('winModal');
+const winnerText = document.getElementById('winnerText');
+const modeText = document.getElementById('modeText');
+
+let currentPlayer = 'X';
+let active = true;
+let vsComputer = false;
+
+const wins = [
+    [0,1,2],[3,4,5],[6,7,8],
+    [0,3,6],[1,4,7],[2,5,8],
+    [0,4,8],[2,4,6]
+];
+
+cells.forEach((cell, i) => {
+    cell.onclick = () => move(i);
+});
+
+function toggleMode() {
+    vsComputer = !vsComputer;
+    modeText.innerText = vsComputer ? 'Player vs Computer' : 'Player vs Player';
+    restartGame();
+}
+
+function move(i) {
+    if (!active || cells[i].textContent) return;
+
+    place(i, currentPlayer);
+
+    if (checkWin(currentPlayer)) return showResult(`🎉 Player ${currentPlayer} Wins!`);
+    if (isDraw()) return showResult("🤝 It's a Draw!");
+
+    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+    statusText.innerText = `Player ${currentPlayer}'s Turn`;
+
+    if (vsComputer && currentPlayer === 'O') {
+        setTimeout(computerMove, 400);
+    }
+}
+
+function place(i, player) {
+    cells[i].textContent = player;
+    cells[i].classList.add(player.toLowerCase());
+}
+
+function computerMove() {
+    const empty = [...cells].map((c,i)=>c.textContent===''?i:null).filter(i=>i!==null);
+    const i = empty[Math.floor(Math.random()*empty.length)];
+
+    place(i,'O');
+
+    if (checkWin('O')) return showResult("🤖 Computer Wins!");
+    if (isDraw()) return showResult("🤝 It's a Draw!");
+
+    currentPlayer = 'X';
+    statusText.innerText = "Player X's Turn";
+}
+
+function checkWin(p) {
+    return wins.some(w => w.every(i => cells[i].textContent === p));
+}
+
+function isDraw() {
+    return [...cells].every(c => c.textContent !== '');
+}
+
+function showResult(text) {
+    active = false;
+    winnerText.innerText = text;
+    modal.style.display = 'flex';
+}
+
+function restartGame() {
+    modal.style.display = 'none';
+    active = true;
+    currentPlayer = 'X';
+    statusText.innerText = "Player X's Turn";
+
+    cells.forEach(c => {
+        c.textContent = '';
+        c.className = 'cell';
+    });
+}
+</script>
+
+{% endblock %}
