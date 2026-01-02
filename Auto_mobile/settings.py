@@ -83,21 +83,21 @@ WSGI_APPLICATION = "Auto_mobile.wsgi.application"
 # ======================# ======================
 # DATABASE CONFIG (SINGLE SOURCE OF TRUTH)
 # ======================
-
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": os.getenv("DB_NAME"),
+        "NAME": os.getenv("DB_NAME"),          # new_bombay_auto_prod
         "USER": os.getenv("DB_USER"),
         "PASSWORD": os.getenv("DB_PASSWORD"),
         "HOST": os.getenv("DB_HOST"),
         "PORT": os.getenv("DB_PORT", "4000"),
         "OPTIONS": {
-            "ssl": {"ssl": {}},  # Required for TiDB Cloud
+            "ssl": {"ssl": {}},
             "init_command": "SET sql_mode='STRICT_TRANS_TABLES'",
         },
     }
 }
+
 
 
 
