@@ -3,6 +3,29 @@
 {% block title %}Staff Details{% endblock %}
 
 {% block content %}
+<style>
+  table th,
+  table td {
+      white-space: nowrap;
+      vertical-align: middle;
+  }
+
+  .staff-col { max-width: 250px; }
+  .role-col { max-width: 150px; }
+
+  .staff-flex {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+  }
+
+  .staff-name {
+      white-space: normal;
+      line-height: 1.3;
+  }
+</style>
+
 <div class="container-fluid p-4">
 
   <div class="d-flex justify-content-between mb-3">
@@ -17,8 +40,8 @@
       <table class="table table-hover align-middle mb-0">
         <thead class="table-light">
           <tr>
-            <th>Staff</th>
-            <th>Role</th>
+            <th class="staff-col">Staff</th>
+            <th class="role-col">Role</th>
             <th>Joining Date</th>
             <th>Star</th>
             <th>Salary</th>
@@ -30,32 +53,30 @@
         {% for s in staff_list %}
         <tr>
 
-          <!-- Staff Info -->
-          <td>
-            <div class="d-flex align-items-center">
+          <!-- STAFF -->
+          <td class="staff-col">
+            <div class="staff-flex">
               <img
                 src="{% if s.profile_picture %}{{ s.profile_picture }}{% else %}{% static 'profiles/default.png' %}{% endif %}"
-                class="rounded-circle me-2 border"
-                width="40"
-                height="40"
-                style="object-fit: cover;"
-                alt="Staff Image">
-
-              <strong>{{ s.user.username }}</strong>
+                class="rounded-circle border"
+                width="40" height="40"
+                style="object-fit: cover;">
+              <div class="staff-name">
+                <strong>{{ s.user.username }}</strong>
+              </div>
             </div>
           </td>
 
-          <td>{{ s.get_role_display }}</td>
+          <!-- ROLE -->
+          <td class="role-col">{{ s.get_role_display }}</td>
 
-          <td>
-            {{ s.joining_date|date:"d M Y"|default:"—" }}
-          </td>
+          <!-- DATE -->
+          <td>{{ s.joining_date|date:"d M Y"|default:"—" }}</td>
 
-          <td>
-            {% if s.is_star_staff %}⭐{% else %}—{% endif %}
-          </td>
+          <!-- STAR -->
+          <td>{% if s.is_star_staff %}⭐{% else %}—{% endif %}</td>
 
-          <!-- Salary Info -->
+          <!-- SALARY -->
           <td>
             {% if s.salary %}
               ₹ {{ s.salary.monthly_salary }}
@@ -64,23 +85,36 @@
                 ₹ {{ s.salary.per_day_salary }} / day
               </small>
             {% else %}
-              <span class="badge bg-warning text-dark">
-                Not Configured
-              </span>
+              <span class="badge bg-warning text-dark">Not Configured</span>
             {% endif %}
           </td>
 
-          <!-- ACTION MENU -->
+          <!-- ACTION BUTTON -->
           <td class="text-center">
-            <div class="dropdown">
-              <button class="btn btn-sm btn-light" data-bs-toggle="dropdown">
-                <i class="fa fa-ellipsis-vertical"></i>
-              </button>
+            <button class="btn btn-sm btn-light"
+                    data-bs-toggle="modal"
+                    data-bs-target="#staffModal{{ s.id }}">
+              <i class="fa fa-ellipsis-vertical"></i>
+            </button>
+          </td>
 
-              <div class="dropdown-menu dropdown-menu-end p-3"
-                   style="min-width: 220px;">
+        </tr>
 
-                <!-- SET / UPDATE SALARY -->
+        <!-- ================= MODAL ================= -->
+        <div class="modal fade" id="staffModal{{ s.id }}" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h5 class="modal-title">
+                  {{ s.user.username }} — Actions
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+
+              <div class="modal-body">
+
+                <!-- SALARY FORM -->
                 <form method="post"
                       action="{% url 'set_staff_salary' s.id %}">
                   {% csrf_token %}
@@ -91,37 +125,38 @@
 
                   <input type="number"
                          name="monthly_salary"
-                         class="form-control form-control-sm mb-2"
+                         class="form-control mb-3"
                          placeholder="Enter salary"
                          step="0.01"
                          required>
 
-                  <button class="btn btn-sm btn-success w-100">
+                  <button class="btn btn-success w-100 mb-3">
                     Save Salary
                   </button>
                 </form>
 
-                <hr class="my-2">
+                <hr>
 
-                <!-- ACTIONS -->
-                <a class="dropdown-item"
-                   href="{% url 'staff_update' s.id %}">
-                  <i class="fa fa-pen me-2"></i> Edit
+                <!-- ACTION LINKS -->
+                <a href="{% url 'staff_update' s.id %}"
+                   class="btn btn-outline-warning w-100 mb-2">
+                  <i class="fa fa-pen me-2"></i> Edit Staff
                 </a>
 
-                <a class="dropdown-item text-danger"
-                   href="{% url 'staff_delete' s.id %}">
-                  <i class="fa fa-trash me-2"></i> Delete
+                <a href="{% url 'staff_delete' s.id %}"
+                   class="btn btn-outline-danger w-100">
+                  <i class="fa fa-trash me-2"></i> Delete Staff
                 </a>
 
               </div>
-            </div>
-          </td>
 
-        </tr>
+            </div>
+          </div>
+        </div>
+        <!-- =============== END MODAL =============== -->
+
         {% endfor %}
         </tbody>
-
       </table>
     </div>
   </div>

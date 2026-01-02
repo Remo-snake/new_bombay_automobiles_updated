@@ -34,6 +34,16 @@ CSRF_TRUSTED_ORIGINS = [
     "https://new-bombay.onrender.com"
 ]
 
+
+
+# ======================
+# IMAGEKIT
+# ======================
+
+IMAGEKIT_PUBLIC_KEY = os.getenv("IMAGEKIT_PUBLIC_KEY")
+IMAGEKIT_PRIVATE_KEY = os.getenv("IMAGEKIT_PRIVATE_KEY")
+IMAGEKIT_URL_ENDPOINT = os.getenv("IMAGEKIT_URL_ENDPOINT")
+
 # ======================
 # APPS
 # ======================
