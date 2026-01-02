@@ -7,38 +7,37 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 
+# ======================
+# BASE
+# ======================
+
 BASE_DIR = Path(__file__).resolve().parent.parent
-load_dotenv(BASE_DIR / ".env")  # ✅ load .env file
+load_dotenv(BASE_DIR / ".env")
 
 # ======================
-# ENVIRONMENT
+# ENV
 # ======================
+
 DJANGO_ENV = os.getenv("DJANGO_ENV", "development")
-DEBUG = os.getenv("DEBUG", "True") == "True"
-
-IMAGEKIT_PUBLIC_KEY = os.getenv("IMAGEKIT_PUBLIC_KEY")
-IMAGEKIT_PRIVATE_KEY = os.getenv("IMAGEKIT_PRIVATE_KEY")
-IMAGEKIT_URL_ENDPOINT = os.getenv("IMAGEKIT_URL_ENDPOINT")
-
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
 # ======================
 # SECURITY
 # ======================
-SECRET_KEY = os.getenv(
-    "DJANGO_SECRET_KEY",
-    "django-insecure-dev-only-key"
-)
+
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "unsafe-dev-key")
 
 ALLOWED_HOSTS = ["*"]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://new-bombay-automobiles.onrender.com",
     "https://*.ngrok-free.dev",
+    "https://new-bombay.onrender.com"
 ]
 
 # ======================
-# APPLICATIONS
+# APPS
 # ======================
+
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -80,30 +79,39 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "Auto_mobile.wsgi.application"
 
-# ======================# ======================
-# DATABASE CONFIG (SINGLE SOURCE OF TRUTH)
 # ======================
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": os.getenv("DB_NAME"),          # new_bombay_auto_prod
-        "USER": os.getenv("DB_USER"),
-        "PASSWORD": os.getenv("DB_PASSWORD"),
-        "HOST": os.getenv("DB_HOST"),
-        "PORT": os.getenv("DB_PORT", "4000"),
-        "OPTIONS": {
-            "ssl": {"ssl": {}},
-            "init_command": "SET sql_mode='STRICT_TRANS_TABLES'",
-        },
+# DATABASE CONFIG
+# ======================
+
+if DJANGO_ENV == "production":
+    # 🔵 PRODUCTION → TiDB Cloud
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.mysql",
+            "NAME": os.getenv("DB_NAME"),
+            "USER": os.getenv("DB_USER"),
+            "PASSWORD": os.getenv("DB_PASSWORD"),
+            "HOST": os.getenv("DB_HOST"),
+            "PORT": os.getenv("DB_PORT", "4000"),
+            "OPTIONS": {
+                "ssl": {"ssl": {}},
+                "init_command": "SET sql_mode='STRICT_TRANS_TABLES'",
+            },
+        }
     }
-}
-
-
-
+else:
+    # 🟢 LOCAL → SQLite
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
+    }
 
 # ======================
 # PASSWORDS
 # ======================
+
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
@@ -114,6 +122,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # ======================
 # I18N
 # ======================
+
 LANGUAGE_CODE = "en-us"
 TIME_ZONE = "UTC"
 USE_I18N = True
@@ -122,9 +131,9 @@ USE_TZ = True
 # ======================
 # STATIC & MEDIA
 # ======================
+
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
-
 STATICFILES_DIRS = [BASE_DIR / "static"]
 
 MEDIA_URL = "/media/"
@@ -135,6 +144,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # ======================
 # AUTH
 # ======================
+
 LOGIN_URL = "staff_login"
 LOGIN_REDIRECT_URL = "dashboard"
 LOGOUT_REDIRECT_URL = "dashboard"
