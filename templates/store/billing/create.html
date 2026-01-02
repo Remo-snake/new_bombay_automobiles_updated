@@ -1,0 +1,239 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Create Bill{% endblock %}
+
+{% block content %}
+<div class="container-fluid p-3">
+
+  
+
+  <!-- Header -->
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h4 class="mb-0">Create Bill</h4>
+    <a href="{% url 'billing_list' %}" class="btn btn-outline-secondary btn-sm">
+      Billing History
+    </a>
+  </div>
+
+  <form method="post" id="billingForm" class="bg-white p-3 rounded shadow-sm">
+    {% csrf_token %}
+
+    <!-- Payment Type -->
+    <div class="mb-3">
+      <label class="form-label fw-semibold">Payment Type</label>
+      <select name="payment_type"
+              class="form-select"
+              onchange="toggleCustomer()"
+              required>
+        <option value="PAID">Cash</option>
+        <option value="PARTIAL">Partial Payment</option>
+        <option value="CREDIT">Credit</option>
+      </select>
+    </div>
+
+    <!-- Customer Name -->
+
+    <div class="mb-3" id="customerNameBox">
+      <label class="form-label fw-semibold">Customer Name</label>
+      <input type="text"
+            name="customer_name"
+            id="customerNameInput"
+            class="form-control"
+            placeholder="Enter customer name"
+            value="Walk-in Customer"
+            required>
+    </div>
+
+
+    <!-- Customer Dropdown -->
+    <div class="mb-3 d-none" id="customerBox">
+      <label class="form-label fw-semibold">Select Existing Customer</label>
+      <select name="customer" class="form-select">
+        <option value="">-- Select Customer --</option>
+        {% for c in customers %}
+          <option value="{{ c.id }}">{{ c.name }} ({{ c.phone }})</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <!-- Paid Amount -->
+    <div class="mb-3 d-none" id="paidBox">
+      <label class="form-label fw-semibold">Paid Amount</label>
+      <input type="number"
+             name="paid_amount"
+             class="form-control"
+             placeholder="Enter paid amount"
+             value="0"
+             min="0">
+    </div>
+
+    <!-- Attended Staff -->
+    <div class="mb-3">
+      <label class="form-label fw-semibold">Attended Staff</label>
+      <select name="attended_staff" class="form-select">
+        <option value="">-- Select Staff --</option>
+        {% for s in staff_list %}
+          <option value="{{ s.id }}">
+            {{ s.user.username }} ({{ s.get_role_display }})
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <!-- Labor Amount -->
+    <div class="mb-3">
+      <label class="form-label fw-semibold">Labor Amount (₹)</label>
+      <input type="number"
+             name="labor_amount"
+             class="form-control"
+             placeholder="Enter labor charges"
+             value="0"
+             min="0"
+             oninput="calcTotal()">
+    </div>
+
+    <!-- Discount -->
+    <div class="mb-3">
+      <label class="form-label fw-semibold">Discount Amount (₹)</label>
+      <input type="number"
+             name="discount_amount"
+             class="form-control"
+             placeholder="Enter discount (if any)"
+             value="0"
+             min="0"
+             oninput="calcTotal()">
+    </div>
+
+    <!-- Products -->
+    <div class="table-responsive mb-3">
+      <table class="table table-bordered align-middle">
+        <thead class="table-light">
+          <tr>
+            <th>Product</th>
+            <th width="120">Price</th>
+            <th width="100">Qty</th>
+            <th width="120">Total</th>
+            <th width="40"></th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+
+      <button type="button"
+              class="btn btn-outline-secondary btn-sm"
+              onclick="addRow()">
+        + Add Product
+      </button>
+    </div>
+
+    <!-- Grand Total -->
+    <div class="border-top pt-3">
+      <div class="d-flex justify-content-between align-items-center">
+        <h5 class="mb-0">
+          Total: ₹ <span id="grandTotal" class="fw-bold">0</span>
+        </h5>
+        <button class="btn btn-success px-4">
+          Save & Print
+        </button>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+<script>
+const products = {{ products_json|safe }};
+
+function toggleCustomer() {
+  const type = document.querySelector('[name="payment_type"]').value;
+
+  const customerBox = document.getElementById('customerBox');
+  const paidBox = document.getElementById('paidBox');
+  const customerNameBox = document.getElementById('customerNameBox');
+  const customerNameInput = document.getElementById('customerNameInput');
+
+  if (type === 'PAID') {
+    // Cash payment
+    customerBox.classList.add('d-none');
+    paidBox.classList.add('d-none');
+
+    customerNameBox.classList.remove('d-none');
+    customerNameInput.required = true;
+
+  } else {
+    // PARTIAL or CREDIT
+    customerBox.classList.remove('d-none');
+    customerNameBox.classList.add('d-none');
+
+    customerNameInput.value = "Walk-in Customer";
+    customerNameInput.required = false;
+
+    paidBox.classList.toggle('d-none', type !== 'PARTIAL');
+  }
+}
+
+
+function addRow() {
+  const row = document.createElement('tr');
+
+  let options = '<option value="">Select product</option>';
+  products.forEach(p => {
+    options += `<option value="${p.id}" data-price="${p.price}">${p.name}</option>`;
+  });
+
+  row.innerHTML = `
+    <td>
+      <select name="product[]" class="form-select product" onchange="setPrice(this)">
+        ${options}
+      </select>
+    </td>
+    <td>
+      <input name="price[]" class="form-control price" readonly>
+    </td>
+    <td>
+      <input name="quantity[]" type="number"
+             class="form-control qty"
+             value="1" min="1" oninput="calcTotal()">
+    </td>
+    <td class="rowTotal text-end">0</td>
+    <td class="text-center">
+      <button type="button"
+              class="btn btn-danger btn-sm"
+              onclick="this.closest('tr').remove(); calcTotal()">
+        ×
+      </button>
+    </td>
+  `;
+
+  document.getElementById('rows').appendChild(row);
+}
+
+function setPrice(select) {
+  const price = select.selectedOptions[0]?.dataset.price || 0;
+  const row = select.closest('tr');
+  row.querySelector('.price').value = price;
+  calcTotal();
+}
+
+function calcTotal() {
+  let total = 0;
+
+  document.querySelectorAll('#rows tr').forEach(row => {
+    const price = parseFloat(row.querySelector('.price').value || 0);
+    const qty = parseInt(row.querySelector('.qty').value || 0);
+    total += price * qty;
+  });
+
+  const labor = parseFloat(document.querySelector('[name="labor_amount"]').value || 0);
+  const discount = parseFloat(document.querySelector('[name="discount_amount"]').value || 0);
+
+  total = total + labor - discount;
+  if (total < 0) total = 0;
+
+  document.getElementById('grandTotal').innerText = total.toFixed(2);
+}
+
+addRow();
+toggleCustomer();
+</script>
+{% endblock %}

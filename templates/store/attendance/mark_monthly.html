@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% block title %}Mark Attendance{% endblock %}
+
+{% block content %}
+<div class="container-fluid p-3">
+
+<h4 class="mb-3">Monthly Attendance</h4>
+
+<!-- FILTER FORM -->
+<form method="get" class="row g-2 mb-4">
+  <div class="col-md-4">
+    <label class="fw-bold">Staff</label>
+    <select name="staff" class="form-control" required>
+      <option value="">-- Select Staff --</option>
+      {% for s in staff_list %}
+      <option value="{{ s.id }}"
+        {% if selected_staff == s.id|stringformat:"s" %}selected{% endif %}>
+        {{ s.user.username }}
+      </option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div class="col-md-4">
+    <label class="fw-bold">Month</label>
+    <input type="month" name="month"
+           class="form-control"
+           value="{{ month }}" required>
+  </div>
+
+  <div class="col-md-2 d-flex align-items-end">
+    <button class="btn btn-primary w-100">Load</button>
+  </div>
+</form>
+
+{% if staff %}
+<form method="post">{% csrf_token %}
+<input type="hidden" name="staff" value="{{ staff.id }}">
+<input type="hidden" name="month" value="{{ month }}">
+
+<div class="mb-2">
+  <button type="button" class="btn btn-sm btn-outline-success"
+          onclick="selectAllPresent()">
+    Mark All Present
+  </button>
+</div>
+
+<div class="card p-3">
+<div class="table-responsive">
+<table class="table table-bordered align-middle">
+<thead class="table-light">
+<tr>
+  <th>Date</th>
+  <th>Day</th>
+  <th>Status</th>
+  <th>Reason / Remark</th>
+</tr>
+</thead>
+<tbody>
+
+{% for d in days %}
+<tr>
+  <td>{{ d.date|date:"d-m-Y" }}</td>
+  <td>{{ d.date|date:"l" }}</td>
+
+  <!-- STATUS -->
+  <td>
+    <select name="status_{{ d.date.day }}"
+            class="form-control status-select">
+      <option value="P" {% if d.status == 'P' %}selected{% endif %}>
+        Present
+      </option>
+      <option value="H" {% if d.status == 'H' %}selected{% endif %}>
+        Half Day
+      </option>
+      <option value="A" {% if d.status == 'A' %}selected{% endif %}>
+        Absent
+      </option>
+    </select>
+  </td>
+
+  <!-- REMARK -->
+  <td>
+    <input type="text"
+           name="remark_{{ d.date.day }}"
+           class="form-control"
+           placeholder="Reason (optional)"
+           value="{{ d.remark }}">
+  </td>
+</tr>
+{% endfor %}
+
+</tbody>
+</table>
+</div>
+</div>
+
+<button class="btn btn-success mt-3 w-100">
+  Save Attendance
+</button>
+</form>
+{% endif %}
+
+</div>
+
+<script>
+function selectAllPresent() {
+  document.querySelectorAll('.status-select').forEach(el => {
+    el.value = 'P';
+  });
+}
+</script>
+
+{% endblock %}

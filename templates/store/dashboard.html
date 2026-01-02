@@ -1,0 +1,197 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block title %}Dashboard{% endblock title %}
+
+
+{% if not request.user.is_authenticated %}
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+  <div class="card shadow-sm p-4" style="width: 350px;">
+    <h5 class="text-center mb-3">Staff Login</h5>
+
+    <form method="post" action="{% url 'staff_login' %}">
+      {% csrf_token %}
+
+      <div class="mb-3">
+        <label class="form-label">Staff ID</label>
+        <input type="text"
+               name="username"
+               class="form-control"
+               placeholder="Enter staff ID"
+               required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password"
+               name="password"
+               class="form-control"
+               placeholder="Enter password"
+               required>
+      </div>
+
+      <button class="btn btn-primary w-100">
+        Login
+      </button>
+    </form>
+  </div>
+</div>
+{% else %}
+
+{% block content %}
+<div class="container-fluid py-4">
+
+
+
+
+
+<!-- =======================
+     CHART JS -real slider
+======================= -->
+<div class="col-12 col-lg-4">
+  <div class="card shadow-sm h-100">
+    <div class="card-body">
+
+      <h6 class="fw-bold mb-3">
+        Sales Live
+        <small class="text-muted">(Billing Based)</small>
+      </h6>
+
+      <div class="mb-3">
+        <label class="form-label">
+          Last <span id="daysLabel">1</span> Day(s)
+        </label>
+
+        <input
+          type="range"
+          class="form-range"
+          min="1"
+          max="90"
+          value="1"
+          id="salesRange"
+        >
+      </div>
+
+      <div class="text-center mt-4">
+        <h5 class="text-muted mb-1">Total Sales</h5>
+        <h2 class="fw-bold text-success">
+          ₹ <span id="salesAmount">0</span>
+        </h2>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- =======================
+     CHART JS - payment methods
+======================= -->
+
+
+
+
+</div>
+<script>
+
+const paymentLabels = {{ payment_labels|safe }};
+const paymentValues = {{ payment_values|safe }};
+
+new Chart(document.getElementById('paymentPieChart'), {
+  type: 'doughnut',
+  data: {
+    labels: paymentLabels,
+    datasets: [{
+      data: paymentValues,
+      backgroundColor: ['#198754', '#0d6efd', '#ffc107']
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { position: 'bottom' }
+    }
+  }
+});
+
+/* =======================
+   SALES SLIDER
+======================= */
+const perDaySale = {{ avg_daily_sales }};
+const slider = document.getElementById('salesSlider');
+const dayCount = document.getElementById('dayCount');
+const salesValue = document.getElementById('salesValue');
+
+function updateSales(days) {
+  dayCount.textContent = days;
+  salesValue.textContent = (days * perDaySale).toLocaleString('en-IN', {
+    maximumFractionDigits: 2
+  });
+}
+
+updateSales(1);
+
+slider.addEventListener('input', function () {
+  updateSales(this.value);
+});
+
+/* =======================
+   LAST 7 DAYS BAR CHART
+======================= */
+const salesLabels = {{ sales_labels|safe }};
+const salesValues = {{ sales_values|safe }};
+
+new Chart(document.getElementById('salesChart'), {
+  type: 'bar',
+  data: {
+    labels: salesLabels,
+    datasets: [{
+      label: 'Sales',
+      data: salesValues,
+      backgroundColor: '#0d6efd'
+    }]
+  },
+  options: {
+    responsive: true,
+    scales: {
+      y: { beginAtZero: true }
+    }
+  }
+});
+</script>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const range = document.getElementById("salesRange");
+  const amountEl = document.getElementById("salesAmount");
+  const daysLabel = document.getElementById("daysLabel");
+
+  function loadSales(days) {
+    fetch(`/dashboard/sales-simulator/?days=${days}`)
+      .then(response => response.json())
+      .then(data => {
+        amountEl.innerText = data.total_sales.toLocaleString("en-IN");
+        daysLabel.innerText = data.days;
+      });
+  }
+
+  // Initial load (Today)
+  loadSales(range.value);
+
+  // Slider change
+  range.addEventListener("input", function () {
+    loadSales(this.value);
+  });
+
+});
+</script> 
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+{% endblock content %}
+{% endif %}
+

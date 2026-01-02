@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block title %}Pending Payments{% endblock %}
+
+{% block content %}
+<div class="container-fluid p-4">
+
+  <!-- ==========================
+       PENDING PAYMENTS
+  =========================== -->
+  <h4 class="mb-3">Pending Payments (Credit / Partial)</h4>
+
+  <div class="card shadow-sm mb-4">
+    <div class="table-responsive">
+      <table class="table table-hover align-middle mb-0 border-3 ">
+        <thead class="table-light">
+          <tr>
+            <th>ID</th>
+            <th>Customer</th>
+            <th>Total</th>
+            <th>Paid</th>
+            <th>Balance</th>
+            <th>Status</th>
+            <th style="width:220px;">Pay Partial</th>
+            <th >Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for b in bills %}
+          <tr>
+            <td>#{{ b.id }}</td>
+            <td>{{ b.customer.name }}</td>
+            <td>₹ {{ b.total_amount|intcomma }}</td>
+            <td>₹ {{ b.paid_amount|intcomma }}</td>
+            <td class="fw-bold text-danger">
+              ₹ {{ b.balance_amount|intcomma }}
+            </td>
+            <td>
+              {% if b.payment_status == "CREDIT" %}
+                <span class="badge bg-danger">CREDIT</span>
+              {% else %}
+                <span class="badge bg-warning text-dark">PARTIAL</span>
+              {% endif %}
+            </td>
+            <td>
+              <form method="post"
+                    action="{% url 'mark_bill_paid' b.id %}"
+                    class="d-flex gap-2">
+                {% csrf_token %}
+                <input type="number"
+                       name="pay_amount"
+                       class="form-control form-control-sm"
+                       placeholder="₹ Pay"
+                       min="1"
+                       max="{{ b.balance_amount }}"
+                       required>
+            </td>
+            <td>
+                <button class="btn btn-primary btn-sm">
+                  Pay
+                </button>
+              </form>
+            </td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan="7" class="text-center text-muted py-4">
+              No pending bills 🎉
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ==========================
+       PAYMENT HISTORY
+  =========================== -->
+  <div class="d-flex justify-content-between align-items-center mb-2">
+    <h4 class="mb-0">Payment History</h4>
+
+    <input type="text"
+           id="paymentSearch"
+           class="form-control w-25"
+           placeholder="Search customer / bill...">
+  </div>
+
+  <div class="card shadow-sm">
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover align-middle mb-0"
+             id="paymentTable">
+        <thead class="table-light">
+          <tr>
+            <th>Date</th>
+            <th>Bill ID</th>
+            <th>Customer</th>
+            <th>Amount Paid</th>
+            <th>Recorded By</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for p in payment_history %}
+          <tr>
+            <td>{{ p.paid_on|date:"d M Y H:i" }}</td>
+            <td>#{{ p.bill.id }}</td>
+            <td>{{ p.bill.customer.name }}</td>
+            <td class="fw-bold text-success">
+              ₹ {{ p.amount|intcomma }}
+            </td>
+            <td>
+              {% if p.recorded_by %}
+                {{ p.recorded_by.username }}
+              {% else %}
+                —
+              {% endif %}
+            </td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan="6" class="text-center text-muted py-4">
+              No payment history found
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<!-- ==========================
+     SEARCH SCRIPT
+========================== -->
+<script>
+document.getElementById("paymentSearch").addEventListener("keyup", function () {
+  const value = this.value.toLowerCase();
+  const rows = document.querySelectorAll("#paymentTable tbody tr");
+
+  rows.forEach(row => {
+    const text = row.innerText.toLowerCase();
+    row.style.display = text.includes(value) ? "" : "none";
+  });
+});
+</script>
+
+{% endblock %}

@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% block title %}Products{% endblock %}
+
+{% block content %}
+<div class="container-fluid p-4">
+
+  <!-- Header -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h4 class="fw-semibold mb-0">Products</h4>
+    <a href="{% url 'product_create' %}" class="btn btn-success">
+      + Add Product
+    </a>
+  </div>
+
+  <!-- 🔍 Live Search -->
+  <div class="row mb-3">
+    <div class="col-12 col-md-4">
+      <input
+        type="text"
+        id="productSearch"
+        class="form-control form-control-lg"
+        placeholder="Search by product or category..."
+        autocomplete="off"
+      >
+    </div>
+  </div>
+
+  <!-- Stylish Table -->
+  <div class="card border-0 shadow-sm">
+    <div class="table-responsive">
+      <table class="table table-hover align-middle mb-0" id="productTable">
+        <thead class="bg-light border-bottom">
+          <tr>
+            <th class="ps-4">Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th class="text-center pe-4" width="70">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for p in products %}
+          <tr>
+            <td class="ps-4 fw-medium p-name">{{ p.name }}</td>
+            <td class="p-category text-muted">
+              {{ p.category.name|default:"—" }}
+            </td>
+            <td>₹ {{ p.price }}</td>
+            <td>
+              {% if p.stock <= 5 %}
+                <span class="badge bg-danger">{{ p.stock }}</span>
+              {% else %}
+                <span class="badge bg-success bg-opacity-10 text-success">
+                  {{ p.stock }}
+                </span>
+              {% endif %}
+            </td>
+            <td class="text-center pe-4">
+              <div class="dropdown">
+                <button
+                  class="btn btn-sm btn-light rounded-circle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  title="Actions"
+                >
+                  &#8942;
+                </button>
+
+                <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+                  <li>
+                    <a class="dropdown-item" href="{% url 'product_update' p.id %}">
+                      ✏️ Edit
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item text-danger"
+                      href="{% url 'product_delete' p.id %}"
+                      onclick="return confirm('Are you sure you want to delete this product?');"
+                    >
+                      🗑 Delete
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan="5" class="text-center py-4 text-muted">
+              No products available
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<!-- 🔥 Live Search Script -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const searchInput = document.getElementById("productSearch");
+  const rows = document.querySelectorAll("#productTable tbody tr");
+
+  searchInput.addEventListener("keyup", function () {
+    const query = this.value.toLowerCase();
+
+    rows.forEach(row => {
+      const name = row.querySelector(".p-name")?.innerText.toLowerCase() || "";
+      const category = row.querySelector(".p-category")?.innerText.toLowerCase() || "";
+
+      row.style.display =
+        name.includes(query) || category.includes(query)
+          ? ""
+          : "none";
+    });
+  });
+});
+</script>
+
+{% endblock %}

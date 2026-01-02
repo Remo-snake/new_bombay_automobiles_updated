@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Product Form{% endblock %}
+{% block content %}
+<div class="container p-4">
+  <div class="card col-md-6 mx-auto shadow-sm">
+    <div class="card-body">
+      <h5>Product</h5>
+      <form method="post">{% csrf_token %}
+        <input name="name" class="form-control mb-2" placeholder="Product Name"
+               value="{{ product.name|default:'' }}" required>
+
+<select name="category" class="form-control mb-2" required>
+    <option value="" disabled selected>
+        -- Select Category --
+    </option>
+
+    {% for c in categories %}
+        <option value="{{ c.id }}"
+            {% if product and product.category.id == c.id %}selected{% endif %}>
+            {{ c.name }}
+        </option>
+    {% endfor %}
+</select>
+
+
+        <input name="price" type="number" step="0.01" class="form-control mb-2"
+               placeholder="Price" value="{{ product.price|default:'' }}" required>
+        <input name="stock" type="number" class="form-control mb-3"
+               placeholder="Stock" value="{{ product.stock|default:'' }}">
+
+        <button class="btn btn-success w-100">Save</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,281 @@
+{% load static %}
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+<style>
+.sidebar {
+    width: 250px;
+    background-color: #343a40;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.nav-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 5px;
+}
+
+.nav-link {
+    color: #adb5bd;
+}
+
+.nav-link.active,
+.nav-link:hover {
+    background-color: #495057;
+    color: #fff;
+}
+
+.dropdown-menu {
+    background-color: #495057;
+}
+
+.dropdown-item {
+    color: #adb5bd;
+}
+
+.dropdown-item:hover {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .sidebar {
+        left: -250px;
+    }
+    .sidebar.toggled {
+        left: 0;
+    }
+}
+</style>
+
+<aside class="sidebar bg-dark text-light" id="show-side-navigation1">
+
+    <!-- Close button (Mobile) -->
+    <button class="btn btn-dark d-md-none position-absolute top-0 end-0 m-2"
+            data-close="show-side-navigation1">
+        <i class="fa fa-times"></i>
+    </button>
+
+    <!-- Header -->
+    <div class="sidebar-header d-flex align-items-center px-3 py-4 border-bottom">
+<img class="rounded-circle" width="45"
+    src="{% if request.user.profile.profile_picture %}{{ request.user.profile.profile_picture }}{% else %}{% static 'profiles/default.png' %}{% endif %}">
+
+        <div class="ms-3">
+            <h6 class="mb-0">{{ request.user.username }}</h6>
+            <span class="badge bg-success">{{ request.user.profile.get_role_display }}</span>
+        </div>
+    </div>
+
+    <!-- MENU -->
+    <div class="nav-container">
+        <ul class="nav flex-column mt-3">
+
+            <!-- Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link {% if request.resolver_match.url_name == 'dashboard' %}bg-primary text-dark{% endif %}"
+                   href="{% url 'dashboard' %}">
+                    <i class="fa fa-tachometer-alt me-2"></i> Dashboard
+                </a>
+            </li>
+
+            <!-- Customers -->
+            <li class="nav-item">
+                <a class="nav-link {% if 'customer' in request.resolver_match.url_name %}bg-primary text-dark{% endif %}"
+                   href="{% url 'customer_list' %}">
+                    <i class="fa fa-user me-2"></i> Customers
+                </a>
+            </li>
+
+            <!-- Categories -->
+            <li class="nav-item">
+                <a class="nav-link {% if 'category' in request.resolver_match.url_name %}bg-primary text-dark{% endif %}"
+                   href="{% url 'category_list' %}">
+                    <i class="fa fa-tags me-2"></i> Categories
+                </a>
+            </li>
+
+            <!-- Products -->
+            <li class="nav-item">
+                <a class="nav-link {% if 'product' in request.resolver_match.url_name %}bg-primary text-dark{% endif %}"
+                   href="{% url 'product_list' %}">
+                    <i class="fa fa-box me-2"></i> Products
+                </a>
+            </li>
+
+            <!-- Billing -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle nav-link {% if 'billing' in request.resolver_match.url_name %}bg-primary text-dark{% endif %}" href="#" data-bs-toggle="dropdown">
+                    <i class="fa fa-wallet me-2"></i> Billing
+                </a>
+                <ul class="dropdown-menu border-0">
+                    <li><a class="dropdown-item" href="{% url 'billing_list' %}">Billings</a></li>
+                    <li><a class="dropdown-item" href="{% url 'billing_create' %}">Create Bill</a></li>
+                </ul>
+            </li>
+
+            <!-- Purchases -->
+            {% if request.user.profile.role == 'AD' %}
+            <li class="nav-item">
+            <a class="nav-link {% if 'purchase' in request.resolver_match.url_name %}bg-primary text-dark{% endif %}"
+                href="{% url 'purchase_list' %}">
+                <i class="fa fa-shopping-cart me-2"></i> Purchases
+            </a>
+            </li>
+            {% endif %}
+
+            <!-- Dealers -->
+            {% if request.user.profile.role == 'AD' %}
+            <li class="nav-item">
+            <a class="nav-link {% if 'dealer' in request.resolver_match.url_name %}bg-primary text-dark{% endif %}"
+                href="{% url 'dealer_list' %}">
+                <i class="fa fa-exclamation-circle me-2"></i> Dealers
+            </a>
+            </li>
+            {% endif %}
+
+
+
+            <!-- Attendance -->
+
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle {% if 'attendance_mark' in request.resolver_match.url_name %}bg-primary text-dark{% endif %}"
+                href="#" data-bs-toggle="dropdown">
+                <i class="fa fa-wallet me-2"></i> Attendance
+            </a>    
+            <ul class="dropdown-menu border-0">
+                <li><a class="dropdown-item" href="{% url 'attendance_mark' %}">Add Daily Attendance</a></li>
+                <!-- <li><a class="dropdown-item" href="{% url 'attendance_monthly_mark' %}">Add Monthly Attendance</a></li> -->
+            </ul>
+            </li>
+
+            <!-- Staff Advance -->
+
+            {% if request.user.profile.role == 'AD' %}
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle {% if 'staff' in request.resolver_match.url_name %}bg-primary text-dark{% endif %}"
+                href="#" data-bs-toggle="dropdown">
+                <i class="fa fa-wallet me-2"></i> Staff
+            </a>
+            <ul class="dropdown-menu border-0">
+                <li><a class="dropdown-item" href="{% url 'staff_details' %}">Staff Details</a></li>
+                <li><a class="dropdown-item" href="{% url 'staff_advance_create' %}">Staff Advance</a></li>
+            </ul>
+            </li>
+            {% endif %}
+
+
+
+            <!-- Salary -->
+            {% if request.user.profile.role == 'AD' %}
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle {% if 'salary' in request.resolver_match.url_name %}bg-primary text-dark{% endif %}"
+                href="#" data-bs-toggle="dropdown">
+                <i class="fa fa-wallet me-2"></i> Salary
+            </a>
+            <ul class="dropdown-menu border-0">
+                <li><a class="dropdown-item" href="{% url 'salary_history' %}">Salary History</a></li>
+                <li><a class="dropdown-item" href="{% url 'salary_expectation' %}">Salary Calculation</a></li>
+            </ul>
+            </li>
+            {% endif %}
+
+
+            <!-- ✅ AUDIT (ADMIN ONLY) -->
+             {% if request.user.profile.role == 'AD' %}
+            <li class="nav-item">
+                <a class="nav-link {% if 'audit' in request.resolver_match.url_name %}bg-primary text-dark{% endif %}"
+                   href="{% url 'audit_report' %}">
+                    <i class="fa fa-chart-line me-2"></i> Audit Report
+                </a>
+            </li>
+            {% endif %}
+            
+            {% if request.user.profile.role == 'AD' %}
+            <li class="nav-item">
+            <a class="nav-link {% if 'credit' in request.resolver_match.url_name %}bg-primary text-dark{% endif %}"
+                href="{% url 'credit_bills' %}">
+                <i class="fa fa-exclamation-circle me-2"></i> Pending Payments
+            </a>
+            </li>
+            {% endif %}
+
+        </ul>
+    </div>
+
+    <!-- Footer -->
+    <div class="sidebar-footer border-top p-3 text-center">
+            <form method="post" action="{% url 'staff_logout' %}">
+            {% csrf_token %}
+            <button class="btn btn-danger btn-sm w-100">
+                <i class="fa fa-sign-out-alt me-2"></i> Logout
+            </button>
+            </form>
+    </div>
+</aside>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // 1. Select the elements
+    const sidebar = document.getElementById("show-side-navigation1");
+    const wrapper = document.getElementById("wrapper");
+    const toggleBtn = document.getElementById("sidebarToggle");
+    const closeBtn = document.querySelector('[data-close="show-side-navigation1"]');
+
+    // 2. The Toggle Function
+    function toggleSystem() {
+        if(sidebar && wrapper) {
+            sidebar.classList.toggle("toggled");
+            wrapper.classList.toggle("toggled");
+        }
+    }
+
+    // 3. Add Event Listener to the Navbar Button
+    if (toggleBtn) {
+        toggleBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleSystem();
+        });
+    }
+
+    // 4. Add Event Listener to the Sidebar Close (X) Button
+    if (closeBtn) {
+        closeBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            // On mobile, "toggled" means Open. So we remove it to close.
+            sidebar.classList.remove("toggled");
+            wrapper.classList.remove("toggled");
+        });
+    }
+
+    // 5. Close when clicking outside on mobile
+    document.addEventListener("click", function (e) {
+        // Only valid if screen is small
+        if (window.innerWidth <= 768) {
+            // If sidebar is open (has class 'toggled')
+            if (sidebar.classList.contains("toggled") && 
+                !sidebar.contains(e.target) && 
+                !toggleBtn.contains(e.target)) {
+                
+                sidebar.classList.remove("toggled");
+                wrapper.classList.remove("toggled");
+            }
+        }
+    });
+});
+</script>

@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block title %}{% if form.instance.pk %}Edit Customer{% else %}Add Customer{% endif %}{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+          <h4 class="mb-0">
+            {% if form.instance.pk %}Edit Customer{% else %}Add New Customer{% endif %}
+          </h4>
+        </div>
+        
+        <div class="card-body">
+          <form method="post">
+            {% csrf_token %}
+
+            <div class="mb-3">
+              <label for="id_name" class="form-label">Customer Name <span class="text-danger">*</span></label>
+              <input 
+                type="text" 
+                name="name" 
+                id="id_name" 
+                class="form-control" 
+                value="{{ form.name.value|default_if_none:'' }}" 
+                placeholder="Enter full name"
+                required
+              >
+              {% if form.name.errors %}
+                <div class="text-danger small">{{ form.name.errors }}</div>
+              {% endif %}
+            </div>
+
+            <div class="mb-3">
+              <label for="id_phone" class="form-label">Phone Number <span class="text-danger">*</span></label>
+              <input 
+                type="tel" 
+                name="phone" 
+                id="id_phone" 
+                class="form-control" 
+                value="{{ form.phone.value|default_if_none:'' }}" 
+                placeholder="10-digit mobile number"
+                maxlength="10"
+                minlength="10"
+                pattern="\d{10}"
+                title="Phone number must be exactly 10 digits"
+                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                required
+              >
+              {% if form.phone.errors %}
+                <div class="text-danger small">{{ form.phone.errors }}</div>
+              {% endif %}
+            </div>
+
+            <div class="mb-3">
+              <label for="id_address" class="form-label">Address <span class="text-danger">*</span></label>
+              <textarea 
+                name="address" 
+                id="id_address" 
+                class="form-control" 
+                rows="3" 
+                placeholder="Enter full address"
+                required
+              >{{ form.address.value|default_if_none:'' }}</textarea>
+              {% if form.address.errors %}
+                <div class="text-danger small">{{ form.address.errors }}</div>
+              {% endif %}
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <a href="{% url 'customer_list' %}" class="btn btn-secondary">Cancel</a>
+              <button type="submit" class="btn btn-success">
+                {% if form.instance.pk %}Update Customer{% else %}Save Customer{% endif %}
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

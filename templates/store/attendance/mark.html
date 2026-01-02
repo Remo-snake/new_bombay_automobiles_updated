@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block title %}Attendance{% endblock %}
+
+{% block content %}
+<div class="container-fluid p-3">
+  <div class="d-flex justify-content-between mb-3">
+  <h4 class="mb-3">Staff Attendance</h4>
+  <a href="{% url 'staff_monthly_attendance' %}" class="btn btn-success">Monthly Attendance</a>
+  </div>
+  <form method="get" class="mb-3">
+    <label class="fw-bold">Select Date</label>
+    <input type="date"
+           name="date"
+           value="{{ selected_date }}"
+           class="form-control"
+           onchange="this.form.submit()">
+  </form>
+
+  <form method="post">{% csrf_token %}
+    <input type="hidden" name="date" value="{{ selected_date }}">
+
+    <div class="table-responsive">
+      <table class="table table-bordered align-middle">
+        <thead class="table-light">
+          <tr>
+            <th>Staff</th>
+            <th>Status</th>
+            <th>In</th>
+            <th>Out</th>
+            <th>Remark</th>
+          </tr>
+        </thead>
+        <tbody>
+{% for staff in staff_list %}
+<tr>
+  <td>
+    <strong>{{ staff.user.username }}</strong><br>
+    <small>{{ staff.get_role_display }}</small>
+  </td>
+
+  <td>
+    <select name="status_{{ staff.id }}" class="form-control">
+      <option value="P" {% if staff.attendance and staff.attendance.status == 'P' %}selected{% endif %}>Present</option>
+      <option value="H" {% if staff.attendance and staff.attendance.status == 'H' %}selected{% endif %}>Half Day</option>
+      <option value="A" {% if staff.attendance and staff.attendance.status == 'A' %}selected{% endif %}>Absent</option>
+      </select>
+  </td>
+
+  <td>
+    <input type="time" name="in_{{ staff.id }}" class="form-control"
+           value="{{ staff.attendance.in_time|default:'' }}">
+  </td>
+
+  <td>
+    <input type="time" name="out_{{ staff.id }}" class="form-control"
+           value="{{ staff.attendance.out_time|default:'' }}">
+  </td>
+
+  <td>
+    <input type="text" name="remark_{{ staff.id }}" class="form-control"
+           value="{{ staff.attendance.remark|default:'' }}">
+  </td>
+</tr>
+{% endfor %}
+</tbody>
+
+
+      </table>
+    </div>
+
+    <button class="btn btn-success w-100 mt-3">
+      Save Attendance 
+    </button>
+  </form>
+</div>
+{% endblock %}
+

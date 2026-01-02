@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>404 – Page Not Found</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #0d6efd, #6610f2);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+        }
+
+        .error-box {
+            background: rgba(0,0,0,0.25);
+            padding: 40px;
+            border-radius: 12px;
+            max-width: 520px;
+            width: 100%;
+        }
+
+        .error-code {
+            font-size: 90px;
+            font-weight: 800;
+            letter-spacing: 4px;
+        }
+
+        .error-text {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+
+        .btn-home {
+            margin-top: 20px;
+        }
+
+        .brand {
+            font-size: 18px;
+            font-weight: 600;
+            opacity: 0.85;
+        }
+    </style>
+</head>
+<body>
+
+<div class="error-box shadow-lg">
+    <div class="brand mb-3">
+        🏍️ New Bombay Automobiles
+    </div>
+
+    <div class="error-code">404</div>
+
+    <p class="error-text mb-3">
+        Oops! The page you’re looking for doesn’t exist.
+    </p>
+
+    <p class="text-light opacity-75">
+        It may have been moved or deleted.
+    </p>
+
+    <a href="{% url 'dashboard' %}" class="btn btn-light btn-lg btn-home">
+        Go to Dashboard
+    </a>
+</div>
+
+</body>
+</html>

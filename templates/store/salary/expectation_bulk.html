@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block title %}Salary Calculation{% endblock %}
+
+{% block content %}
+<div class="container-fluid p-3">
+
+<div class="d-flex justify-content-between mb-3">
+  <h4>Salary Calculation</h4>
+  <a href="{% url 'salary_history' %}" class="btn btn-outline-primary">
+    Salary History
+  </a>
+</div>
+
+<form method="get" class="row g-2 mb-3">
+  <div class="col-md-3">
+    <input type="month"
+           name="month"
+           class="form-control"
+           value="{{ month }}"
+           required>
+  </div>
+  <div class="col-md-2">
+    <button class="btn btn-primary w-100">Load</button>
+  </div>
+</form>
+
+{% if month %}
+
+<div class="table-responsive">
+  <table class="table table-bordered table-striped align-middle text-nowrap">
+    <thead class="table-dark">
+      <tr>
+        <th>Staff</th>
+        <th>Per Day</th>
+        <th>Payable Days</th>
+        <th>Gross</th>
+        <th>Advance</th>
+        <th>Incentive</th>
+        <th>Net Pay</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    {% for row in rows %}
+      <tr>
+        <td>{{ row.staff }}</td>
+
+        {% if row.error %}
+          <td colspan="6" class="text-danger fw-bold">
+            {{ row.error }}
+          </td>
+          <td>
+            <span class="badge bg-danger">Fix Salary</span>
+          </td>
+        {% else %}
+          <td>₹ {{ row.per_day|floatformat:2|intcomma }}</td>
+          <td>{{ row.payable_days }}</td>
+          <td>₹ {{ row.gross|floatformat:2|intcomma }}</td>
+          <td>₹ {{ row.advances|floatformat:2|intcomma }}</td>
+          <td>₹ {{ row.incentive|floatformat:2|intcomma }}</td>
+          <td class="fw-bold text-success">
+            ₹ {{ row.net_pay|floatformat:2|intcomma }}
+          </td>
+          <td>
+            <a href="{% url 'pay_salary' row.staff.id row.year row.month %}"
+               class="btn btn-sm btn-success">
+               Pay Now
+            </a>
+          </td>
+        {% endif %}
+      </tr>
+    {% empty %}
+      <tr>
+        <td colspan="8" class="text-center text-muted">
+          No salary records
+        </td>
+      </tr>
+    {% endfor %}
+
+    </tbody>
+  </table>
+</div>
+{% endif %}
+
+
+
+<div class="container p-3">
+<h4>Salary Payment History</h4>
+
+<div class="card border-0 shadow-sm">
+    <div class="table-responsive">
+      <table class="table table-hover align-middle mb-0">
+        <thead class="bg-light border-bottom">
+          <tr>
+            <th class="ps-4">Staff</th>
+            <th>Month</th>
+            <th>Paid</th>
+            <th>Mode</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for p in payments %}
+          <tr>
+            <td class="ps-4 fw-medium">{{ p.staff }}</td>
+            <td>
+              {% if p.month == 1 %}January
+              {% elif p.month == 2 %}February
+              {% elif p.month == 3 %}March
+              {% elif p.month == 4 %}April
+              {% elif p.month == 5 %}May
+              {% elif p.month == 6 %}June
+              {% elif p.month == 7 %}July
+              {% elif p.month == 8 %}August
+              {% elif p.month == 9 %}September
+              {% elif p.month == 10 %}October
+              {% elif p.month == 11 %}November
+              {% elif p.month == 12 %}December
+              {% endif %}
+              {{ p.year }}
+            </td>
+            <td>₹ {{ p.paid_amount }}</td>
+            <td>{{ p.payment_mode }}</td>
+            <td>{{ p.paid_on|date:"d M Y" }}</td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan="5" class="text-center text-muted py-4">
+              No salary records found
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bill Preview</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    .bill-box {
+      max-width: 800px;
+      margin: auto;
+      border: 1px solid #ddd;
+      padding: 20px;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .header h2 {
+      margin: 0;
+    }
+    .info {
+      margin-bottom: 15px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    table, th, td {
+      border: 1px solid #000;
+    }
+    th, td {
+      padding: 6px;
+      text-align: center;
+    }
+    .right {
+      text-align: right;
+    }
+    .summary {
+      margin-top: 15px;
+      width: 100%;
+    }
+    .summary td {
+      border: none;
+      padding: 4px;
+    }
+    .status {
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    .paid { color: green; }
+    .partial { color: orange; }
+    .credit { color: red; }
+
+    @media print {
+      .no-print {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>  
+
+
+  <button class="btn btn-primary"><a href="{% url 'billing_list' %}" >Back to Billing List</a></button>
+
+<div class="bill-box">
+
+  <!-- Header -->
+  <div class="header">
+    <h2>New Bombay Automobiles</h2>
+    <p>Spare Parts & Services</p>
+  </div>
+
+  <!-- Info -->
+  <div class="info">
+    <strong>Bill No:</strong> {{ bill.id }} <br>
+    <strong>Date:</strong> {{ bill.date|date:"d-m-Y H:i" }} <br>
+    <strong>Customer:</strong>
+    {% if bill.payment_status != 'PAID' and bill.customer %}
+      {{ bill.customer.name }}
+    {% else %}
+      {{ bill.customer_name }}
+    {% endif %}
+    <br>
+
+    {% if bill.attended_staff %}
+        <strong>Attended By:</strong> {{ bill.attended_staff.user.username }} <br>
+    {% endif %}
+
+
+    <strong>Payment Status:</strong>
+    <span class="status
+      {% if bill.payment_status == 'PAID' %}paid{% endif %}
+      {% if bill.payment_status == 'PARTIAL' %}partial{% endif %}
+      {% if bill.payment_status == 'CREDIT' %}credit{% endif %}
+    ">
+      {{ bill.payment_status }}
+    </span>
+  </div>
+
+  <!-- Items -->
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Qty</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in items %}
+      <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ i.product.name }}</td>
+        <td>₹ {{ i.price }}</td>
+        <td>{{ i.quantity }}</td>
+        <td>₹ {{ i.row_total }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <!-- Summary -->
+  <table class="summary">
+
+    <tr>
+      <td class="right"><strong>Paid Amount:</strong></td>
+      <td class="right">₹ {{ bill.paid_amount }}</td>
+    </tr>
+    <tr>
+      <td class="right"><strong>Balance Due:</strong></td>
+      <td class="right">₹ {{ bill.due_amount }}</td>
+    </tr>
+    {% if bill.labor_amount > 0 %}
+        <tr>
+        <td class="right"><strong>Labor Charges:</strong></td>
+        <td class="right">₹ {{ bill.labor_amount }}</td>
+        </tr>
+    {% endif %}
+
+    {% if bill.discount_amount > 0 %}
+    <tr>
+      <td class="right"><strong>Discount:</strong></td>
+      <td class="right">- ₹ {{ bill.discount_amount }}</td>
+    </tr>
+    {% endif %}
+        <tr>
+      <td class="right"><strong>Total Amount:</strong></td>
+      <td class="right">₹ {{ bill.total_amount }}</td>
+    </tr>
+
+
+  </table>
+
+  <!-- Footer -->
+  <p style="margin-top:20px;text-align:center;">
+    Thank you for your business!
+  </p>
+
+  <!-- Print Button -->
+  <div class="no-print" style="text-align:center;margin-top:15px;">
+    <button onclick="window.print()">Print</button>
+  </div>
+
+</div>
+
+</body>
+</html>

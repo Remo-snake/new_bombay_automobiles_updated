@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% block title %}Customers{% endblock %}
+
+{% block content %}
+<div class="container-fluid p-4">
+
+  <!-- Header -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h4 class="fw-semibold mb-0">Customers</h4>
+    <a href="{% url 'customer_create' %}" class="btn btn-success">
+      + Add Customer
+    </a>
+  </div>
+
+  <!-- 🔍 Search -->
+  <div class="row mb-3">
+    <div class="col-12 col-md-4">
+      <input
+        type="text"
+        id="customerSearch"
+        class="form-control form-control-lg"
+        placeholder="Search customers..."
+        autocomplete="off"
+      >
+    </div>
+  </div>
+
+  <!-- Table Card -->
+  <div class="card border-0 shadow-sm">
+    <div class="table-responsive">
+      <table class="table table-hover align-middle mb-0" id="customerTable">
+        <thead class="bg-light border-bottom">
+          <tr>
+            <th class="ps-4">Name</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th class="text-center pe-4" width="70">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for c in customers %}
+          <tr>
+            <td class="ps-4 fw-medium c-name">{{ c.name }}</td>
+            <td class="c-phone">{{ c.phone }}</td>
+            <td class="text-muted c-address">{{ c.address|default:"—" }}</td>
+            <td class="text-center pe-4">
+              <div class="dropdown">
+                <button
+                  class="btn btn-sm btn-light rounded-circle"
+                  data-bs-toggle="dropdown"
+                >
+                  &#8942;
+                </button>
+
+                <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+                  <li>
+                    <a class="dropdown-item" href="{% url 'customer_update' c.id %}">
+                      ✏️ Edit
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item text-danger"
+                      href="{% url 'customer_delete' c.id %}"
+                      onclick="return confirm('Delete this customer?');"
+                    >
+                      🗑 Delete
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan="4" class="text-center py-4 text-muted">
+              No customers found
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<!-- Live Search Script -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const searchInput = document.getElementById("customerSearch");
+  const rows = document.querySelectorAll("#customerTable tbody tr");
+
+  searchInput.addEventListener("keyup", function () {
+    const query = this.value.toLowerCase();
+
+    rows.forEach(row => {
+      const name = row.querySelector(".c-name")?.innerText.toLowerCase() || "";
+      const phone = row.querySelector(".c-phone")?.innerText.toLowerCase() || "";
+      const address = row.querySelector(".c-address")?.innerText.toLowerCase() || "";
+
+      row.style.display =
+        name.includes(query) ||
+        phone.includes(query) ||
+        address.includes(query)
+          ? ""
+          : "none";
+    });
+  });
+});
+</script>
+
+{% endblock %}
+  

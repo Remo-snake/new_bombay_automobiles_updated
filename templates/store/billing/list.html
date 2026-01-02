@@ -1,0 +1,162 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block title %}Billing History{% endblock %}
+
+{% block content %}
+<div class="container-fluid p-4">
+
+
+    <!-- Header -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h4 class="fw-semibold mb-0">Billing History</h4>
+    <a href="{% url 'billing_create' %}" class="btn btn-success">
+      + Add Biling
+    </a>
+  </div>
+
+    <!-- 🔍 Live Search -->
+  <div class="row mb-3">
+    <div class="col-12 col-md-4">
+    <input type="text"
+           id="billSearch"
+           class="form-control form-control-lg w-100 w-md-25"
+           placeholder="Search customer...">
+    </div>
+  </div>
+
+  <!-- Stylish Table -->
+  <div class="card border-0 shadow-sm">
+    <div class="table-responsive">
+      <table class="table table-hover align-middle mb-0" id="billingTable">
+        <thead class="bg-light border-bottom">
+          <tr>
+            <th class="ps-4">ID</th>
+            <th>Customer</th>
+            <th>Total</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th class="text-center">View</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {% for b in bills %}
+          <tr>
+            <td class="ps-4 fw-medium">#{{ b.id }}</td>
+
+            <td class="customer-name">
+              {% if b.payment_status != 'PAID' and b.customer %}
+                {{ b.customer.name }}
+              {% else %}
+                {{ b.customer_name }}
+              {% endif %}
+            </td>
+
+            <td>₹ {{ b.total_amount|intcomma }}</td>
+
+            <td>
+              {% if b.payment_status == 'PAID' %}
+                <span class="badge bg-success">PAID</span>
+              {% elif b.payment_status == 'CREDIT' %}
+                <span class="badge bg-danger">CREDIT</span>
+              {% else %}
+                <span class="badge bg-warning text-dark">PARTIAL</span>
+              {% endif %}
+            </td>
+
+            <td>{{ b.date|date:"d M Y" }}</td>
+
+            <td class="text-center">
+              <button
+                class="btn btn-sm btn-outline-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#billModal"
+                data-bill-id="{{ b.id }}"
+                title="View Bill">
+                <i class="fa fa-eye"></i>
+              </button>
+            </td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan="6" class="text-center text-muted py-4">
+              No billing records found
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<!-- ======================
+     BILL PREVIEW MODAL
+====================== -->
+<div class="modal fade" id="billModal" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Bill Preview</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body p-0">
+        <iframe id="billFrame"
+                src=""
+                style="width:100%; height:75vh; border:none;">
+        </iframe>
+      </div>
+
+      <div class="modal-footer">
+        <a id="printBillBtn"
+           href="#"
+           target="_blank"
+           class="btn btn-success">
+          <i class="fa fa-print me-1"></i> Print
+        </a>
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ======================
+     JAVASCRIPT
+====================== -->
+<script>
+/* ------------------------
+   MODAL BILL PREVIEW
+------------------------ */
+const billModal = document.getElementById('billModal');
+const billFrame = document.getElementById('billFrame');
+const printBtn = document.getElementById('printBillBtn');
+
+billModal.addEventListener('show.bs.modal', function (event) {
+  const button = event.relatedTarget;
+  const billId = button.getAttribute('data-bill-id');
+
+  const billUrl = `/billing/${billId}/print/`;
+
+  billFrame.src = billUrl;
+  printBtn.href = billUrl;
+});
+
+/* ------------------------
+   CUSTOMER SEARCH
+------------------------ */
+document.getElementById("billSearch").addEventListener("keyup", function () {
+  const search = this.value.toLowerCase();
+  const rows = document.querySelectorAll("#billingTable tbody tr");
+
+  rows.forEach(row => {
+    const customer = row.querySelector(".customer-name")?.innerText.toLowerCase();
+    row.style.display = customer.includes(search) ? "" : "none";
+  });
+});
+</script>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Delete Staff{% endblock %}
+
+{% block content %}
+<div class="container p-4">
+  <div class="card shadow-sm p-4 text-center">
+    <h5>Delete Staff</h5>
+    <p>
+      Are you sure you want to delete
+      <strong>{{ staff.user.username }}</strong>?
+    </p>
+
+    <form method="post">
+      {% csrf_token %}
+      <button class="btn btn-danger">Yes, Delete</button>
+      <a href="{% url 'staff_details' %}"
+         class="btn btn-secondary">
+        Cancel
+      </a>
+    </form>
+  </div>
+</div>
+{% endblock %}

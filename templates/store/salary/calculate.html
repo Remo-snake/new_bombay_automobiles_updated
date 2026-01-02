@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block title %}Salary Calculation{% endblock %}
+
+{% block content %}
+<div class="container-fluid p-3">
+
+  <h4 class="mb-3">Monthly Salary Calculation</h4>
+
+  <!-- Salary Filter Form -->
+  <form method="get" class="card p-3 mb-4">
+
+    <label class="fw-bold">Staff</label>
+    <select name="staff" class="form-control mb-2" required>
+      <option value="">-- Select Staff --</option>
+      {% for s in staff_list %}
+      <option value="{{ s.id }}"
+        {% if selected_staff == s.id|stringformat:"s" %}selected{% endif %}>
+        {{ s.user.username }} ({{ s.get_role_display }})
+      </option>
+      {% endfor %}
+    </select>
+
+    <label class="fw-bold">Month</label>
+    <input type="month"
+           name="month"
+           class="form-control mb-3"
+           value="{{ month }}"
+           required>
+
+    <button class="btn btn-primary w-100">
+      Calculate Salary
+    </button>
+
+  </form>
+
+  {% if result %}
+    {% if result.error %}
+      <!-- Error Message -->
+      <div class="alert alert-danger">
+        {{ result.error }}<br>
+        <small>Please configure salary for this staff before calculation.</small>
+      </div>
+    {% else %}
+      <!-- Salary Result -->
+      <div class="card p-3">
+
+        <h5 class="mb-3">
+          Salary Summary – {{ result.staff.user.username }}
+        </h5>
+
+        <table class="table table-bordered">
+          <tr>
+            <th>Present Days</th>
+            <td>{{ result.present }}</td>
+          </tr>
+          <tr>
+            <th>Half Days</th>
+            <td>{{ result.half }}</td>
+          </tr>
+          <tr>
+            <th>Total Working Days</th>
+            <td>{{ result.total_days }}</td>
+          </tr>
+          <tr>
+            <th>Gross Salary</th>
+            <td>₹ {{ result.gross_salary }}</td>
+          </tr>
+          <tr>
+            <th>Advances</th>
+            <td>₹ {{ result.advances }}</td>
+          </tr>
+          <tr class="table-success">
+            <th>Net Payable</th>
+            <td><strong>₹ {{ result.net_pay }}</strong></td>
+          </tr>
+        </table>
+
+        <div class="alert alert-info mt-2">
+          This is a preview calculation. Salary payment will be recorded separately.
+        </div>
+
+      </div>
+    {% endif %}
+  {% endif %}
+
+</div>
+{% endblock %}

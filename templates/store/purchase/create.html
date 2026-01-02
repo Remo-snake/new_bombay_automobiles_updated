@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+{% block title %}Create Purchase{% endblock %}
+
+{% block content %}
+<div class="container-fluid p-4">
+  <h4 class="mb-3">Create Purchase</h4>
+
+  <form method="post" class="bg-white p-4 rounded shadow-sm">
+    {% csrf_token %}
+
+    <!-- ================= Dealer ================= -->
+    <div class="mb-3">
+      <label class="form-label fw-bold">Dealer</label>
+      <select name="dealer" class="form-control" required>
+        <option value="">-- Select Dealer --</option>
+        {% for d in dealers %}
+          <option value="{{ d.id }}">{{ d.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <!-- ================= Invoice ================= -->
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label class="form-label fw-bold">Invoice Number</label>
+        <input type="text" name="invoice_number" class="form-control">
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label fw-bold">Invoice Date</label>
+        <input type="date"
+               name="invoice_date"
+               class="form-control"
+               value="{{ today|default:None }}">
+      </div>
+    </div>
+
+    <!-- ================= Payment ================= -->
+    <div class="row mb-4">
+      <div class="col-md-6">
+        <label class="form-label fw-bold">Payment Type</label>
+        <select name="payment_type"
+                class="form-control"
+                onchange="togglePaid()">
+          <option value="PAID">Paid</option>
+          <option value="CREDIT">Credit</option>
+        </select>
+      </div>
+
+      <div class="col-md-6" id="paidBox">
+        <label class="form-label fw-bold">Paid Amount</label>
+        <input type="number"
+               name="paid_amount"
+               class="form-control"
+               value="0"
+               min="0">
+      </div>
+    </div>
+
+    <!-- ================= Products ================= -->
+    <div class="table-responsive mb-3">
+      <table class="table table-bordered align-middle">
+        <thead class="table-light">
+          <tr>
+            <th width="40%">Product</th>
+            <th width="20%">Purchase Price</th>
+            <th width="15%">Qty</th>
+            <th width="15%">Total</th>
+            <th width="10%"></th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+
+      <button type="button"
+              class="btn btn-outline-secondary btn-sm"
+              onclick="addRow()">
+        + Add Product
+      </button>
+    </div>
+
+    <!-- ================= Total ================= -->
+    <div class="border-top pt-3 d-flex justify-content-between align-items-center">
+      <h5 class="mb-0">
+        Total Purchase: ₹ <span id="grandTotal" class="fw-bold">0</span>
+      </h5>
+      <button class="btn btn-success px-4">
+        Save Purchase
+      </button>
+    </div>
+
+  </form>
+</div>
+
+<script>
+const products = {{ products_json|safe }};
+
+function togglePaid() {
+  const type = document.querySelector('[name="payment_type"]').value;
+  document.getElementById('paidBox').style.display =
+    type === 'CREDIT' ? 'none' : 'block';
+}
+
+function addRow() {
+  const row = document.createElement('tr');
+
+  let options = '<option value="">Select product</option>';
+  products.forEach(p => {
+    options += `<option value="${p.id}">${p.name}</option>`;
+  });
+
+  row.innerHTML = `
+    <td>
+      <select name="product[]" class="form-control">
+        ${options}
+      </select>
+    </td>
+    <td>
+      <input name="price[]" class="form-control price" value="0">
+    </td>
+    <td>
+      <input name="quantity[]"
+             class="form-control qty"
+             value="1" min="1">
+    </td>
+    <td class="rowTotal text-end">0</td>
+    <td class="text-center">
+      <button type="button"
+              class="btn btn-danger btn-sm">×</button>
+    </td>
+  `;
+
+  document.getElementById('rows').appendChild(row);
+
+  row.querySelector('.price').addEventListener('input', calculateTotal);
+  row.querySelector('.qty').addEventListener('input', calculateTotal);
+
+  row.querySelector('.btn-danger').onclick = function () {
+    row.remove();
+    calculateTotal();
+  };
+}
+
+function calculateTotal() {
+  let total = 0;
+
+  document.querySelectorAll('#rows tr').forEach(row => {
+    const price = parseFloat(row.querySelector('.price').value || 0);
+    const qty = parseInt(row.querySelector('.qty').value || 0);
+    const rowTotal = price * qty;
+
+    row.querySelector('.rowTotal').innerText = rowTotal.toFixed(2);
+    total += rowTotal;
+  });
+
+  document.getElementById('grandTotal').innerText =
+    total.toFixed(2);
+}
+
+addRow();
+togglePaid();
+</script>
+
+{% endblock %}

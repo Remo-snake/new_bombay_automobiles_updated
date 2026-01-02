@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %}Salary History{% endblock %}
+
+{% block content %}
+<div class="container-fluid p-4">
+
+  <!-- Header -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h4 class="fw-semibold mb-0">Salary Payment History</h4>
+  </div>
+
+  <!-- Stylish Table -->
+  <div class="card border-0 shadow-sm">
+    <div class="table-responsive">
+      <table class="table table-hover align-middle mb-0">
+        <thead class="bg-light border-bottom">
+          <tr>
+            <th class="ps-4">Staff</th>
+            <th>Month</th>
+            <th>Paid</th>
+            <th>Mode</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for p in payments %}
+          <tr>
+            <td class="ps-4 fw-medium">{{ p.staff }}</td>
+            <td>
+              {% if p.month == 1 %}January
+              {% elif p.month == 2 %}February
+              {% elif p.month == 3 %}March
+              {% elif p.month == 4 %}April
+              {% elif p.month == 5 %}May
+              {% elif p.month == 6 %}June
+              {% elif p.month == 7 %}July
+              {% elif p.month == 8 %}August
+              {% elif p.month == 9 %}September
+              {% elif p.month == 10 %}October
+              {% elif p.month == 11 %}November
+              {% elif p.month == 12 %}December
+              {% endif %}
+              {{ p.year }}
+            </td>
+            <td>₹ {{ p.paid_amount }}</td>
+            <td>{{ p.payment_mode }}</td>
+            <td>{{ p.paid_on|date:"d M Y" }}</td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan="5" class="text-center text-muted py-4">
+              No salary records found
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

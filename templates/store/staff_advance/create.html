@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block title %}Staff Advance{% endblock %}
+
+{% block content %}
+<div class="container-fluid p-3">
+
+  <h4 class="mb-3">Staff Advance Entry</h4>
+
+  <!-- Advance Form -->
+  <div class="card p-3 mb-4">
+    <form method="post">{% csrf_token %}
+
+      <label class="fw-bold">Staff</label>
+      <select name="staff" class="form-control mb-2" required>
+        <option value="">-- Select Staff --</option>
+        {% for s in staff_list %}
+        <option value="{{ s.id }}">
+          {{ s.user.username }} ({{ s.get_role_display }})
+        </option>
+        {% endfor %}
+      </select>
+
+      <label class="fw-bold">Advance Amount</label>
+      <input type="number"
+             name="amount"
+             class="form-control mb-2"
+             min="1"
+             required>
+
+      <label class="fw-bold">Remark</label>
+      <input type="text"
+             name="remark"
+             class="form-control mb-3"
+             placeholder="Optional note"
+             required>
+
+      <button class="btn btn-success w-100">
+        Save Advance
+      </button>
+    </form>
+  </div>
+
+  <!-- Advance History -->
+  <div class="card p-3">
+    <h5 class="mb-3">Advance History</h5>
+
+    <div class="table-responsive">
+      <table class="table table-bordered align-middle">
+        <thead class="table-light">
+          <tr>
+            <th>Date</th>
+            <th>Staff</th>
+            <th>Amount</th>
+            <th>Remark</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for a in advances %}
+          <tr>
+            <td>{{ a.date }}</td>
+            <td>{{ a.staff.user.username }}</td>
+            <td>₹ {{ a.amount }}</td>
+            <td>{{ a.remark|default:"-" }}</td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan="4" class="text-center text-muted">
+              No advances recorded
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% block title %}Purchases{% endblock %}
+
+{% block content %}
+<div class="container-fluid p-4">
+
+  <!-- Header -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h4 class="fw-semibold mb-0">Purchase List</h4>
+    <a href="{% url 'purchase_create' %}" class="btn btn-primary">
+      + New Purchase
+    </a>
+  </div>
+
+  <!-- 🔍 Live Search -->
+  <div class="row mb-3">
+    <div class="col-12 col-md-4">
+      <input
+        type="text"
+        id="purchaseSearch"
+        class="form-control form-control-lg"
+        placeholder="Search by dealer, date, or amount..."
+        autocomplete="off"
+      >
+    </div>
+  </div>
+
+  <!-- Stylish Table -->
+  <div class="card border-0 shadow-sm">
+    <div class="table-responsive">
+      <table class="table table-hover align-middle mb-0" id="purchaseTable">
+        <thead class="bg-light border-bottom">
+          <tr>
+            <th class="ps-4">ID</th>
+            <th>Dealer</th>
+            <th>Date</th>
+            <th>Total</th>
+            <th>Paid</th>
+            <th>Pending</th>
+            <th class="text-center pe-4" width="70">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for p in purchases %}
+          <tr>
+            <td class="ps-4 fw-medium p-id">{{ p.id }}</td>
+            <td class="p-dealer">{{ p.dealer.name }}</td>
+            <td class="p-date">{{ p.invoice_date|date:"d M Y" }}</td>
+            <td class="p-total">₹ {{ p.total_amount }}</td>
+            <td class="p-paid">₹ {{ p.paid_amount }}</td>
+            <td class="p-pending">₹ {{ p.total_amount|floatformat:2 }}</td>
+            <td class="text-center pe-4">
+              <div class="dropdown">
+                <button
+                  class="btn btn-sm btn-light rounded-circle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  title="Actions"
+                >
+                  &#8942;
+                </button>
+
+                <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      
+                    >
+                      ✏️ Edit - Coming Soon
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item text-danger"
+                      href="#"
+                      onclick="alert('Delete: Coming Soon'); return false;"
+                    >
+                      🗑 Delete - Coming Soon
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan="7" class="text-center py-4 text-muted">
+              No purchases found
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<!-- 🔥 Live Search Script -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const searchInput = document.getElementById("purchaseSearch");
+  const rows = document.querySelectorAll("#purchaseTable tbody tr");
+
+  searchInput.addEventListener("keyup", function () {
+    const query = this.value.toLowerCase();
+
+    rows.forEach(row => {
+      const id = row.querySelector(".p-id")?.innerText.toLowerCase() || "";
+      const dealer = row.querySelector(".p-dealer")?.innerText.toLowerCase() || "";
+      const date = row.querySelector(".p-date")?.innerText.toLowerCase() || "";
+      const total = row.querySelector(".p-total")?.innerText.toLowerCase() || "";
+      const paid = row.querySelector(".p-paid")?.innerText.toLowerCase() || "";
+      const pending = row.querySelector(".p-pending")?.innerText.toLowerCase() || "";
+
+      row.style.display =
+        id.includes(query) ||
+        dealer.includes(query) ||
+        date.includes(query) ||
+        total.includes(query) ||
+        paid.includes(query) ||
+        pending.includes(query)
+          ? ""
+          : "none";
+    });
+  });
+});
+</script> 
+
+{% endblock %}

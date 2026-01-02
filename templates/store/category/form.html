@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Category Form{% endblock %}
+{% block content %}
+<div class="container p-4">
+  <div class="card col-md-6 mx-auto shadow-sm">
+    <div class="card-body">
+      <h5>Category</h5>
+      <form method="post">{% csrf_token %}
+        <input name="name" class="form-control mb-2" placeholder="Name"
+               value="{{ category.name|default:'' }}">
+        <textarea name="description" class="form-control mb-3"
+                  placeholder="Description">{{ category.description|default:'' }}</textarea>
+        <button class="btn btn-success w-100">Save</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

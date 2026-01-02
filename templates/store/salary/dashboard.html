@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %}Salary Dashboard{% endblock %}
+
+{% block content %}
+<div class="container-fluid p-3">
+<h4 class="mb-3">Salary Dashboard</h4>
+
+<table class="table table-bordered table-striped">
+<thead>
+<tr>
+  <th>Staff</th>
+  <th>Working Days</th>
+  <th>Gross Salary</th>
+  <th>Net Pay</th>
+  <th>Action</th>
+</tr>
+</thead>
+<tbody>
+
+{% for row in rows %}
+<tr>
+  <td>{{ row.staff }}</td>
+  <td>{{ row.working_days }}</td>
+  <td>₹ {{ row.gross_salary|floatformat:2 }}</td>
+  <td class="fw-bold text-success">
+      ₹ {{ row.net_pay|floatformat:2 }}
+  </td>
+  <td>
+    <a href="{% url 'pay_salary' row.staff.id row.year row.month %}"
+       class="btn btn-sm btn-success">
+       Pay Now
+    </a>
+  </td>
+</tr>
+{% empty %}
+<tr>
+  <td colspan="5" class="text-center text-muted">
+    No pending salary
+  </td>
+</tr>
+{% endfor %}
+
+</tbody>
+</table>
+</div>
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block title %}Salary Calculation{% endblock %}
+
+{% block content %}
+<div class="container-fluid p-3">
+
+<h4 class="mb-3">Salary Calculation</h4>
+
+<form method="get" class="row g-2 mb-3">
+  <div class="col-md-4">
+    <label>Staff</label>
+    <select name="staff" class="form-control" required>
+      <option value="">-- Select Staff --</option>
+      {% for s in staff_list %}
+      <option value="{{ s.id }}"
+        {% if selected_staff == s.id|stringformat:"s" %}selected{% endif %}>
+        {{ s }}
+      </option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div class="col-md-4">
+    <label>Month</label>
+    <input type="month" name="month"
+           class="form-control"
+           value="{{ month }}" required>
+  </div>
+
+  <div class="col-md-2 d-flex align-items-end">
+    <button class="btn btn-primary w-100">Calculate</button>
+  </div>
+</form>
+
+{% if not staff %}
+<div class="alert alert-info">
+  Please select staff and month to calculate salary.
+</div>
+{% endif %}
+
+{% if staff %}
+<div class="card p-3">
+<table class="table table-bordered">
+<tr><th>Working Days</th><td>{{ working_days }}</td></tr>
+<tr><th>Gross Salary</th><td>₹ {{ gross_salary }}</td></tr>
+<tr><th>Net Salary</th><td>₹ {{ net_salary }}</td></tr>
+<tr class="table-warning">
+  <th>Advance Deduction</th>
+  <td>₹ {{ advances }}</td>
+</tr>
+<tr class="table-success fw-bold">
+  <th>Final Payable</th>
+  <td>₹ {{ final_payable }}</td>
+</tr>
+</table>
+
+<a href="{% url 'pay_salary' staff.id year month_no %}"
+   class="btn btn-success w-100">
+   Pay Now
+</a>
+</div>
+{% endif %}
+
+</div>
+{% endblock %}

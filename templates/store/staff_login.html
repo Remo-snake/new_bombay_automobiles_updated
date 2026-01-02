@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Staff Login | New Bombay Automobile</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<style>
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* MAIN WRAPPER */
+.login-page {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* LEFT INFO SECTION */
+.login-info {
+    flex: 1;
+    position: relative;
+    background: url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80")
+        center / cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 60px;
+    color: #fff;
+}
+
+/* OVERLAY */
+.login-info::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(46, 51, 59, 0.85),
+        rgba(46, 156, 92, 0.85)
+    );
+    z-index: 1;
+}
+
+/* CONTENT ABOVE OVERLAY */
+.login-info * {
+    position: relative;
+    z-index: 2;
+}
+
+.login-info h1 {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.login-info p {
+    opacity: 0.95;
+    max-width: 400px;
+}
+
+/* PUSH TEXT TOP, CLOCK BOTTOM */
+.login-info .info-content {
+    flex: 1;
+}
+
+/* DIGITAL CLOCK */
+.digital-clock {
+    align-self: center;
+    margin-top: auto;
+    margin-bottom: 20px;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 38px;
+}
+
+/* RIGHT LOGIN SECTION */
+.login-form {
+    flex: 1;
+    position: relative;
+    background: url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80")
+        center / cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* LOGIN CARD */
+.login-card {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* INPUT FIELDS */
+.login-card .form-control {
+    background-color: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    padding: 10px 12px;
+    border-radius: 8px;
+}
+
+/* PLACEHOLDER */
+.login-card .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* INPUT FOCUS */
+.login-card .form-control:focus {
+    background-color: rgba(255, 255, 255, 0.22);
+    border-color: #4caf50;
+    box-shadow: 0 0 0 0.15rem rgba(76, 175, 80, 0.25);
+    color: #ffffff;
+}
+
+/* PASSWORD TOGGLE ICON */
+.password-toggle {
+    position: absolute;
+    right: 14px;
+    top: 70%;
+    transform: translateY(-50%);
+    color: #2f1616;
+    cursor: pointer;
+}
+
+.password-toggle:hover {
+    color: #44a017;
+}
+
+/* MOBILE VIEW */
+@media (max-width: 768px) {
+    .login-page {
+        flex-direction: column;
+    }
+
+    .login-info {
+        min-height: 45vh;
+        padding: 40px 25px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .login-info h1 {
+        font-size: 28px;
+    }
+
+    .login-form {
+        min-height: 55vh;
+        padding: 20px;
+    }
+
+    .digital-clock {
+        font-size: 30px;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="login-page">
+
+    <!-- LEFT SIDE INFO -->
+    <div class="login-info">
+
+        <div class="info-content text-center">
+            <h1 class="mb-4">Welcome to<br>New Bombay Automobile</h1>
+            <p>
+                Managing billing, inventory and staff operations for your
+                automobile spare parts showroom.
+            </p>
+        </div>
+
+        <!-- CLOCK MOVED HERE (BOTTOM CENTER) -->
+        <div class="digital-clock" id="clock">00:00:00</div>
+    </div>
+
+    <!-- RIGHT SIDE LOGIN -->
+    <div class="login-form">
+
+        <div class="login-card">
+
+            <div class="text-center mb-4">
+                <i class="fa fa-car fa-2x text-primary"></i>
+                <h5 class="mt-2 fw-bold">NBA Staff Login</h5>
+            </div>
+
+
+            <form method="post">
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    <label class="form-label text-white">Staff ID</label>
+                    <input type="text" name="username" class="form-control" required>
+                </div>
+
+                <div class="mb-3 position-relative">
+                    <label class="form-label text-white">Password</label>
+                    <input type="password" name="password" id="password" class="form-control" required>
+                    <i class="fa fa-eye password-toggle" id="togglePassword"></i>
+                </div>
+
+                <button class="btn btn-primary w-100 fw-bold">
+                    Sign In
+                </button>
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- CLOCK SCRIPT -->
+<script>
+function updateClock() {
+    const now = new Date();
+    document.getElementById("clock").innerText =
+        now.toLocaleTimeString();
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+/* PASSWORD TOGGLE */
+document.getElementById("togglePassword").addEventListener("click", function () {
+    const pwd = document.getElementById("password");
+    pwd.type = pwd.type === "password" ? "text" : "password";
+    this.classList.toggle("fa-eye-slash");
+});
+</script>
+
+</body>
+</html>

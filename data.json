@@ -1,0 +1,7274 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2025-12-15T13:30:16.073Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "admin",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2025-12-15T13:45:35.139Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "1",
+    "object_repr": "Ramesh",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2025-12-15T13:45:49.415Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "1",
+    "object_repr": "Clutch",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2025-12-15T13:46:06.083Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "2",
+    "object_repr": "Type, and oil",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2025-12-15T13:51:22.245Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "2",
+    "object_repr": "Suresh",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2025-12-15T13:51:49.027Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "3",
+    "object_repr": "bolt 8\"",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2025-12-15T13:52:08.406Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "4",
+    "object_repr": "Wire 2\"",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2025-12-15T13:52:42.524Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "2",
+    "object_repr": "Washer",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2025-12-15T13:52:56.926Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "2",
+    "object_repr": "Washer",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2025-12-15T13:53:10.627Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "3",
+    "object_repr": "PRakash",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2025-12-15T13:53:18.533Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "3",
+    "object_repr": "PRakash",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2025-12-15T13:53:30.625Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "Tyre",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2025-12-15T13:53:36.072Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "Oil",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2025-12-15T13:53:42.459Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "Hardware",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2025-12-15T13:54:44.017Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "Bill 1 - Suresh",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"bill item\", \"object\": \"Bill 1\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2025-12-15T13:55:00.168Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "Bill 2 - Ramesh",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"bill item\", \"object\": \"Bill 2\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2025-12-16T17:05:10.155Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "2",
+    "object_repr": "PRakash",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2025-12-17T18:27:17.223Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "1",
+    "object_repr": "Bhagyalaxmi nanded wala",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2025-12-17T18:35:17.489Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "2",
+    "object_repr": "Bhokar wala",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2025-12-17T18:35:29.103Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "3",
+    "object_repr": "Ardhapur wala",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2025-12-17T19:17:02.415Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "4",
+    "object_repr": "Amit",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2025-12-17T19:17:05.478Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "3",
+    "object_repr": "Amit",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2025-12-17T19:17:29.060Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "5",
+    "object_repr": "Ismil",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2025-12-17T19:17:33.186Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "4",
+    "object_repr": "Ismil",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2025-12-17T19:18:06.593Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "6",
+    "object_repr": "Javed_Bhai",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2025-12-17T19:18:10.447Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "5",
+    "object_repr": "Javed_Bhai",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2025-12-17T19:18:23.314Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "7",
+    "object_repr": "Numan",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2025-12-17T19:18:28.888Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "6",
+    "object_repr": "Numan",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2025-12-18T16:55:23.762Z",
+    "user": 1,
+    "content_type": 19,
+    "object_id": "1",
+    "object_repr": "PRakash - 2025-12-18",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2025-12-18T17:05:12.571Z",
+    "user": 1,
+    "content_type": 21,
+    "object_id": "1",
+    "object_repr": "PRakash - 3/2025",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2025-12-18T17:08:58.754Z",
+    "user": 1,
+    "content_type": 20,
+    "object_id": "1",
+    "object_repr": "PRakash",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2025-12-18T17:19:20.759Z",
+    "user": 1,
+    "content_type": 20,
+    "object_id": "2",
+    "object_repr": "Amit",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2025-12-18T17:19:30.490Z",
+    "user": 1,
+    "content_type": 17,
+    "object_id": "2",
+    "object_repr": "Amit - ₹200.00",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2025-12-18T17:47:52.347Z",
+    "user": 1,
+    "content_type": 17,
+    "object_id": "2",
+    "object_repr": "Amit - ₹9000",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Amount\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2025-12-18T17:48:03.366Z",
+    "user": 1,
+    "content_type": 17,
+    "object_id": "2",
+    "object_repr": "Amit - ₹900",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Amount\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2025-12-18T17:48:51.782Z",
+    "user": 1,
+    "content_type": 20,
+    "object_id": "2",
+    "object_repr": "Amit",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2025-12-18T17:53:59.473Z",
+    "user": 1,
+    "content_type": 21,
+    "object_id": "2",
+    "object_repr": "Amit - 12/2025",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 38,
+  "fields": {
+    "action_time": "2025-12-18T18:07:23.390Z",
+    "user": 1,
+    "content_type": 20,
+    "object_id": "2",
+    "object_repr": "Amit",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 39,
+  "fields": {
+    "action_time": "2025-12-18T18:07:53.860Z",
+    "user": 1,
+    "content_type": 20,
+    "object_id": "3",
+    "object_repr": "Amit",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 40,
+  "fields": {
+    "action_time": "2025-12-24T11:26:32.547Z",
+    "user": 1,
+    "content_type": 21,
+    "object_id": "4",
+    "object_repr": "Amit - 12/2025",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 41,
+  "fields": {
+    "action_time": "2025-12-24T11:26:32.547Z",
+    "user": 1,
+    "content_type": 21,
+    "object_id": "3",
+    "object_repr": "PRakash - 12/2025",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 42,
+  "fields": {
+    "action_time": "2025-12-24T11:26:32.555Z",
+    "user": 1,
+    "content_type": 21,
+    "object_id": "6",
+    "object_repr": "Amit - 11/2025",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 43,
+  "fields": {
+    "action_time": "2025-12-24T11:26:32.558Z",
+    "user": 1,
+    "content_type": 21,
+    "object_id": "5",
+    "object_repr": "PRakash - 11/2025",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 44,
+  "fields": {
+    "action_time": "2025-12-24T11:26:32.559Z",
+    "user": 1,
+    "content_type": 21,
+    "object_id": "1",
+    "object_repr": "PRakash - 3/2025",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 45,
+  "fields": {
+    "action_time": "2025-12-24T11:27:03.647Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "4",
+    "object_repr": "Amit",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 46,
+  "fields": {
+    "action_time": "2025-12-24T11:27:41.398Z",
+    "user": 1,
+    "content_type": 20,
+    "object_id": "4",
+    "object_repr": "Ismil",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 47,
+  "fields": {
+    "action_time": "2025-12-24T11:28:21.548Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "4",
+    "object_repr": "Ismil",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Joining date\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 48,
+  "fields": {
+    "action_time": "2025-12-24T11:28:28.577Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "4",
+    "object_repr": "Ismil",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Is star staff\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 49,
+  "fields": {
+    "action_time": "2025-12-24T11:34:15.809Z",
+    "user": 1,
+    "content_type": 21,
+    "object_id": "7",
+    "object_repr": "Ismil - 8/2026",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 50,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.266Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "86",
+    "object_repr": "Javed_Bhai - 2025-11-30",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 51,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.269Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "85",
+    "object_repr": "Javed_Bhai - 2025-11-29",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 52,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.271Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "84",
+    "object_repr": "Javed_Bhai - 2025-11-28",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 53,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.274Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "83",
+    "object_repr": "Javed_Bhai - 2025-11-27",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 54,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.276Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "82",
+    "object_repr": "Javed_Bhai - 2025-11-26",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 55,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.279Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "81",
+    "object_repr": "Javed_Bhai - 2025-11-25",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 56,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.282Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "80",
+    "object_repr": "Javed_Bhai - 2025-11-24",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 57,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.284Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "79",
+    "object_repr": "Javed_Bhai - 2025-11-23",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 58,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.287Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "78",
+    "object_repr": "Javed_Bhai - 2025-11-22",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 59,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.289Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "77",
+    "object_repr": "Javed_Bhai - 2025-11-21",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 60,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.292Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "76",
+    "object_repr": "Javed_Bhai - 2025-11-20",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 61,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.294Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "75",
+    "object_repr": "Javed_Bhai - 2025-11-19",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 62,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.297Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "74",
+    "object_repr": "Javed_Bhai - 2025-11-18",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 63,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.299Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "73",
+    "object_repr": "Javed_Bhai - 2025-11-17",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 64,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.301Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "72",
+    "object_repr": "Javed_Bhai - 2025-11-16",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 65,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.304Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "71",
+    "object_repr": "Javed_Bhai - 2025-11-15",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 66,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.307Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "70",
+    "object_repr": "Javed_Bhai - 2025-11-11",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 67,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.309Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "69",
+    "object_repr": "Javed_Bhai - 2025-11-10",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 68,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.312Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "68",
+    "object_repr": "Javed_Bhai - 2025-11-09",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 69,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.314Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "67",
+    "object_repr": "Javed_Bhai - 2025-11-08",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 70,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.316Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "66",
+    "object_repr": "Javed_Bhai - 2025-11-07",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 71,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.319Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "65",
+    "object_repr": "Javed_Bhai - 2025-11-06",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 72,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.322Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "64",
+    "object_repr": "Javed_Bhai - 2025-11-05",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 73,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.324Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "63",
+    "object_repr": "Javed_Bhai - 2025-11-04",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 74,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.326Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "62",
+    "object_repr": "Javed_Bhai - 2025-11-02",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 75,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.328Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "61",
+    "object_repr": "PRakash - 2025-11-30",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 76,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.331Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "60",
+    "object_repr": "PRakash - 2025-11-29",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 77,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.334Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "59",
+    "object_repr": "PRakash - 2025-11-28",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 78,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.336Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "58",
+    "object_repr": "PRakash - 2025-11-27",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 79,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.339Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "57",
+    "object_repr": "PRakash - 2025-11-26",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 80,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.341Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "56",
+    "object_repr": "PRakash - 2025-11-25",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 81,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.343Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "55",
+    "object_repr": "PRakash - 2025-11-24",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 82,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.346Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "54",
+    "object_repr": "PRakash - 2025-11-23",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 83,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.348Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "53",
+    "object_repr": "PRakash - 2025-11-22",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 84,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.351Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "52",
+    "object_repr": "PRakash - 2025-11-21",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 85,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.353Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "51",
+    "object_repr": "PRakash - 2025-11-20",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 86,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.355Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "50",
+    "object_repr": "PRakash - 2025-11-19",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 87,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.358Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "49",
+    "object_repr": "PRakash - 2025-11-18",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 88,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.361Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "48",
+    "object_repr": "PRakash - 2025-11-17",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 89,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.363Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "47",
+    "object_repr": "PRakash - 2025-11-16",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 90,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.365Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "46",
+    "object_repr": "PRakash - 2025-11-15",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 91,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.368Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "45",
+    "object_repr": "PRakash - 2025-11-11",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 92,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.371Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "44",
+    "object_repr": "PRakash - 2025-11-10",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 93,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.373Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "43",
+    "object_repr": "PRakash - 2025-11-09",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 94,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.375Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "42",
+    "object_repr": "PRakash - 2025-11-08",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 95,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.377Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "41",
+    "object_repr": "PRakash - 2025-11-07",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 96,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.380Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "40",
+    "object_repr": "PRakash - 2025-11-06",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 97,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.382Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "39",
+    "object_repr": "PRakash - 2025-11-05",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 98,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.385Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "38",
+    "object_repr": "PRakash - 2025-11-04",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 99,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.387Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "37",
+    "object_repr": "PRakash - 2025-11-02",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 100,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.390Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "36",
+    "object_repr": "Numan - 2025-11-14",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 101,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.392Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "35",
+    "object_repr": "Javed_Bhai - 2025-11-14",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 102,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.395Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "34",
+    "object_repr": "Ismil - 2025-11-14",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 103,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.397Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "33",
+    "object_repr": "PRakash - 2025-11-14",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 104,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.399Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "32",
+    "object_repr": "Numan - 2025-11-13",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 105,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.402Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "31",
+    "object_repr": "Javed_Bhai - 2025-11-13",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 106,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.405Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "30",
+    "object_repr": "Ismil - 2025-11-13",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 107,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.407Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "29",
+    "object_repr": "PRakash - 2025-11-13",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 108,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.410Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "28",
+    "object_repr": "Numan - 2025-11-12",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 109,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.412Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "27",
+    "object_repr": "Javed_Bhai - 2025-11-12",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 110,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.415Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "26",
+    "object_repr": "Ismil - 2025-11-12",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 111,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.417Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "25",
+    "object_repr": "PRakash - 2025-11-12",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 112,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.420Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "24",
+    "object_repr": "Numan - 2025-11-03",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 113,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.422Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "23",
+    "object_repr": "Javed_Bhai - 2025-11-03",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 114,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.425Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "22",
+    "object_repr": "Ismil - 2025-11-03",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 115,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.427Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "21",
+    "object_repr": "PRakash - 2025-11-03",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 116,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.430Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "20",
+    "object_repr": "Numan - 2025-11-01",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 117,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.433Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "19",
+    "object_repr": "Javed_Bhai - 2025-11-01",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 118,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.435Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "18",
+    "object_repr": "Ismil - 2025-11-01",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 119,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.438Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "17",
+    "object_repr": "PRakash - 2025-11-01",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 120,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.440Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "16",
+    "object_repr": "Numan - 2025-12-19",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 121,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.442Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "15",
+    "object_repr": "Javed_Bhai - 2025-12-19",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 122,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.445Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "14",
+    "object_repr": "Ismil - 2025-12-19",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 123,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.447Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "12",
+    "object_repr": "PRakash - 2025-12-19",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 124,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.447Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "11",
+    "object_repr": "Numan - 2025-12-17",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 125,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.452Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "10",
+    "object_repr": "Javed_Bhai - 2025-12-17",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 126,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.455Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "9",
+    "object_repr": "Ismil - 2025-12-17",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 127,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.458Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "7",
+    "object_repr": "PRakash - 2025-12-17",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 128,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.460Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "6",
+    "object_repr": "Numan - 2025-12-16",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 129,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.463Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "5",
+    "object_repr": "Javed_Bhai - 2025-12-16",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 130,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.465Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "4",
+    "object_repr": "Ismil - 2025-12-16",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 131,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.467Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "2",
+    "object_repr": "PRakash - 2025-12-16",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 132,
+  "fields": {
+    "action_time": "2025-12-24T12:11:10.470Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "1",
+    "object_repr": "PRakash - 2025-12-18",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 133,
+  "fields": {
+    "action_time": "2025-12-24T18:40:34.706Z",
+    "user": 1,
+    "content_type": 20,
+    "object_id": "5",
+    "object_repr": "Numan - 9000",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 134,
+  "fields": {
+    "action_time": "2025-12-25T11:08:24.019Z",
+    "user": 1,
+    "content_type": 20,
+    "object_id": "5",
+    "object_repr": "Numan - 9000.00",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 135,
+  "fields": {
+    "action_time": "2025-12-25T11:08:24.022Z",
+    "user": 1,
+    "content_type": 20,
+    "object_id": "4",
+    "object_repr": "Ismil - 10000.00",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 136,
+  "fields": {
+    "action_time": "2025-12-25T11:08:24.025Z",
+    "user": 1,
+    "content_type": 20,
+    "object_id": "1",
+    "object_repr": "PRakash - 10000.00",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 137,
+  "fields": {
+    "action_time": "2025-12-25T11:08:42.505Z",
+    "user": 1,
+    "content_type": 20,
+    "object_id": "6",
+    "object_repr": "PRakash - 10000",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 138,
+  "fields": {
+    "action_time": "2025-12-25T11:08:49.981Z",
+    "user": 1,
+    "content_type": 20,
+    "object_id": "7",
+    "object_repr": "Ismil - 9000",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 139,
+  "fields": {
+    "action_time": "2025-12-25T11:09:00.087Z",
+    "user": 1,
+    "content_type": 20,
+    "object_id": "8",
+    "object_repr": "Numan - 9000",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 140,
+  "fields": {
+    "action_time": "2025-12-25T11:09:13.357Z",
+    "user": 1,
+    "content_type": 20,
+    "object_id": "9",
+    "object_repr": "Javed_Bhai - 13000",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 141,
+  "fields": {
+    "action_time": "2025-12-25T11:25:17.534Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "5",
+    "object_repr": "Javed_Bhai",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Is star staff\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 142,
+  "fields": {
+    "action_time": "2025-12-26T10:33:28.651Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "admin",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Profile picture\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 143,
+  "fields": {
+    "action_time": "2025-12-26T14:21:00.204Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "23",
+    "object_repr": "Bill 23 - Walk-in Customer",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 144,
+  "fields": {
+    "action_time": "2025-12-26T14:21:00.210Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "22",
+    "object_repr": "Bill 22 - Walk-in Customer",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 145,
+  "fields": {
+    "action_time": "2025-12-28T07:18:41.477Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "7",
+    "object_repr": "Numan",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 146,
+  "fields": {
+    "action_time": "2025-12-28T07:55:23.064Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "6",
+    "object_repr": "Numan",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Profile picture\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 147,
+  "fields": {
+    "action_time": "2025-12-28T07:56:10.083Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "admin",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Profile picture\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 148,
+  "fields": {
+    "action_time": "2025-12-28T08:16:12.319Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "admin",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Profile picture\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 149,
+  "fields": {
+    "action_time": "2025-12-28T08:16:43.694Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "6",
+    "object_repr": "Numan",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Profile picture\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 150,
+  "fields": {
+    "action_time": "2025-12-28T11:17:43.800Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "admin",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Profile picture\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 151,
+  "fields": {
+    "action_time": "2025-12-28T11:48:34.855Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "admin",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Profile picture\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 152,
+  "fields": {
+    "action_time": "2025-12-28T11:49:35.614Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "admin",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Profile picture\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 153,
+  "fields": {
+    "action_time": "2025-12-28T11:56:58.290Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "admin",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Profile picture\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 154,
+  "fields": {
+    "action_time": "2025-12-28T12:10:42.595Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "admin",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Profile picture\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 155,
+  "fields": {
+    "action_time": "2025-12-28T12:12:01.440Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "admin",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Profile picture\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 156,
+  "fields": {
+    "action_time": "2025-12-28T12:48:52.542Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "admin",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Profile picture\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 157,
+  "fields": {
+    "action_time": "2025-12-28T12:59:59.240Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "6",
+    "object_repr": "Numan",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Profile picture\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 158,
+  "fields": {
+    "action_time": "2025-12-28T13:43:33.999Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "admin",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Profile picture\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 159,
+  "fields": {
+    "action_time": "2025-12-29T12:50:03.153Z",
+    "user": 1,
+    "content_type": 21,
+    "object_id": "10",
+    "object_repr": "PRakash - 12/2025",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 160,
+  "fields": {
+    "action_time": "2026-01-01T08:00:22.146Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "admin",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Profile picture\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 161,
+  "fields": {
+    "action_time": "2026-01-02T10:34:12.405Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "admin",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Profile picture\"]}}]"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$hXHRmi8zhJiFvNWsCBs2xK$mJyoCU2ow+igVMzW4hpjGS/387mQXiNk9ApBm5PRovk=",
+    "last_login": "2026-01-02T11:26:34.077Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-12-15T12:55:05.000Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$IPmPmtrGOK7RhH0Ob6m6WI$quksVQs8MhIO/lnj4cWAL6R0CcMzSUMh0gHQZgOo/bU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Washer",
+    "first_name": "Chandu",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-12-15T13:52:42Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$9NX4JHInEz5dWxNSVnrTvk$EU4TWi0rh3fpeX585Wyaw3j9npzaAoSeDhO8OJ/MX78=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "PRakash",
+    "first_name": "PRakash",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-12-15T13:53:10Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$a1nfcUOVb5OTzMC5cEpkwr$/WYQZepIsEGYaLhZrkThiwUvZrwaypmhPk/t8JsQnJY=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Ismil",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-12-17T19:17:28.890Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$hCdoVC8G3a8EKnBRG6W9dc$q4ZbRM92OxCSW+LKauHE5CaMMGnXVMJJfTwOVUNfQxE=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Javed_Bhai",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-12-17T19:18:06.423Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$yHLAMhZnAynaNtgtCS3ONi$KVccZcbdKBl2cP2dRIG+3PwXABXd8ZNNrSiT5Ytylf4=",
+    "last_login": "2026-01-01T10:23:28.308Z",
+    "is_superuser": false,
+    "username": "Numan",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-12-17T19:18:23.139Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$217N5SLMFBeRm71iXAjK5t$y388RO73JNDXvNg2czvbSPygOCfHQp5kNpUza3qrI2g=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Sonu",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-12-30T16:58:41.198Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "ae5rc7r7pzaqxs0v9w3wl6c5r26vtr97",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSHCgAMu3fcbyPCSqqFJaVfGfxeSLnR3cu_JeTNH-1bc3tLq5siuTLDT7-YpPFMdR3xQvS88LHVbZ8-Hwo-38WmJ6XU73L9AoVZG1ntMQSNaq5KQQkc4a7AmRyUhGwrBoESPvXiBTp0NGoKsLIGwhn2-0Q03Lw:1vbcTo:EwpHnwyOAfGIaMgqywSghQMwL8RSmBVB9JTIPH4fiWs",
+    "expire_date": "2026-01-16T10:34:00.597Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "hktb7x80rllj74wuol2qhloltqpq062g",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2pBhIAVcuvcMzTCDUjWQlHbVeHdt0oVu_3vvb2qkdSnj2vM8TqLOyqvT75aIn7nuQB5U701zq8s8Jb0r-qBdX5vk1-Vw_w4K9fKtIwgLAg-RgxhrkdGmlFhMHAaGAOgRHJM1hPnmwGbBFDyicxkIWL0_40o3pg:1vaBfN:33yGoSlJLXVfOUbXQRokwheSJw9vMKjfH12G23grd3s",
+    "expire_date": "2026-01-12T11:44:01.289Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "hyr7xuyoh3ml89rcytp8l97gb34fosv9",
+  "fields": {
+    "session_data": ".eJxVjEsKwjAUAO-StYQmaZ-vLt17hpD3ia1KAk27Eu8uhS50OzPM28S0rVPcmi5xFnMxzpx-GSV-atmFPFK5V8u1rMtMdk_sYZu9VdHX9Wj_BlNq075V8WPuuWPm4DAAKWb1CAoQNMOZKRM66ELuB-y9F6ScsHOjCA0BzOcL-dQ4QA:1vbFkM:EnoGk3GTjWuWeO3B_9dwYwl6Y7VUzbuAhoLYk3GnxUI",
+    "expire_date": "2026-01-15T10:17:34.734Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "iej9zlsiso088lx60c135vwzs9sur8zs",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2pBhIAVcuvcMzTCDUjWQlHbVeHdt0oVu_3vvb2qkdSnj2vM8TqLOyqvT75aIn7nuQB5U701zq8s8Jb0r-qBdX5vk1-Vw_w4K9fKtIwgLAg-RgxhrkdGmlFhMHAaGAOgRHJM1hPnmwGbBFDyicxkIWL0_40o3pg:1vaCu6:fzKrnCQmBU6ljt8xgxUzfEZ5le3OQKbNeQ-fe_nrm7U",
+    "expire_date": "2026-01-12T13:03:18.862Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "ktl0v5kxm4fhx3zzbcx923uwf4sp1s7n",
+  "fields": {
+    "session_data": ".eJxVjMsOgjAUBf-la9P0AVzq0r3f0NwXFjWQUFgZ_11JWOj2zMx5mYzbWvJWdcmjmLPx5vS7EfJDpx3IHafbbHme1mUkuyv2oNVeZ9Hn5XD_DgrW8q0TwNCIek09RBWBvtUYuSftOuLBIQ8YlchHx85h67QJgAkoICtAMO8PBZ04wQ:1vbdIg:SVTylpbOEJSQg571_KK6_ZsMFkHweiy3MoiQvTukWK4",
+    "expire_date": "2026-01-16T11:26:34.081Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "na52gom5ryb6uweg8anti4dv2ztbceq4",
+  "fields": {
+    "session_data": ".eJxVjEsKwjAUAO-StYQmaZ-vLt17hpD3ia1KAk27Eu8uhS50OzPM28S0rVPcmi5xFnMxzpx-GSV-atmFPFK5V8u1rMtMdk_sYZu9VdHX9Wj_BlNq075V8WPuuWPm4DAAKWb1CAoQNMOZKRM66ELuB-y9F6ScsHOjCA0BzOcL-dQ4QA:1vawoD:Rt-1AP30qsqt-ONhIAVR3bGtjcGX768HKmdyjb0nnW4",
+    "expire_date": "2026-01-14T14:04:17.877Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "voou6rm2fdl3178tc684mjvb7qzgdh67",
+  "fields": {
+    "session_data": ".eJxVjEsKwjAUAO-StYQmaZ-vLt17hpD3ia1KAk27Eu8uhS50OzPM28S0rVPcmi5xFnMxzpx-GSV-atmFPFK5V8u1rMtMdk_sYZu9VdHX9Wj_BlNq075V8WPuuWPm4DAAKWb1CAoQNMOZKRM66ELuB-y9F6ScsHOjCA0BzOcL-dQ4QA:1vap0u:9xQu-YtK8QPSn3d_W2L0ykEoUGsDwVx7gotgVmPctBw",
+    "expire_date": "2026-01-14T05:44:52.180Z"
+  }
+},
+{
+  "model": "store.profile",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "role": "AD",
+    "profile_picture": "https://ik.imagekit.io/i8rqohdkt/profiles/staff_admin_WVB2ThFOZ-.jpg?updatedAt=1767338757129",
+    "joining_date": "2025-07-01",
+    "is_star_staff": false
+  }
+},
+{
+  "model": "store.profile",
+  "pk": 2,
+  "fields": {
+    "user": 3,
+    "role": "MC",
+    "profile_picture": "https://ik.imagekit.io/i8rqohdkt/profiles/staff_PRakash_LI_AV1NKt.jpg",
+    "joining_date": "2025-09-18",
+    "is_star_staff": false
+  }
+},
+{
+  "model": "store.profile",
+  "pk": 4,
+  "fields": {
+    "user": 5,
+    "role": "AP",
+    "profile_picture": "https://ik.imagekit.io/i8rqohdkt/profiles/staff_Ismil_CZluKMgcS.jpg",
+    "joining_date": "2025-10-01",
+    "is_star_staff": true
+  }
+},
+{
+  "model": "store.profile",
+  "pk": 5,
+  "fields": {
+    "user": 6,
+    "role": "MC",
+    "profile_picture": "https://ik.imagekit.io/i8rqohdkt/profiles/staff_Javed_Bhai_dD8rDWPaT.jpg",
+    "joining_date": "2025-12-17",
+    "is_star_staff": true
+  }
+},
+{
+  "model": "store.profile",
+  "pk": 6,
+  "fields": {
+    "user": 7,
+    "role": "SC",
+    "profile_picture": "https://ik.imagekit.io/i8rqohdkt/profiles/staff_Numan_5p4SKZ6Qm.jpg",
+    "joining_date": "2025-07-08",
+    "is_star_staff": false
+  }
+},
+{
+  "model": "store.profile",
+  "pk": 7,
+  "fields": {
+    "user": 8,
+    "role": "MC",
+    "profile_picture": "https://ik.imagekit.io/i8rqohdkt/profiles/staff_Sonu_V38itqKJr.jpg",
+    "joining_date": "2025-12-30",
+    "is_star_staff": false
+  }
+},
+{
+  "model": "store.customer",
+  "pk": 1,
+  "fields": {
+    "name": "Ramesh",
+    "email": null,
+    "phone": "9878787",
+    "address": "",
+    "created_at": "2025-12-15T13:45:35.138Z"
+  }
+},
+{
+  "model": "store.customer",
+  "pk": 2,
+  "fields": {
+    "name": "Suresh",
+    "email": "",
+    "phone": "+1 4055043522",
+    "address": "",
+    "created_at": "2025-12-15T13:51:22.244Z"
+  }
+},
+{
+  "model": "store.customer",
+  "pk": 4,
+  "fields": {
+    "name": "Akash Miyabhai",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "created_at": "2025-12-28T13:03:20.445Z"
+  }
+},
+{
+  "model": "store.customer",
+  "pk": 5,
+  "fields": {
+    "name": "nawab bhai",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "created_at": "2025-12-28T14:45:06.750Z"
+  }
+},
+{
+  "model": "store.customer",
+  "pk": 6,
+  "fields": {
+    "name": "pachling anna",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "created_at": "2025-12-28T14:45:13.858Z"
+  }
+},
+{
+  "model": "store.customer",
+  "pk": 7,
+  "fields": {
+    "name": "multani",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "created_at": "2025-12-28T14:45:23.178Z"
+  }
+},
+{
+  "model": "store.customer",
+  "pk": 8,
+  "fields": {
+    "name": "Shaikh Akbar",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "created_at": "2025-12-28T14:45:34.793Z"
+  }
+},
+{
+  "model": "store.customer",
+  "pk": 9,
+  "fields": {
+    "name": "Pande santosh",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "created_at": "2025-12-28T14:45:41.457Z"
+  }
+},
+{
+  "model": "store.customer",
+  "pk": 11,
+  "fields": {
+    "name": "Sai",
+    "email": "",
+    "phone": "123456789013",
+    "address": "Bhokar",
+    "created_at": "2025-12-29T12:29:49.814Z"
+  }
+},
+{
+  "model": "store.customer",
+  "pk": 15,
+  "fields": {
+    "name": "Nirmala Sitaraman",
+    "email": "",
+    "phone": "876765654",
+    "address": "New Delhi",
+    "created_at": "2025-12-30T17:08:19.204Z"
+  }
+},
+{
+  "model": "store.customer",
+  "pk": 16,
+  "fields": {
+    "name": "remo sony",
+    "email": null,
+    "phone": "1405504366",
+    "address": "hyderabad",
+    "created_at": "2025-12-30T17:17:24.899Z"
+  }
+},
+{
+  "model": "store.customer",
+  "pk": 17,
+  "fields": {
+    "name": "Mr. Dinesh",
+    "email": null,
+    "phone": "9878787324",
+    "address": "Nanded",
+    "created_at": "2025-12-30T17:21:23.143Z"
+  }
+},
+{
+  "model": "store.customer",
+  "pk": 18,
+  "fields": {
+    "name": "Jatin bhai",
+    "email": null,
+    "phone": "8978675645",
+    "address": "Umari",
+    "created_at": "2025-12-30T17:22:40.792Z"
+  }
+},
+{
+  "model": "store.customer",
+  "pk": 19,
+  "fields": {
+    "name": "Showkat",
+    "email": null,
+    "phone": "9098845322",
+    "address": "Mendhka",
+    "created_at": "2025-12-30T17:38:30.146Z"
+  }
+},
+{
+  "model": "store.customer",
+  "pk": 20,
+  "fields": {
+    "name": "Amiy",
+    "email": null,
+    "phone": "1234567890",
+    "address": "Vhh",
+    "created_at": "2025-12-31T14:02:54.829Z"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 1,
+  "fields": {
+    "name": "Tyre",
+    "description": "All tyre, like MRF, ceat, applo, ralco, numax, remote, other"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 3,
+  "fields": {
+    "name": "Hardware",
+    "description": ""
+  }
+},
+{
+  "model": "store.category",
+  "pk": 4,
+  "fields": {
+    "name": "Battery",
+    "description": "All types of battery"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 5,
+  "fields": {
+    "name": "Oil",
+    "description": ""
+  }
+},
+{
+  "model": "store.category",
+  "pk": 6,
+  "fields": {
+    "name": "Coolant",
+    "description": ""
+  }
+},
+{
+  "model": "store.category",
+  "pk": 7,
+  "fields": {
+    "name": "Grease",
+    "description": ""
+  }
+},
+{
+  "model": "store.category",
+  "pk": 8,
+  "fields": {
+    "name": "Seat Cover",
+    "description": ""
+  }
+},
+{
+  "model": "store.category",
+  "pk": 9,
+  "fields": {
+    "name": "Halar Belt",
+    "description": ""
+  }
+},
+{
+  "model": "store.category",
+  "pk": 10,
+  "fields": {
+    "name": "Washing",
+    "description": ""
+  }
+},
+{
+  "model": "store.product",
+  "pk": 1,
+  "fields": {
+    "name": "Clutch",
+    "category": 1,
+    "price": "2500.00",
+    "stock": 856
+  }
+},
+{
+  "model": "store.product",
+  "pk": 2,
+  "fields": {
+    "name": "Type, and oil",
+    "category": 4,
+    "price": "890.00",
+    "stock": 64
+  }
+},
+{
+  "model": "store.product",
+  "pk": 3,
+  "fields": {
+    "name": "bolt 8\"",
+    "category": 4,
+    "price": "10.00",
+    "stock": 80
+  }
+},
+{
+  "model": "store.product",
+  "pk": 4,
+  "fields": {
+    "name": "Wire 2\"",
+    "category": 1,
+    "price": "20.00",
+    "stock": 89
+  }
+},
+{
+  "model": "store.product",
+  "pk": 5,
+  "fields": {
+    "name": "MRF",
+    "category": 1,
+    "price": "1600.00",
+    "stock": 77
+  }
+},
+{
+  "model": "store.product",
+  "pk": 6,
+  "fields": {
+    "name": "CEAT",
+    "category": 1,
+    "price": "4080.00",
+    "stock": 67
+  }
+},
+{
+  "model": "store.product",
+  "pk": 7,
+  "fields": {
+    "name": "Apollo",
+    "category": 1,
+    "price": "1871.00",
+    "stock": 47
+  }
+},
+{
+  "model": "store.product",
+  "pk": 8,
+  "fields": {
+    "name": "JK",
+    "category": 1,
+    "price": "3239.00",
+    "stock": 20
+  }
+},
+{
+  "model": "store.product",
+  "pk": 9,
+  "fields": {
+    "name": "RALCO",
+    "category": 1,
+    "price": "2764.00",
+    "stock": 98
+  }
+},
+{
+  "model": "store.product",
+  "pk": 10,
+  "fields": {
+    "name": "NUMAX",
+    "category": 1,
+    "price": "888.00",
+    "stock": 26
+  }
+},
+{
+  "model": "store.product",
+  "pk": 11,
+  "fields": {
+    "name": "Remote",
+    "category": 1,
+    "price": "1511.00",
+    "stock": 22
+  }
+},
+{
+  "model": "store.product",
+  "pk": 12,
+  "fields": {
+    "name": "Other",
+    "category": 1,
+    "price": "3316.00",
+    "stock": 36
+  }
+},
+{
+  "model": "store.product",
+  "pk": 13,
+  "fields": {
+    "name": "Amron",
+    "category": 4,
+    "price": "2109.00",
+    "stock": 10
+  }
+},
+{
+  "model": "store.product",
+  "pk": 14,
+  "fields": {
+    "name": "Excide",
+    "category": 4,
+    "price": "622.00",
+    "stock": 16
+  }
+},
+{
+  "model": "store.product",
+  "pk": 15,
+  "fields": {
+    "name": "Other",
+    "category": 4,
+    "price": "1300.00",
+    "stock": 68
+  }
+},
+{
+  "model": "store.product",
+  "pk": 16,
+  "fields": {
+    "name": "Castrol",
+    "category": 5,
+    "price": "398.00",
+    "stock": 89
+  }
+},
+{
+  "model": "store.product",
+  "pk": 17,
+  "fields": {
+    "name": "Gulf",
+    "category": 5,
+    "price": "4925.00",
+    "stock": 152
+  }
+},
+{
+  "model": "store.product",
+  "pk": 18,
+  "fields": {
+    "name": "Sarvo",
+    "category": 5,
+    "price": "2625.00",
+    "stock": 97
+  }
+},
+{
+  "model": "store.product",
+  "pk": 19,
+  "fields": {
+    "name": "Miles",
+    "category": 5,
+    "price": "4826.00",
+    "stock": 77
+  }
+},
+{
+  "model": "store.product",
+  "pk": 20,
+  "fields": {
+    "name": "Bajaj",
+    "category": 5,
+    "price": "1198.00",
+    "stock": 977
+  }
+},
+{
+  "model": "store.product",
+  "pk": 21,
+  "fields": {
+    "name": "Motul",
+    "category": 5,
+    "price": "2704.00",
+    "stock": 85
+  }
+},
+{
+  "model": "store.product",
+  "pk": 22,
+  "fields": {
+    "name": "Vorrac",
+    "category": 5,
+    "price": "4459.00",
+    "stock": 21
+  }
+},
+{
+  "model": "store.product",
+  "pk": 23,
+  "fields": {
+    "name": "Amrron",
+    "category": 5,
+    "price": "4421.00",
+    "stock": 99
+  }
+},
+{
+  "model": "store.product",
+  "pk": 24,
+  "fields": {
+    "name": "Petro",
+    "category": 5,
+    "price": "2536.00",
+    "stock": 9
+  }
+},
+{
+  "model": "store.product",
+  "pk": 25,
+  "fields": {
+    "name": "Numax",
+    "category": 5,
+    "price": "4433.00",
+    "stock": 95
+  }
+},
+{
+  "model": "store.product",
+  "pk": 26,
+  "fields": {
+    "name": "HP laal ghoda Oil",
+    "category": 5,
+    "price": "2422.00",
+    "stock": 78
+  }
+},
+{
+  "model": "store.product",
+  "pk": 27,
+  "fields": {
+    "name": "Castrol",
+    "category": 6,
+    "price": "2518.00",
+    "stock": 97
+  }
+},
+{
+  "model": "store.product",
+  "pk": 28,
+  "fields": {
+    "name": "Bosch",
+    "category": 6,
+    "price": "1790.00",
+    "stock": 13
+  }
+},
+{
+  "model": "store.product",
+  "pk": 29,
+  "fields": {
+    "name": "TVS",
+    "category": 6,
+    "price": "1612.00",
+    "stock": 21
+  }
+},
+{
+  "model": "store.product",
+  "pk": 30,
+  "fields": {
+    "name": "Numax",
+    "category": 6,
+    "price": "1796.00",
+    "stock": 93
+  }
+},
+{
+  "model": "store.product",
+  "pk": 31,
+  "fields": {
+    "name": "Cosmos",
+    "category": 6,
+    "price": "1950.00",
+    "stock": 33
+  }
+},
+{
+  "model": "store.product",
+  "pk": 32,
+  "fields": {
+    "name": "Castrol",
+    "category": 7,
+    "price": "4200.00",
+    "stock": 94
+  }
+},
+{
+  "model": "store.product",
+  "pk": 33,
+  "fields": {
+    "name": "Gulf",
+    "category": 7,
+    "price": "3176.00",
+    "stock": 5
+  }
+},
+{
+  "model": "store.product",
+  "pk": 34,
+  "fields": {
+    "name": "SKF",
+    "category": 7,
+    "price": "2367.00",
+    "stock": 76
+  }
+},
+{
+  "model": "store.product",
+  "pk": 35,
+  "fields": {
+    "name": "Miles",
+    "category": 7,
+    "price": "64.00",
+    "stock": 37
+  }
+},
+{
+  "model": "store.product",
+  "pk": 36,
+  "fields": {
+    "name": "Texpin",
+    "category": 7,
+    "price": "1068.00",
+    "stock": 26
+  }
+},
+{
+  "model": "store.product",
+  "pk": 37,
+  "fields": {
+    "name": "SF Soni",
+    "category": 7,
+    "price": "902.00",
+    "stock": 12
+  }
+},
+{
+  "model": "store.product",
+  "pk": 38,
+  "fields": {
+    "name": "Mark",
+    "category": 7,
+    "price": "1838.00",
+    "stock": 31
+  }
+},
+{
+  "model": "store.product",
+  "pk": 39,
+  "fields": {
+    "name": "Numax",
+    "category": 7,
+    "price": "1359.00",
+    "stock": 83
+  }
+},
+{
+  "model": "store.product",
+  "pk": 40,
+  "fields": {
+    "name": "ABL",
+    "category": 7,
+    "price": "3130.00",
+    "stock": 9
+  }
+},
+{
+  "model": "store.product",
+  "pk": 41,
+  "fields": {
+    "name": "Other",
+    "category": 7,
+    "price": "4330.00",
+    "stock": 66
+  }
+},
+{
+  "model": "store.product",
+  "pk": 42,
+  "fields": {
+    "name": "Bike",
+    "category": 8,
+    "price": "3375.00",
+    "stock": 16
+  }
+},
+{
+  "model": "store.product",
+  "pk": 43,
+  "fields": {
+    "name": "Activa",
+    "category": 8,
+    "price": "710.00",
+    "stock": 96
+  }
+},
+{
+  "model": "store.product",
+  "pk": 44,
+  "fields": {
+    "name": "Tacter",
+    "category": 8,
+    "price": "920.00",
+    "stock": 15
+  }
+},
+{
+  "model": "store.product",
+  "pk": 45,
+  "fields": {
+    "name": "A No. Belt",
+    "category": 9,
+    "price": "1508.00",
+    "stock": 86
+  }
+},
+{
+  "model": "store.product",
+  "pk": 46,
+  "fields": {
+    "name": "B No. Belt",
+    "category": 9,
+    "price": "373.00",
+    "stock": 82
+  }
+},
+{
+  "model": "store.product",
+  "pk": 47,
+  "fields": {
+    "name": "C No. Belt",
+    "category": 9,
+    "price": "2582.00",
+    "stock": 7
+  }
+},
+{
+  "model": "store.product",
+  "pk": 48,
+  "fields": {
+    "name": "Tacter Belt",
+    "category": 9,
+    "price": "4899.00",
+    "stock": 99
+  }
+},
+{
+  "model": "store.product",
+  "pk": 49,
+  "fields": {
+    "name": "Other",
+    "category": 9,
+    "price": "3631.00",
+    "stock": 53
+  }
+},
+{
+  "model": "store.product",
+  "pk": 50,
+  "fields": {
+    "name": "Bike",
+    "category": 10,
+    "price": "4801.00",
+    "stock": 81
+  }
+},
+{
+  "model": "store.product",
+  "pk": 51,
+  "fields": {
+    "name": "Car",
+    "category": 10,
+    "price": "1409.00",
+    "stock": 65
+  }
+},
+{
+  "model": "store.product",
+  "pk": 52,
+  "fields": {
+    "name": "KeyChain",
+    "category": null,
+    "price": "1363.00",
+    "stock": 48
+  }
+},
+{
+  "model": "store.product",
+  "pk": 53,
+  "fields": {
+    "name": "Horn",
+    "category": null,
+    "price": "3763.00",
+    "stock": 25
+  }
+},
+{
+  "model": "store.product",
+  "pk": 54,
+  "fields": {
+    "name": "LED Item",
+    "category": null,
+    "price": "88.00",
+    "stock": 72
+  }
+},
+{
+  "model": "store.product",
+  "pk": 55,
+  "fields": {
+    "name": "Two Wheeler Bike",
+    "category": null,
+    "price": "4746.00",
+    "stock": 81
+  }
+},
+{
+  "model": "store.product",
+  "pk": 56,
+  "fields": {
+    "name": "Bullet Item",
+    "category": null,
+    "price": "1844.00",
+    "stock": 79
+  }
+},
+{
+  "model": "store.product",
+  "pk": 57,
+  "fields": {
+    "name": "Three Wheeler Auto",
+    "category": null,
+    "price": "899.00",
+    "stock": 15
+  }
+},
+{
+  "model": "store.product",
+  "pk": 58,
+  "fields": {
+    "name": "Four Wheeler Car",
+    "category": null,
+    "price": "3020.00",
+    "stock": 86
+  }
+},
+{
+  "model": "store.product",
+  "pk": 59,
+  "fields": {
+    "name": "Tata-S Item",
+    "category": null,
+    "price": "110.00",
+    "stock": 21
+  }
+},
+{
+  "model": "store.product",
+  "pk": 60,
+  "fields": {
+    "name": "Tractor Item",
+    "category": null,
+    "price": "4381.00",
+    "stock": 80
+  }
+},
+{
+  "model": "store.product",
+  "pk": 61,
+  "fields": {
+    "name": "Nangar Item",
+    "category": null,
+    "price": "4854.00",
+    "stock": 96
+  }
+},
+{
+  "model": "store.product",
+  "pk": 62,
+  "fields": {
+    "name": "GCP Item",
+    "category": null,
+    "price": "4529.00",
+    "stock": 71
+  }
+},
+{
+  "model": "store.product",
+  "pk": 63,
+  "fields": {
+    "name": "Chaina Pichkari",
+    "category": null,
+    "price": "1567.00",
+    "stock": 92
+  }
+},
+{
+  "model": "store.product",
+  "pk": 64,
+  "fields": {
+    "name": "Pamchar Fiting",
+    "category": null,
+    "price": "1415.00",
+    "stock": 39
+  }
+},
+{
+  "model": "store.product",
+  "pk": 65,
+  "fields": {
+    "name": "Hawa",
+    "category": 1,
+    "price": "10.00",
+    "stock": 62
+  }
+},
+{
+  "model": "store.product",
+  "pk": 66,
+  "fields": {
+    "name": "khille",
+    "category": 3,
+    "price": "10.00",
+    "stock": 94
+  }
+},
+{
+  "model": "store.product",
+  "pk": 67,
+  "fields": {
+    "name": "bolt 9\"",
+    "category": 1,
+    "price": "90.00",
+    "stock": 0
+  }
+},
+{
+  "model": "store.product",
+  "pk": 68,
+  "fields": {
+    "name": "Type ceil",
+    "category": 1,
+    "price": "80.00",
+    "stock": 0
+  }
+},
+{
+  "model": "store.product",
+  "pk": 69,
+  "fields": {
+    "name": "Pana 10 inch",
+    "category": 3,
+    "price": "50.00",
+    "stock": 100
+  }
+},
+{
+  "model": "store.billing",
+  "pk": 1,
+  "fields": {
+    "customer": 2,
+    "customer_name": "Walk-in Customer",
+    "attended_staff": null,
+    "discount_amount": "0.00",
+    "labor_description": "",
+    "labor_amount": "0.00",
+    "total_amount": "980.00",
+    "paid_amount": "0.00",
+    "due_amount": "0.00",
+    "payment_status": "PAID",
+    "date": "2025-12-15T13:54:44.015Z"
+  }
+},
+{
+  "model": "store.billing",
+  "pk": 2,
+  "fields": {
+    "customer": 1,
+    "customer_name": "Walk-in Customer",
+    "attended_staff": null,
+    "discount_amount": "0.00",
+    "labor_description": "",
+    "labor_amount": "0.00",
+    "total_amount": "908.00",
+    "paid_amount": "0.00",
+    "due_amount": "0.00",
+    "payment_status": "PAID",
+    "date": "2025-12-15T13:55:00.166Z"
+  }
+},
+{
+  "model": "store.billing",
+  "pk": 3,
+  "fields": {
+    "customer": 1,
+    "customer_name": "Walk-in Customer",
+    "attended_staff": null,
+    "discount_amount": "0.00",
+    "labor_description": "",
+    "labor_amount": "0.00",
+    "total_amount": "0.00",
+    "paid_amount": "0.00",
+    "due_amount": "0.00",
+    "payment_status": "PAID",
+    "date": "2025-12-16T15:31:17.506Z"
+  }
+},
+{
+  "model": "store.billing",
+  "pk": 4,
+  "fields": {
+    "customer": 1,
+    "customer_name": "Walk-in Customer",
+    "attended_staff": null,
+    "discount_amount": "0.00",
+    "labor_description": "",
+    "labor_amount": "0.00",
+    "total_amount": "17956.00",
+    "paid_amount": "0.00",
+    "due_amount": "0.00",
+    "payment_status": "PAID",
+    "date": "2025-12-16T15:46:13.304Z"
+  }
+},
+{
+  "model": "store.billing",
+  "pk": 5,
+  "fields": {
+    "customer": 2,
+    "customer_name": "Walk-in Customer",
+    "attended_staff": null,
+    "discount_amount": "0.00",
+    "labor_description": "",
+    "labor_amount": "0.00",
+    "total_amount": "1560.00",
+    "paid_amount": "0.00",
+    "due_amount": "0.00",
+    "payment_status": "PAID",
+    "date": "2025-12-16T15:47:02.077Z"
+  }
+},
+{
+  "model": "store.billing",
+  "pk": 6,
+  "fields": {
+    "customer": 2,
+    "customer_name": "Walk-in Customer",
+    "attended_staff": null,
+    "discount_amount": "0.00",
+    "labor_description": "",
+    "labor_amount": "0.00",
+    "total_amount": "0.00",
+    "paid_amount": "0.00",
+    "due_amount": "0.00",
+    "payment_status": "PAID",
+    "date": "2025-12-16T15:56:06.156Z"
+  }
+},
+{
+  "model": "store.billing",
+  "pk": 7,
+  "fields": {
+    "customer": 1,
+    "customer_name": "Walk-in Customer",
+    "attended_staff": null,
+    "discount_amount": "0.00",
+    "labor_description": "",
+    "labor_amount": "0.00",
+    "total_amount": "0.00",
+    "paid_amount": "0.00",
+    "due_amount": "0.00",
+    "payment_status": "PAID",
+    "date": "2025-12-16T15:56:11.263Z"
+  }
+},
+{
+  "model": "store.billing",
+  "pk": 8,
+  "fields": {
+    "customer": 2,
+    "customer_name": "Walk-in Customer",
+    "attended_staff": null,
+    "discount_amount": "0.00",
+    "labor_description": "",
+    "labor_amount": "0.00",
+    "total_amount": "0.00",
+    "paid_amount": "0.00",
+    "due_amount": "0.00",
+    "payment_status": "PAID",
+    "date": "2025-12-16T15:56:19.824Z"
+  }
+},
+{
+  "model": "store.billing",
+  "pk": 9,
+  "fields": {
+    "customer": null,
+    "customer_name": "Pandit shashtri",
+    "attended_staff": null,
+    "discount_amount": "0.00",
+    "labor_description": "",
+    "labor_amount": "0.00",
+    "total_amount": "1858.00",
+    "paid_amount": "0.00",
+    "due_amount": "0.00",
+    "payment_status": "PAID",
+    "date": "2025-12-16T16:08:47.473Z"
+  }
+},
+{
+  "model": "store.billing",
+  "pk": 10,
+  "fields": {
+    "customer": null,
+    "customer_name": "Sai Charan",
+    "attended_staff": null,
+    "discount_amount": "0.00",
+    "labor_description": "",
+    "labor_amount": "0.00",
+    "total_amount": "890.00",
+    "paid_amount": "890.00",
+    "due_amount": "0.00",
+    "payment_status": "PAID",
+    "date": "2025-12-16T16:42:03.170Z"
+  }
+},
+{
+  "model": "store.billing",
+  "pk": 11,
+  "fields": {
+    "customer": 2,
+    "customer_name": "Sai Charan",
+    "attended_staff": null,
+    "discount_amount": "0.00",
+    "labor_description": "",
+    "labor_amount": "0.00",
+    "total_amount": "7910.00",
+    "paid_amount": "980.00",
+    "due_amount": "6930.00",
+    "payment_status": "PARTIAL",
+    "date": "2025-12-16T16:42:36.343Z"
+  }
+},
+{
+  "model": "store.billing",
+  "pk": 12,
+  "fields": {
+    "customer": null,
+    "customer_name": "Walk-in Customer",
+    "attended_staff": 2,
+    "discount_amount": "0.00",
+    "labor_description": "",
+    "labor_amount": "158.00",
+    "total_amount": "948.00",
+    "paid_amount": "948.00",
+    "due_amount": "0.00",
+    "payment_status": "PAID",
+    "date": "2025-12-16T17:08:36.676Z"
+  }
+},
+{
+  "model": "store.billing",
+  "pk": 13,
+  "fields": {
+    "customer": null,
+    "customer_name": "Walk-in Customer",
+    "attended_staff": 2,
+    "discount_amount": "50.00",
+    "labor_description": "dfasd",
+    "labor_amount": "150.00",
+    "total_amount": "110.00",
+    "paid_amount": "110.00",
+    "due_amount": "0.00",
+    "payment_status": "PAID",
+    "date": "2025-12-16T17:28:49.986Z"
+  }
+},
+{
+  "model": "store.billing",
+  "pk": 14,
+  "fields": {
+    "customer": null,
+    "customer_name": "Nivgha patil",
+    "attended_staff": 2,
+    "discount_amount": "0.00",
+    "labor_description": "",
+    "labor_amount": "100.00",
+    "total_amount": "1068.00",
+    "paid_amount": "1068.00",
+    "due_amount": "0.00",
+    "payment_status": "PAID",
+    "date": "2025-12-16T17:30:37.233Z"
+  }
+},
+{
+  "model": "store.billing",
+  "pk": 15,
+  "fields": {
+    "customer": null,
+    "customer_name": "Mr. Ramesh Sonkamble",
+    "attended_staff": 2,
+    "discount_amount": "0.00",
+    "labor_description": "100",
+    "labor_amount": "0.00",
+    "total_amount": "5760.00",
+    "paid_amount": "5760.00",
+    "due_amount": "0.00",
+    "payment_status": "PAID",
+    "date": "2025-12-17T17:22:39.811Z"
+  }
+},
+{
+  "model": "store.billing",
+  "pk": 16,
+  "fields": {
+    "customer": null,
+    "customer_name": "Mr. Ramesh Sonkamble",
+    "attended_staff": 2,
+    "discount_amount": "10.00",
+    "labor_description": "100",
+    "labor_amount": "100.00",
+    "total_amount": "5850.00",
+    "paid_amount": "5850.00",
+    "due_amount": "0.00",
+    "payment_status": "PAID",
+    "date": "2025-12-17T17:23:08.438Z"
+  }
+},
+{
+  "model": "store.billing",
+  "pk": 17,
+  "fields": {
+    "customer": null,
+    "customer_name": "Walk-in Customer",
+    "attended_staff": 2,
+    "discount_amount": "0.00",
+    "labor_description": "",
+    "labor_amount": "0.00",
+    "total_amount": "4040.00",
+    "paid_amount": "4040.00",
+    "due_amount": "0.00",
+    "payment_status": "PAID",
+    "date": "2025-12-17T17:58:39.354Z"
+  }
+},
+{
+  "model": "store.billing",
+  "pk": 18,
+  "fields": {
+    "customer": null,
+    "customer_name": "Akash Biradar",
+    "attended_staff": 5,
+    "discount_amount": "50.00",
+    "labor_description": "",
+    "labor_amount": "150.00",
+    "total_amount": "762.00",
+    "paid_amount": "762.00",
+    "due_amount": "0.00",
+    "payment_status": "PAID",
+    "date": "2025-12-19T07:47:39.952Z"
+  }
+},
+{
+  "model": "store.billing",
+  "pk": 19,
+  "fields": {
+    "customer": null,
+    "customer_name": "Ahemad Pasha",
+    "attended_staff": 2,
+    "discount_amount": "100.00",
+    "labor_description": "",
+    "labor_amount": "101.00",
+    "total_amount": "8919.00",
+    "paid_amount": "8919.00",
+    "due_amount": "0.00",
+    "payment_status": "PAID",
+    "date": "2025-12-25T11:43:00.157Z"
+  }
+},
+{
+  "model": "store.billing",
+  "pk": 20,
+  "fields": {
+    "customer": 1,
+    "customer_name": "Ahemad bhai Bhangarwale",
+    "attended_staff": 2,
+    "discount_amount": "0.00",
+    "labor_description": "190",
+    "labor_amount": "190.00",
+    "total_amount": "7153.00",
+    "paid_amount": "153.00",
+    "due_amount": "7000.00",
+    "payment_status": "PARTIAL",
+    "date": "2025-12-26T11:35:01.497Z"
+  }
+},
+{
+  "model": "store.billing",
+  "pk": 21,
+  "fields": {
+    "customer": null,
+    "customer_name": "Walk-in Customer",
+    "attended_staff": 4,
+    "discount_amount": "0.00",
+    "labor_description": "",
+    "labor_amount": "0.00",
+    "total_amount": "10816.00",
+    "paid_amount": "10816.00",
+    "due_amount": "0.00",
+    "payment_status": "PAID",
+    "date": "2025-12-26T14:02:17.277Z"
+  }
+},
+{
+  "model": "store.billing",
+  "pk": 24,
+  "fields": {
+    "customer": null,
+    "customer_name": "Walk-in Customer",
+    "attended_staff": null,
+    "discount_amount": "0.00",
+    "labor_description": "",
+    "labor_amount": "0.00",
+    "total_amount": "4758.00",
+    "paid_amount": "4758.00",
+    "due_amount": "0.00",
+    "payment_status": "PAID",
+    "date": "2025-12-27T09:07:57.851Z"
+  }
+},
+{
+  "model": "store.billing",
+  "pk": 25,
+  "fields": {
+    "customer": null,
+    "customer_name": "Walk-in Customer",
+    "attended_staff": null,
+    "discount_amount": "0.00",
+    "labor_description": "",
+    "labor_amount": "0.00",
+    "total_amount": "60.00",
+    "paid_amount": "60.00",
+    "due_amount": "0.00",
+    "payment_status": "PAID",
+    "date": "2025-12-27T09:08:19.780Z"
+  }
+},
+{
+  "model": "store.billing",
+  "pk": 26,
+  "fields": {
+    "customer": null,
+    "customer_name": "Walk-in Customer",
+    "attended_staff": 4,
+    "discount_amount": "0.00",
+    "labor_description": "",
+    "labor_amount": "150.00",
+    "total_amount": "4609.00",
+    "paid_amount": "4609.00",
+    "due_amount": "0.00",
+    "payment_status": "PAID",
+    "date": "2025-12-28T06:46:38.308Z"
+  }
+},
+{
+  "model": "store.billing",
+  "pk": 27,
+  "fields": {
+    "customer": 4,
+    "customer_name": "Walk-in Customer",
+    "attended_staff": 4,
+    "discount_amount": "20.00",
+    "labor_description": "",
+    "labor_amount": "100.00",
+    "total_amount": "4602.00",
+    "paid_amount": "4602.00",
+    "due_amount": "0.00",
+    "payment_status": "PAID",
+    "date": "2025-12-28T13:04:30.372Z"
+  }
+},
+{
+  "model": "store.billing",
+  "pk": 28,
+  "fields": {
+    "customer": null,
+    "customer_name": "Walk-in Customer",
+    "attended_staff": null,
+    "discount_amount": "0.00",
+    "labor_description": "",
+    "labor_amount": "0.00",
+    "total_amount": "4826.00",
+    "paid_amount": "4826.00",
+    "due_amount": "0.00",
+    "payment_status": "PAID",
+    "date": "2025-12-28T13:50:34.624Z"
+  }
+},
+{
+  "model": "store.billing",
+  "pk": 29,
+  "fields": {
+    "customer": null,
+    "customer_name": "Walk-in Customer",
+    "attended_staff": null,
+    "discount_amount": "0.00",
+    "labor_description": "",
+    "labor_amount": "0.00",
+    "total_amount": "4826.00",
+    "paid_amount": "4826.00",
+    "due_amount": "0.00",
+    "payment_status": "PAID",
+    "date": "2025-12-28T14:01:38.923Z"
+  }
+},
+{
+  "model": "store.billing",
+  "pk": 30,
+  "fields": {
+    "customer": 6,
+    "customer_name": "Pachling anna",
+    "attended_staff": 5,
+    "discount_amount": "0.00",
+    "labor_description": "",
+    "labor_amount": "0.00",
+    "total_amount": "14969.00",
+    "paid_amount": "14969.00",
+    "due_amount": "0.00",
+    "payment_status": "PAID",
+    "date": "2025-12-28T14:50:32.269Z"
+  }
+},
+{
+  "model": "store.billing",
+  "pk": 31,
+  "fields": {
+    "customer": null,
+    "customer_name": "Walk-in Customer",
+    "attended_staff": 6,
+    "discount_amount": "0.00",
+    "labor_description": "",
+    "labor_amount": "0.00",
+    "total_amount": "1415.00",
+    "paid_amount": "1415.00",
+    "due_amount": "0.00",
+    "payment_status": "PAID",
+    "date": "2025-12-29T12:09:27.010Z"
+  }
+},
+{
+  "model": "store.billing",
+  "pk": 32,
+  "fields": {
+    "customer": 11,
+    "customer_name": "Sai",
+    "attended_staff": 2,
+    "discount_amount": "10.00",
+    "labor_description": "",
+    "labor_amount": "1.00",
+    "total_amount": "11.00",
+    "paid_amount": "11.00",
+    "due_amount": "0.00",
+    "payment_status": "PAID",
+    "date": "2025-12-29T12:53:12.746Z"
+  }
+},
+{
+  "model": "store.billing",
+  "pk": 33,
+  "fields": {
+    "customer": null,
+    "customer_name": "Amit Gavali",
+    "attended_staff": 4,
+    "discount_amount": "0.00",
+    "labor_description": "",
+    "labor_amount": "100.00",
+    "total_amount": "6488.00",
+    "paid_amount": "6488.00",
+    "due_amount": "0.00",
+    "payment_status": "PAID",
+    "date": "2025-12-29T12:59:26.846Z"
+  }
+},
+{
+  "model": "store.billing",
+  "pk": 34,
+  "fields": {
+    "customer": null,
+    "customer_name": "Pachling anna",
+    "attended_staff": 2,
+    "discount_amount": "500.00",
+    "labor_description": "",
+    "labor_amount": "0.00",
+    "total_amount": "4825.00",
+    "paid_amount": "4825.00",
+    "due_amount": "0.00",
+    "payment_status": "PAID",
+    "date": "2025-12-29T13:01:43.364Z"
+  }
+},
+{
+  "model": "store.billing",
+  "pk": 35,
+  "fields": {
+    "customer": null,
+    "customer_name": "Shyam Anna",
+    "attended_staff": 5,
+    "discount_amount": "0.00",
+    "labor_description": "",
+    "labor_amount": "0.00",
+    "total_amount": "4925.00",
+    "paid_amount": "4925.00",
+    "due_amount": "0.00",
+    "payment_status": "PAID",
+    "date": "2025-12-29T13:49:09.672Z"
+  }
+},
+{
+  "model": "store.billing",
+  "pk": 36,
+  "fields": {
+    "customer": 9,
+    "customer_name": "Walk-in Customer",
+    "attended_staff": 5,
+    "discount_amount": "0.00",
+    "labor_description": "",
+    "labor_amount": "600.00",
+    "total_amount": "9506.00",
+    "paid_amount": "1506.00",
+    "due_amount": "8000.00",
+    "payment_status": "PARTIAL",
+    "date": "2025-12-29T13:49:43.644Z"
+  }
+},
+{
+  "model": "store.billing",
+  "pk": 37,
+  "fields": {
+    "customer": 19,
+    "customer_name": "Walk-in Customer",
+    "attended_staff": null,
+    "discount_amount": "0.00",
+    "labor_description": "",
+    "labor_amount": "100.00",
+    "total_amount": "6625.00",
+    "paid_amount": "2625.00",
+    "due_amount": "4000.00",
+    "payment_status": "PARTIAL",
+    "date": "2025-12-30T17:41:07.387Z"
+  }
+},
+{
+  "model": "store.billing",
+  "pk": 38,
+  "fields": {
+    "customer": null,
+    "customer_name": "Walk-in Customer",
+    "attended_staff": 5,
+    "discount_amount": "20.00",
+    "labor_description": "",
+    "labor_amount": "30.00",
+    "total_amount": "6854.00",
+    "paid_amount": "6854.00",
+    "due_amount": "0.00",
+    "payment_status": "PAID",
+    "date": "2025-12-31T14:00:15.827Z"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 1,
+  "fields": {
+    "bill": 1,
+    "product": 1,
+    "quantity": 56,
+    "price": "590.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 2,
+  "fields": {
+    "bill": 2,
+    "product": 4,
+    "quantity": 1,
+    "price": "100.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 3,
+  "fields": {
+    "bill": 4,
+    "product": 1,
+    "quantity": 1,
+    "price": "78.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 4,
+  "fields": {
+    "bill": 4,
+    "product": 1,
+    "quantity": 1,
+    "price": "78.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 5,
+  "fields": {
+    "bill": 4,
+    "product": 2,
+    "quantity": 10,
+    "price": "890.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 6,
+  "fields": {
+    "bill": 4,
+    "product": 2,
+    "quantity": 10,
+    "price": "890.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 7,
+  "fields": {
+    "bill": 5,
+    "product": 1,
+    "quantity": 10,
+    "price": "78.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 8,
+  "fields": {
+    "bill": 5,
+    "product": 1,
+    "quantity": 10,
+    "price": "78.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 9,
+  "fields": {
+    "bill": 9,
+    "product": 1,
+    "quantity": 1,
+    "price": "78.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 10,
+  "fields": {
+    "bill": 9,
+    "product": 2,
+    "quantity": 2,
+    "price": "890.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 11,
+  "fields": {
+    "bill": 10,
+    "product": 2,
+    "quantity": 1,
+    "price": "890.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 12,
+  "fields": {
+    "bill": 11,
+    "product": 2,
+    "quantity": 1,
+    "price": "890.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 13,
+  "fields": {
+    "bill": 11,
+    "product": 1,
+    "quantity": 90,
+    "price": "78.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 14,
+  "fields": {
+    "bill": 12,
+    "product": 3,
+    "quantity": 1,
+    "price": "10.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 15,
+  "fields": {
+    "bill": 12,
+    "product": 1,
+    "quantity": 10,
+    "price": "78.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 16,
+  "fields": {
+    "bill": 13,
+    "product": 3,
+    "quantity": 1,
+    "price": "10.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 17,
+  "fields": {
+    "bill": 14,
+    "product": 2,
+    "quantity": 1,
+    "price": "890.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 18,
+  "fields": {
+    "bill": 14,
+    "product": 1,
+    "quantity": 1,
+    "price": "78.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 19,
+  "fields": {
+    "bill": 15,
+    "product": 16,
+    "quantity": 1,
+    "price": "398.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 20,
+  "fields": {
+    "bill": 15,
+    "product": 55,
+    "quantity": 1,
+    "price": "4746.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 21,
+  "fields": {
+    "bill": 15,
+    "product": 54,
+    "quantity": 7,
+    "price": "88.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 22,
+  "fields": {
+    "bill": 16,
+    "product": 16,
+    "quantity": 1,
+    "price": "398.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 23,
+  "fields": {
+    "bill": 16,
+    "product": 55,
+    "quantity": 1,
+    "price": "4746.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 24,
+  "fields": {
+    "bill": 16,
+    "product": 54,
+    "quantity": 7,
+    "price": "88.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 25,
+  "fields": {
+    "bill": 17,
+    "product": 5,
+    "quantity": 10,
+    "price": "404.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 26,
+  "fields": {
+    "bill": 18,
+    "product": 16,
+    "quantity": 1,
+    "price": "398.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 27,
+  "fields": {
+    "bill": 18,
+    "product": 54,
+    "quantity": 3,
+    "price": "88.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 28,
+  "fields": {
+    "bill": 19,
+    "product": 22,
+    "quantity": 2,
+    "price": "4459.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 29,
+  "fields": {
+    "bill": 20,
+    "product": 13,
+    "quantity": 1,
+    "price": "2109.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 30,
+  "fields": {
+    "bill": 20,
+    "product": 61,
+    "quantity": 1,
+    "price": "4854.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 31,
+  "fields": {
+    "bill": 21,
+    "product": 21,
+    "quantity": 4,
+    "price": "2704.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 35,
+  "fields": {
+    "bill": 24,
+    "product": 65,
+    "quantity": 1,
+    "price": "4758.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 36,
+  "fields": {
+    "bill": 25,
+    "product": 66,
+    "quantity": 6,
+    "price": "10.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 37,
+  "fields": {
+    "bill": 26,
+    "product": 22,
+    "quantity": 1,
+    "price": "4459.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 38,
+  "fields": {
+    "bill": 27,
+    "product": 5,
+    "quantity": 2,
+    "price": "404.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 39,
+  "fields": {
+    "bill": 27,
+    "product": 16,
+    "quantity": 1,
+    "price": "398.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 40,
+  "fields": {
+    "bill": 27,
+    "product": 12,
+    "quantity": 1,
+    "price": "3316.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 41,
+  "fields": {
+    "bill": 28,
+    "product": 19,
+    "quantity": 1,
+    "price": "4826.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 42,
+  "fields": {
+    "bill": 29,
+    "product": 19,
+    "quantity": 1,
+    "price": "4826.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 43,
+  "fields": {
+    "bill": 30,
+    "product": 18,
+    "quantity": 5,
+    "price": "2625.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 44,
+  "fields": {
+    "bill": 30,
+    "product": 56,
+    "quantity": 1,
+    "price": "1844.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 45,
+  "fields": {
+    "bill": 31,
+    "product": 64,
+    "quantity": 1,
+    "price": "1415.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 46,
+  "fields": {
+    "bill": 32,
+    "product": 4,
+    "quantity": 1,
+    "price": "20.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 47,
+  "fields": {
+    "bill": 33,
+    "product": 18,
+    "quantity": 1,
+    "price": "2625.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 48,
+  "fields": {
+    "bill": 33,
+    "product": 53,
+    "quantity": 1,
+    "price": "3763.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 49,
+  "fields": {
+    "bill": 34,
+    "product": 16,
+    "quantity": 2,
+    "price": "398.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 50,
+  "fields": {
+    "bill": 34,
+    "product": 62,
+    "quantity": 1,
+    "price": "4529.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 51,
+  "fields": {
+    "bill": 35,
+    "product": 17,
+    "quantity": 1,
+    "price": "4925.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 52,
+  "fields": {
+    "bill": 36,
+    "product": 19,
+    "quantity": 1,
+    "price": "4826.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 53,
+  "fields": {
+    "bill": 36,
+    "product": 6,
+    "quantity": 1,
+    "price": "4080.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 54,
+  "fields": {
+    "bill": 37,
+    "product": 17,
+    "quantity": 1,
+    "price": "4925.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 55,
+  "fields": {
+    "bill": 37,
+    "product": 5,
+    "quantity": 1,
+    "price": "1600.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 56,
+  "fields": {
+    "bill": 38,
+    "product": 6,
+    "quantity": 1,
+    "price": "4080.00"
+  }
+},
+{
+  "model": "store.billitem",
+  "pk": 57,
+  "fields": {
+    "bill": 38,
+    "product": 9,
+    "quantity": 1,
+    "price": "2764.00"
+  }
+},
+{
+  "model": "store.dealer",
+  "pk": 1,
+  "fields": {
+    "name": "Bhagyalaxmi nanded wala",
+    "phone": "8978675645",
+    "address": "Hingoli gate nanded",
+    "gst_number": "GASTN8747474",
+    "created_at": "2025-12-17T18:27:17.222Z"
+  }
+},
+{
+  "model": "store.dealer",
+  "pk": 2,
+  "fields": {
+    "name": "Shakti Enterprises",
+    "phone": "+1 4055043522",
+    "address": "Bhokar",
+    "gst_number": "",
+    "created_at": "2025-12-17T18:35:17.487Z"
+  }
+},
+{
+  "model": "store.dealer",
+  "pk": 3,
+  "fields": {
+    "name": "Ardhapur wala",
+    "phone": "8978675645",
+    "address": "Ardhapur",
+    "gst_number": "PA0987u373763",
+    "created_at": "2025-12-17T18:35:29.102Z"
+  }
+},
+{
+  "model": "store.purchase",
+  "pk": 1,
+  "fields": {
+    "dealer": 1,
+    "invoice_number": "98787",
+    "invoice_date": "2025-12-17",
+    "total_amount": "94500.00",
+    "payment_type": "CREDIT",
+    "paid_amount": "0.00",
+    "created_at": "2025-12-17T18:28:13.229Z"
+  }
+},
+{
+  "model": "store.purchase",
+  "pk": 2,
+  "fields": {
+    "dealer": 1,
+    "invoice_number": "98787",
+    "invoice_date": "2025-12-18",
+    "total_amount": "1000.00",
+    "payment_type": "PAID",
+    "paid_amount": "0.00",
+    "created_at": "2025-12-17T18:32:12.386Z"
+  }
+},
+{
+  "model": "store.purchase",
+  "pk": 3,
+  "fields": {
+    "dealer": 1,
+    "invoice_number": "98787",
+    "invoice_date": "2025-12-18",
+    "total_amount": "10090.00",
+    "payment_type": "PAID",
+    "paid_amount": "0.00",
+    "created_at": "2025-12-17T18:32:42.435Z"
+  }
+},
+{
+  "model": "store.purchase",
+  "pk": 4,
+  "fields": {
+    "dealer": 1,
+    "invoice_number": "",
+    "invoice_date": "0025-06-09",
+    "total_amount": "0.00",
+    "payment_type": "PAID",
+    "paid_amount": "0.00",
+    "created_at": "2025-12-17T18:34:19.274Z"
+  }
+},
+{
+  "model": "store.purchase",
+  "pk": 5,
+  "fields": {
+    "dealer": 1,
+    "invoice_number": "98787",
+    "invoice_date": "2025-12-16",
+    "total_amount": "0.00",
+    "payment_type": "PAID",
+    "paid_amount": "1000.00",
+    "created_at": "2025-12-17T18:34:54.197Z"
+  }
+},
+{
+  "model": "store.purchase",
+  "pk": 6,
+  "fields": {
+    "dealer": 2,
+    "invoice_number": "",
+    "invoice_date": "2025-12-08",
+    "total_amount": "0.00",
+    "payment_type": "PAID",
+    "paid_amount": "20200.00",
+    "created_at": "2025-12-17T18:35:49.642Z"
+  }
+},
+{
+  "model": "store.purchase",
+  "pk": 7,
+  "fields": {
+    "dealer": 3,
+    "invoice_number": "098987",
+    "invoice_date": "2025-12-28",
+    "total_amount": "11300.00",
+    "payment_type": "PAID",
+    "paid_amount": "500.00",
+    "created_at": "2025-12-28T15:11:15.572Z"
+  }
+},
+{
+  "model": "store.purchase",
+  "pk": 8,
+  "fields": {
+    "dealer": 2,
+    "invoice_number": "98787",
+    "invoice_date": "2025-12-30",
+    "total_amount": "100.00",
+    "payment_type": "PAID",
+    "paid_amount": "98700.00",
+    "created_at": "2025-12-30T17:49:46.163Z"
+  }
+},
+{
+  "model": "store.purchase",
+  "pk": 9,
+  "fields": {
+    "dealer": 2,
+    "invoice_number": "098987",
+    "invoice_date": "2025-12-15",
+    "total_amount": "0.00",
+    "payment_type": "PAID",
+    "paid_amount": "90000.00",
+    "created_at": "2025-12-30T19:02:13.248Z"
+  }
+},
+{
+  "model": "store.purchaseitem",
+  "pk": 1,
+  "fields": {
+    "purchase": 1,
+    "product": 20,
+    "quantity": 900,
+    "purchase_price": "100.00"
+  }
+},
+{
+  "model": "store.purchaseitem",
+  "pk": 2,
+  "fields": {
+    "purchase": 1,
+    "product": 17,
+    "quantity": 90,
+    "purchase_price": "50.00"
+  }
+},
+{
+  "model": "store.purchaseitem",
+  "pk": 3,
+  "fields": {
+    "purchase": 2,
+    "product": 18,
+    "quantity": 10,
+    "purchase_price": "100.00"
+  }
+},
+{
+  "model": "store.purchaseitem",
+  "pk": 4,
+  "fields": {
+    "purchase": 3,
+    "product": 18,
+    "quantity": 10,
+    "purchase_price": "1000.00"
+  }
+},
+{
+  "model": "store.purchaseitem",
+  "pk": 5,
+  "fields": {
+    "purchase": 3,
+    "product": 62,
+    "quantity": 1,
+    "purchase_price": "90.00"
+  }
+},
+{
+  "model": "store.purchaseitem",
+  "pk": 6,
+  "fields": {
+    "purchase": 7,
+    "product": 16,
+    "quantity": 30,
+    "purchase_price": "370.00"
+  }
+},
+{
+  "model": "store.purchaseitem",
+  "pk": 7,
+  "fields": {
+    "purchase": 7,
+    "product": 14,
+    "quantity": 10,
+    "purchase_price": "20.00"
+  }
+},
+{
+  "model": "store.purchaseitem",
+  "pk": 8,
+  "fields": {
+    "purchase": 8,
+    "product": 15,
+    "quantity": 1,
+    "purchase_price": "100.00"
+  }
+},
+{
+  "model": "store.staffsalary",
+  "pk": 6,
+  "fields": {
+    "staff": 2,
+    "monthly_salary": "10000.00",
+    "per_day_salary": "333.33"
+  }
+},
+{
+  "model": "store.staffsalary",
+  "pk": 7,
+  "fields": {
+    "staff": 4,
+    "monthly_salary": "9000.00",
+    "per_day_salary": "300.00"
+  }
+},
+{
+  "model": "store.staffsalary",
+  "pk": 8,
+  "fields": {
+    "staff": 6,
+    "monthly_salary": "9000.00",
+    "per_day_salary": "300.00"
+  }
+},
+{
+  "model": "store.staffsalary",
+  "pk": 9,
+  "fields": {
+    "staff": 5,
+    "monthly_salary": "13000.00",
+    "per_day_salary": "433.33"
+  }
+},
+{
+  "model": "store.staffsalary",
+  "pk": 10,
+  "fields": {
+    "staff": 1,
+    "monthly_salary": "100000.00",
+    "per_day_salary": "3333.33"
+  }
+},
+{
+  "model": "store.staffsalary",
+  "pk": 11,
+  "fields": {
+    "staff": 7,
+    "monthly_salary": "10000.00",
+    "per_day_salary": "333.33"
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 87,
+  "fields": {
+    "staff": 5,
+    "date": "2025-11-01",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": "nanded - party"
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 88,
+  "fields": {
+    "staff": 5,
+    "date": "2025-11-02",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": "nanded party"
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 89,
+  "fields": {
+    "staff": 5,
+    "date": "2025-11-03",
+    "status": "H",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 90,
+  "fields": {
+    "staff": 5,
+    "date": "2025-11-04",
+    "status": "A",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 91,
+  "fields": {
+    "staff": 5,
+    "date": "2025-11-05",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 92,
+  "fields": {
+    "staff": 5,
+    "date": "2025-11-06",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 93,
+  "fields": {
+    "staff": 5,
+    "date": "2025-11-07",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 94,
+  "fields": {
+    "staff": 5,
+    "date": "2025-11-08",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 95,
+  "fields": {
+    "staff": 5,
+    "date": "2025-11-09",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 96,
+  "fields": {
+    "staff": 5,
+    "date": "2025-11-10",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 97,
+  "fields": {
+    "staff": 5,
+    "date": "2025-11-11",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 98,
+  "fields": {
+    "staff": 5,
+    "date": "2025-11-12",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 99,
+  "fields": {
+    "staff": 5,
+    "date": "2025-11-13",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 100,
+  "fields": {
+    "staff": 5,
+    "date": "2025-11-14",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 101,
+  "fields": {
+    "staff": 5,
+    "date": "2025-11-15",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 102,
+  "fields": {
+    "staff": 5,
+    "date": "2025-11-16",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 103,
+  "fields": {
+    "staff": 5,
+    "date": "2025-11-17",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 104,
+  "fields": {
+    "staff": 5,
+    "date": "2025-11-18",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 105,
+  "fields": {
+    "staff": 5,
+    "date": "2025-11-19",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 106,
+  "fields": {
+    "staff": 5,
+    "date": "2025-11-20",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 107,
+  "fields": {
+    "staff": 5,
+    "date": "2025-11-21",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 108,
+  "fields": {
+    "staff": 5,
+    "date": "2025-11-22",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 109,
+  "fields": {
+    "staff": 5,
+    "date": "2025-11-23",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 110,
+  "fields": {
+    "staff": 5,
+    "date": "2025-11-24",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 111,
+  "fields": {
+    "staff": 5,
+    "date": "2025-11-25",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 112,
+  "fields": {
+    "staff": 5,
+    "date": "2025-11-26",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 113,
+  "fields": {
+    "staff": 5,
+    "date": "2025-11-27",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 114,
+  "fields": {
+    "staff": 5,
+    "date": "2025-11-28",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 115,
+  "fields": {
+    "staff": 5,
+    "date": "2025-11-29",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 116,
+  "fields": {
+    "staff": 5,
+    "date": "2025-11-30",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 117,
+  "fields": {
+    "staff": 4,
+    "date": "2025-12-01",
+    "status": "H",
+    "in_time": null,
+    "out_time": null,
+    "remark": "nanded - party"
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 118,
+  "fields": {
+    "staff": 4,
+    "date": "2025-12-02",
+    "status": "H",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 119,
+  "fields": {
+    "staff": 4,
+    "date": "2025-12-03",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 120,
+  "fields": {
+    "staff": 4,
+    "date": "2025-12-04",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 121,
+  "fields": {
+    "staff": 4,
+    "date": "2025-12-05",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 122,
+  "fields": {
+    "staff": 4,
+    "date": "2025-12-06",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 123,
+  "fields": {
+    "staff": 4,
+    "date": "2025-12-07",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 124,
+  "fields": {
+    "staff": 4,
+    "date": "2025-12-08",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 125,
+  "fields": {
+    "staff": 4,
+    "date": "2025-12-09",
+    "status": "A",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 126,
+  "fields": {
+    "staff": 4,
+    "date": "2025-12-10",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 127,
+  "fields": {
+    "staff": 4,
+    "date": "2025-12-11",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 128,
+  "fields": {
+    "staff": 4,
+    "date": "2025-12-12",
+    "status": "A",
+    "in_time": null,
+    "out_time": null,
+    "remark": "bimar"
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 129,
+  "fields": {
+    "staff": 4,
+    "date": "2025-12-13",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 130,
+  "fields": {
+    "staff": 4,
+    "date": "2025-12-14",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 131,
+  "fields": {
+    "staff": 4,
+    "date": "2025-12-15",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 132,
+  "fields": {
+    "staff": 4,
+    "date": "2025-12-16",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 133,
+  "fields": {
+    "staff": 4,
+    "date": "2025-12-17",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 134,
+  "fields": {
+    "staff": 4,
+    "date": "2025-12-18",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 135,
+  "fields": {
+    "staff": 4,
+    "date": "2025-12-19",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 136,
+  "fields": {
+    "staff": 4,
+    "date": "2025-12-20",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 137,
+  "fields": {
+    "staff": 4,
+    "date": "2025-12-21",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 138,
+  "fields": {
+    "staff": 4,
+    "date": "2025-12-22",
+    "status": "H",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 139,
+  "fields": {
+    "staff": 4,
+    "date": "2025-12-23",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 140,
+  "fields": {
+    "staff": 4,
+    "date": "2025-12-24",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 141,
+  "fields": {
+    "staff": 4,
+    "date": "2025-12-25",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 142,
+  "fields": {
+    "staff": 4,
+    "date": "2025-12-26",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 143,
+  "fields": {
+    "staff": 4,
+    "date": "2025-12-27",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 144,
+  "fields": {
+    "staff": 4,
+    "date": "2025-12-28",
+    "status": "H",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 145,
+  "fields": {
+    "staff": 4,
+    "date": "2025-12-29",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 146,
+  "fields": {
+    "staff": 4,
+    "date": "2025-12-30",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 147,
+  "fields": {
+    "staff": 4,
+    "date": "2025-12-31",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 148,
+  "fields": {
+    "staff": 6,
+    "date": "2025-12-01",
+    "status": "H",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 149,
+  "fields": {
+    "staff": 6,
+    "date": "2025-12-02",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 150,
+  "fields": {
+    "staff": 6,
+    "date": "2025-12-03",
+    "status": "A",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 151,
+  "fields": {
+    "staff": 6,
+    "date": "2025-12-04",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 152,
+  "fields": {
+    "staff": 6,
+    "date": "2025-12-05",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 153,
+  "fields": {
+    "staff": 6,
+    "date": "2025-12-06",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 154,
+  "fields": {
+    "staff": 6,
+    "date": "2025-12-07",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 155,
+  "fields": {
+    "staff": 6,
+    "date": "2025-12-08",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 156,
+  "fields": {
+    "staff": 6,
+    "date": "2025-12-09",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 157,
+  "fields": {
+    "staff": 6,
+    "date": "2025-12-10",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 158,
+  "fields": {
+    "staff": 6,
+    "date": "2025-12-11",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 159,
+  "fields": {
+    "staff": 6,
+    "date": "2025-12-12",
+    "status": "A",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 160,
+  "fields": {
+    "staff": 6,
+    "date": "2025-12-13",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 161,
+  "fields": {
+    "staff": 6,
+    "date": "2025-12-14",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 162,
+  "fields": {
+    "staff": 6,
+    "date": "2025-12-15",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 163,
+  "fields": {
+    "staff": 6,
+    "date": "2025-12-16",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 164,
+  "fields": {
+    "staff": 6,
+    "date": "2025-12-17",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 165,
+  "fields": {
+    "staff": 6,
+    "date": "2025-12-18",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 166,
+  "fields": {
+    "staff": 6,
+    "date": "2025-12-19",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 167,
+  "fields": {
+    "staff": 6,
+    "date": "2025-12-20",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 168,
+  "fields": {
+    "staff": 6,
+    "date": "2025-12-21",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 169,
+  "fields": {
+    "staff": 6,
+    "date": "2025-12-22",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 170,
+  "fields": {
+    "staff": 6,
+    "date": "2025-12-23",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 171,
+  "fields": {
+    "staff": 6,
+    "date": "2025-12-24",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 172,
+  "fields": {
+    "staff": 6,
+    "date": "2025-12-25",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 173,
+  "fields": {
+    "staff": 6,
+    "date": "2025-12-26",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 174,
+  "fields": {
+    "staff": 6,
+    "date": "2025-12-27",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 175,
+  "fields": {
+    "staff": 6,
+    "date": "2025-12-28",
+    "status": "A",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 176,
+  "fields": {
+    "staff": 6,
+    "date": "2025-12-29",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 177,
+  "fields": {
+    "staff": 6,
+    "date": "2025-12-30",
+    "status": "A",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 178,
+  "fields": {
+    "staff": 6,
+    "date": "2025-12-31",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 179,
+  "fields": {
+    "staff": 5,
+    "date": "2025-12-01",
+    "status": "H",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 180,
+  "fields": {
+    "staff": 5,
+    "date": "2025-12-02",
+    "status": "H",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 181,
+  "fields": {
+    "staff": 5,
+    "date": "2025-12-03",
+    "status": "H",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 182,
+  "fields": {
+    "staff": 5,
+    "date": "2025-12-04",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 183,
+  "fields": {
+    "staff": 5,
+    "date": "2025-12-05",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 184,
+  "fields": {
+    "staff": 5,
+    "date": "2025-12-06",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 185,
+  "fields": {
+    "staff": 5,
+    "date": "2025-12-07",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 186,
+  "fields": {
+    "staff": 5,
+    "date": "2025-12-08",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 187,
+  "fields": {
+    "staff": 5,
+    "date": "2025-12-09",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 188,
+  "fields": {
+    "staff": 5,
+    "date": "2025-12-10",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 189,
+  "fields": {
+    "staff": 5,
+    "date": "2025-12-11",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 190,
+  "fields": {
+    "staff": 5,
+    "date": "2025-12-12",
+    "status": "A",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 191,
+  "fields": {
+    "staff": 5,
+    "date": "2025-12-13",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 192,
+  "fields": {
+    "staff": 5,
+    "date": "2025-12-14",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 193,
+  "fields": {
+    "staff": 5,
+    "date": "2025-12-15",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 194,
+  "fields": {
+    "staff": 5,
+    "date": "2025-12-16",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 195,
+  "fields": {
+    "staff": 5,
+    "date": "2025-12-17",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 196,
+  "fields": {
+    "staff": 5,
+    "date": "2025-12-18",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 197,
+  "fields": {
+    "staff": 5,
+    "date": "2025-12-19",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 198,
+  "fields": {
+    "staff": 5,
+    "date": "2025-12-20",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 199,
+  "fields": {
+    "staff": 5,
+    "date": "2025-12-21",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 200,
+  "fields": {
+    "staff": 5,
+    "date": "2025-12-22",
+    "status": "H",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 201,
+  "fields": {
+    "staff": 5,
+    "date": "2025-12-23",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 202,
+  "fields": {
+    "staff": 5,
+    "date": "2025-12-24",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 203,
+  "fields": {
+    "staff": 5,
+    "date": "2025-12-25",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 204,
+  "fields": {
+    "staff": 5,
+    "date": "2025-12-26",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 205,
+  "fields": {
+    "staff": 5,
+    "date": "2025-12-27",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 206,
+  "fields": {
+    "staff": 5,
+    "date": "2025-12-28",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 207,
+  "fields": {
+    "staff": 5,
+    "date": "2025-12-29",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 208,
+  "fields": {
+    "staff": 5,
+    "date": "2025-12-30",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 209,
+  "fields": {
+    "staff": 5,
+    "date": "2025-12-31",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 210,
+  "fields": {
+    "staff": 4,
+    "date": "2025-11-01",
+    "status": "A",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 211,
+  "fields": {
+    "staff": 4,
+    "date": "2025-11-02",
+    "status": "A",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 212,
+  "fields": {
+    "staff": 4,
+    "date": "2025-11-03",
+    "status": "A",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 213,
+  "fields": {
+    "staff": 4,
+    "date": "2025-11-04",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 214,
+  "fields": {
+    "staff": 4,
+    "date": "2025-11-05",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 215,
+  "fields": {
+    "staff": 4,
+    "date": "2025-11-06",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 216,
+  "fields": {
+    "staff": 4,
+    "date": "2025-11-07",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 217,
+  "fields": {
+    "staff": 4,
+    "date": "2025-11-08",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 218,
+  "fields": {
+    "staff": 4,
+    "date": "2025-11-09",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 219,
+  "fields": {
+    "staff": 4,
+    "date": "2025-11-10",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 220,
+  "fields": {
+    "staff": 4,
+    "date": "2025-11-11",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 221,
+  "fields": {
+    "staff": 4,
+    "date": "2025-11-12",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 222,
+  "fields": {
+    "staff": 4,
+    "date": "2025-11-13",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 223,
+  "fields": {
+    "staff": 4,
+    "date": "2025-11-14",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 224,
+  "fields": {
+    "staff": 4,
+    "date": "2025-11-15",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 225,
+  "fields": {
+    "staff": 4,
+    "date": "2025-11-16",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 226,
+  "fields": {
+    "staff": 4,
+    "date": "2025-11-17",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 227,
+  "fields": {
+    "staff": 4,
+    "date": "2025-11-18",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 228,
+  "fields": {
+    "staff": 4,
+    "date": "2025-11-19",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 229,
+  "fields": {
+    "staff": 4,
+    "date": "2025-11-20",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 230,
+  "fields": {
+    "staff": 4,
+    "date": "2025-11-21",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 231,
+  "fields": {
+    "staff": 4,
+    "date": "2025-11-22",
+    "status": "H",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 232,
+  "fields": {
+    "staff": 4,
+    "date": "2025-11-23",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 233,
+  "fields": {
+    "staff": 4,
+    "date": "2025-11-24",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 234,
+  "fields": {
+    "staff": 4,
+    "date": "2025-11-25",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 235,
+  "fields": {
+    "staff": 4,
+    "date": "2025-11-26",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 236,
+  "fields": {
+    "staff": 4,
+    "date": "2025-11-27",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 237,
+  "fields": {
+    "staff": 4,
+    "date": "2025-11-28",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 238,
+  "fields": {
+    "staff": 4,
+    "date": "2025-11-29",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 239,
+  "fields": {
+    "staff": 4,
+    "date": "2025-11-30",
+    "status": "A",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 240,
+  "fields": {
+    "staff": 2,
+    "date": "2025-11-01",
+    "status": "H",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 241,
+  "fields": {
+    "staff": 2,
+    "date": "2025-11-02",
+    "status": "A",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 242,
+  "fields": {
+    "staff": 2,
+    "date": "2025-11-03",
+    "status": "H",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 243,
+  "fields": {
+    "staff": 2,
+    "date": "2025-11-04",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 244,
+  "fields": {
+    "staff": 2,
+    "date": "2025-11-05",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 245,
+  "fields": {
+    "staff": 2,
+    "date": "2025-11-06",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 246,
+  "fields": {
+    "staff": 2,
+    "date": "2025-11-07",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 247,
+  "fields": {
+    "staff": 2,
+    "date": "2025-11-08",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 248,
+  "fields": {
+    "staff": 2,
+    "date": "2025-11-09",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 249,
+  "fields": {
+    "staff": 2,
+    "date": "2025-11-10",
+    "status": "H",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 250,
+  "fields": {
+    "staff": 2,
+    "date": "2025-11-11",
+    "status": "H",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 251,
+  "fields": {
+    "staff": 2,
+    "date": "2025-11-12",
+    "status": "A",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 252,
+  "fields": {
+    "staff": 2,
+    "date": "2025-11-13",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 253,
+  "fields": {
+    "staff": 2,
+    "date": "2025-11-14",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 254,
+  "fields": {
+    "staff": 2,
+    "date": "2025-11-15",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 255,
+  "fields": {
+    "staff": 2,
+    "date": "2025-11-16",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 256,
+  "fields": {
+    "staff": 2,
+    "date": "2025-11-17",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 257,
+  "fields": {
+    "staff": 2,
+    "date": "2025-11-18",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 258,
+  "fields": {
+    "staff": 2,
+    "date": "2025-11-19",
+    "status": "H",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 259,
+  "fields": {
+    "staff": 2,
+    "date": "2025-11-20",
+    "status": "A",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 260,
+  "fields": {
+    "staff": 2,
+    "date": "2025-11-21",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 261,
+  "fields": {
+    "staff": 2,
+    "date": "2025-11-22",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 262,
+  "fields": {
+    "staff": 2,
+    "date": "2025-11-23",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 263,
+  "fields": {
+    "staff": 2,
+    "date": "2025-11-24",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 264,
+  "fields": {
+    "staff": 2,
+    "date": "2025-11-25",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 265,
+  "fields": {
+    "staff": 2,
+    "date": "2025-11-26",
+    "status": "A",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 266,
+  "fields": {
+    "staff": 2,
+    "date": "2025-11-27",
+    "status": "A",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 267,
+  "fields": {
+    "staff": 2,
+    "date": "2025-11-28",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 268,
+  "fields": {
+    "staff": 2,
+    "date": "2025-11-29",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 269,
+  "fields": {
+    "staff": 2,
+    "date": "2025-11-30",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 270,
+  "fields": {
+    "staff": 2,
+    "date": "2025-12-26",
+    "status": "H",
+    "in_time": "08:30:00",
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 271,
+  "fields": {
+    "staff": 2,
+    "date": "2025-12-29",
+    "status": "H",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 272,
+  "fields": {
+    "staff": 2,
+    "date": "2026-01-01",
+    "status": "H",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 273,
+  "fields": {
+    "staff": 4,
+    "date": "2026-01-01",
+    "status": "A",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 274,
+  "fields": {
+    "staff": 5,
+    "date": "2026-01-01",
+    "status": "A",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 275,
+  "fields": {
+    "staff": 6,
+    "date": "2026-01-01",
+    "status": "A",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 276,
+  "fields": {
+    "staff": 2,
+    "date": "2025-12-30",
+    "status": "H",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.attendance",
+  "pk": 277,
+  "fields": {
+    "staff": 7,
+    "date": "2025-12-30",
+    "status": "P",
+    "in_time": null,
+    "out_time": null,
+    "remark": ""
+  }
+},
+{
+  "model": "store.staffadvance",
+  "pk": 1,
+  "fields": {
+    "staff": 2,
+    "amount": "8500.00",
+    "date": "2025-12-18",
+    "remark": "taken for medical bill"
+  }
+},
+{
+  "model": "store.staffadvance",
+  "pk": 3,
+  "fields": {
+    "staff": 4,
+    "amount": "500.00",
+    "date": "2025-12-24",
+    "remark": ""
+  }
+},
+{
+  "model": "store.staffadvance",
+  "pk": 4,
+  "fields": {
+    "staff": 2,
+    "amount": "500.00",
+    "date": "2025-12-29",
+    "remark": ""
+  }
+},
+{
+  "model": "store.staffadvance",
+  "pk": 5,
+  "fields": {
+    "staff": 5,
+    "amount": "900.00",
+    "date": "2025-12-29",
+    "remark": ""
+  }
+},
+{
+  "model": "store.staffadvance",
+  "pk": 6,
+  "fields": {
+    "staff": 4,
+    "amount": "100.00",
+    "date": "2025-12-29",
+    "remark": "medical"
+  }
+},
+{
+  "model": "store.staffadvance",
+  "pk": 7,
+  "fields": {
+    "staff": 4,
+    "amount": "100.00",
+    "date": "2025-12-29",
+    "remark": "nanded"
+  }
+},
+{
+  "model": "store.staffadvance",
+  "pk": 8,
+  "fields": {
+    "staff": 5,
+    "amount": "200.00",
+    "date": "2025-12-31",
+    "remark": "R."
+  }
+},
+{
+  "model": "store.salarypayment",
+  "pk": 1,
+  "fields": {
+    "staff": 2,
+    "month": "2025-12-18",
+    "gross_salary": "10000.00",
+    "advance_deducted": "3000.00",
+    "net_paid": "7000.00",
+    "paid_on": "2025-12-18"
+  }
+},
+{
+  "model": "store.staffpayment",
+  "pk": 7,
+  "fields": {
+    "staff": 4,
+    "year": 2026,
+    "month": 8,
+    "gross_salary": "10000.00",
+    "advances": "0.00",
+    "net_pay": "7600.00",
+    "paid_amount": "6700.00",
+    "payment_mode": "Cash",
+    "remark": "",
+    "paid_on": "2025-12-24T11:34:15.809Z"
+  }
+},
+{
+  "model": "store.staffpayment",
+  "pk": 8,
+  "fields": {
+    "staff": 4,
+    "year": 2025,
+    "month": 12,
+    "gross_salary": "500.00",
+    "advances": "500.00",
+    "net_pay": "0.00",
+    "paid_amount": "0.00",
+    "payment_mode": "Cash",
+    "remark": "Auto payment from expectation page",
+    "paid_on": "2025-12-24T11:34:24.286Z"
+  }
+},
+{
+  "model": "store.staffpayment",
+  "pk": 9,
+  "fields": {
+    "staff": 6,
+    "year": 2025,
+    "month": 12,
+    "gross_salary": "0.00",
+    "advances": "0.00",
+    "net_pay": "0.00",
+    "paid_amount": "0.00",
+    "payment_mode": "Cash",
+    "remark": "Auto payment from expectation page",
+    "paid_on": "2025-12-24T18:48:51.856Z"
+  }
+},
+{
+  "model": "store.staffpayment",
+  "pk": 11,
+  "fields": {
+    "staff": 6,
+    "year": 2025,
+    "month": 11,
+    "gross_salary": "9000.00",
+    "advances": "0.00",
+    "net_pay": "0.00",
+    "paid_amount": "0.00",
+    "payment_mode": "Cash",
+    "remark": "Auto salary payment",
+    "paid_on": "2025-12-25T11:08:00.435Z"
+  }
+},
+{
+  "model": "store.staffpayment",
+  "pk": 12,
+  "fields": {
+    "staff": 5,
+    "year": 2025,
+    "month": 12,
+    "gross_salary": "13433.23",
+    "advances": "0.00",
+    "net_pay": "12349.90",
+    "paid_amount": "12349.90",
+    "payment_mode": "Cash",
+    "remark": "Auto salary payment",
+    "paid_on": "2025-12-25T11:22:03.349Z"
+  }
+},
+{
+  "model": "store.staffpayment",
+  "pk": 13,
+  "fields": {
+    "staff": 2,
+    "year": 2025,
+    "month": 11,
+    "gross_salary": "9999.90",
+    "advances": "0.00",
+    "net_pay": "6499.94",
+    "paid_amount": "6499.94",
+    "payment_mode": "Cash",
+    "remark": "Auto salary payment",
+    "paid_on": "2025-12-26T13:00:36.915Z"
+  }
+},
+{
+  "model": "store.staffpayment",
+  "pk": 14,
+  "fields": {
+    "staff": 2,
+    "year": 2025,
+    "month": 12,
+    "gross_salary": "10333.23",
+    "advances": "9000.00",
+    "net_pay": "-8666.67",
+    "paid_amount": "-8666.67",
+    "payment_mode": "Cash",
+    "remark": "Auto salary payment",
+    "paid_on": "2025-12-30T14:49:55.075Z"
+  }
+},
+{
+  "model": "store.staffpayment",
+  "pk": 15,
+  "fields": {
+    "staff": 4,
+    "year": 2025,
+    "month": 11,
+    "gross_salary": "9000.00",
+    "advances": "0.00",
+    "net_pay": "7050.00",
+    "paid_amount": "7050.00",
+    "payment_mode": "Cash",
+    "remark": "Auto salary payment",
+    "paid_on": "2025-12-31T14:15:15.186Z"
+  }
+},
+{
+  "model": "store.pendingpayment",
+  "pk": 1,
+  "fields": {
+    "bill": 36,
+    "amount": "1000.00",
+    "payment_method": "CASH",
+    "paid_on": "2025-12-30T14:25:51.450Z",
+    "recorded_by": 1
+  }
+},
+{
+  "model": "store.pendingpayment",
+  "pk": 2,
+  "fields": {
+    "bill": 20,
+    "amount": "153.00",
+    "payment_method": "CASH",
+    "paid_on": "2025-12-30T14:36:48.831Z",
+    "recorded_by": 1
+  }
+},
+{
+  "model": "store.pendingpayment",
+  "pk": 3,
+  "fields": {
+    "bill": 37,
+    "amount": "625.00",
+    "payment_method": "CASH",
+    "paid_on": "2025-12-30T17:42:15.375Z",
+    "recorded_by": 1
+  }
+},
+{
+  "model": "store.pendingpayment",
+  "pk": 4,
+  "fields": {
+    "bill": 37,
+    "amount": "1.00",
+    "payment_method": "CASH",
+    "paid_on": "2025-12-31T14:07:59.237Z",
+    "recorded_by": 1
+  }
+},
+{
+  "model": "store.pendingpayment",
+  "pk": 5,
+  "fields": {
+    "bill": 37,
+    "amount": "1231.00",
+    "payment_method": "CASH",
+    "paid_on": "2025-12-31T14:08:30.198Z",
+    "recorded_by": 1
+  }
+},
+{
+  "model": "store.pendingpayment",
+  "pk": 6,
+  "fields": {
+    "bill": 37,
+    "amount": "768.00",
+    "payment_method": "CASH",
+    "paid_on": "2026-01-01T10:14:35.816Z",
+    "recorded_by": 1
+  }
+}
+]
