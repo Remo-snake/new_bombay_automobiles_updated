@@ -1128,13 +1128,14 @@ def salary_expectation(request):
             )
 
             payable_days = Decimal('0')
-            absent_days = 0
-
+            absent_days = Decimal('0')
+            
             for a in attendance_qs:
                 if a.status == 'P':
                     payable_days += Decimal('1')
                 elif a.status == 'H':
                     payable_days += Decimal('0.5')
+                    absent_days += Decimal('0.5')
                 elif a.status in ['A', 'L']:
                     absent_days += 1
 

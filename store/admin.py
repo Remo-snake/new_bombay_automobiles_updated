@@ -71,7 +71,7 @@ class BillItemInline(admin.TabularInline):
 @admin.register(Billing)
 class BillingAdmin(admin.ModelAdmin):
     list_display = ('id', 'customer', 'total_amount', 'date')
-    list_filter = ('date',)
+    list_filter = ('date','payment_status')
     search_fields = ('customer__name',)
     ordering = ('-date',)
     inlines = [BillItemInline]
@@ -114,6 +114,7 @@ class StaffAdvanceAdmin(admin.ModelAdmin):
 class AttendanceAdmin(admin.ModelAdmin):
     list_display = ('staff', 'date', 'status')
     search_fields = ('staff__name',)
+    list_filter = ('staff','date', 'status')
 @admin.register(StaffSalary)
 class StaffSalaryAdmin(admin.ModelAdmin):
     list_display = ('id','staff')

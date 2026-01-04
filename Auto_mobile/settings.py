@@ -1,4 +1,6 @@
 # settings.py
+import sys
+sys.stdout.reconfigure(encoding='utf-8')
 
 import pymysql
 pymysql.install_as_MySQLdb()
@@ -20,6 +22,11 @@ load_dotenv(BASE_DIR / ".env")
 
 DJANGO_ENV = os.getenv("DJANGO_ENV", "development")
 DEBUG = os.getenv("DEBUG", "False") == "True"
+
+
+import logging
+logger = logging.getLogger(__name__)
+logger.info("Loaded settings for %s environment. DEBUG=%s", DJANGO_ENV, DEBUG)
 
 # ======================
 # SECURITY
@@ -160,3 +167,6 @@ LOGIN_REDIRECT_URL = "dashboard"
 LOGOUT_REDIRECT_URL = "dashboard"
 
 X_FRAME_OPTIONS = "SAMEORIGIN"
+
+
+print(f"⚙️⚙️⚙️  {DJANGO_ENV} ⚙️⚙️⚙️. DEBUG={DEBUG}")
