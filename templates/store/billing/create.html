@@ -3,141 +3,184 @@
 {% block title %}Create Bill{% endblock %}
 
 {% block content %}
-<div class="container-fluid p-3">
+<style>
+    /* --- 1. Label & Text Visibility Fixes --- */
+    label.form-label {
+        color: #000 !important; /* Force Black */
+        font-weight: 700 !important;
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+    }
+    
+    .form-control, .form-select {
+        color: #000 !important; /* Force Input Text Black */
+        border: 1px solid #ced4da;
+    }
 
-  
+    /* --- 2. Table Header Styling --- */
+    .table-header-custom {
+        background-color: #4e73df; /* Primary Blue */
+        white-space: nowrap; /* Prevent header text from wrapping */
+    }
+    .table-header-custom th {
+        color: #ffffff !important;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        padding: 12px;
+        vertical-align: middle;
+    }
 
-  <!-- Header -->
-  <div class="d-flex justify-content-between align-items-center mb-3">
-    <h4 class="mb-0">Create Bill</h4>
-    <a href="{% url 'billing_list' %}" class="btn btn-outline-secondary btn-sm">
-      Billing History
+    /* --- 3. COLUMN WIDTH CONTROLS (The Magic Part) --- */
+    /* We set MIN-WIDTH so columns never get too small to type in */
+    
+    .col-product {
+        min-width: 250px; /* Product name needs space */
+        width: 40%;
+    }
+    .col-price {
+        min-width: 120px; /* Price needs enough space for currency */
+        width: 15%;
+    }
+    .col-qty {
+        min-width: 150px; /* Qty needs space for spinner */
+        width: 15%;
+    }
+    .col-total {
+        min-width: 120px;
+        width: 15%;
+    }
+    .col-action {
+        min-width: 60px;
+        width: 5%;
+    }
+
+    /* --- 4. Responsive Scroll Container --- */
+    .table-responsive-custom {
+        overflow-x: auto; /* Enable Horizontal Scroll */
+        -webkit-overflow-scrolling: touch; /* Smooth scroll on mobile */
+        border: 1px solid #e3e6f0;
+        border-radius: 8px;
+    }
+    
+    /* Optional: Custom Scrollbar styling for webkit */
+    .table-responsive-custom::-webkit-scrollbar {
+        height: 8px;
+    }
+    .table-responsive-custom::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+        border-radius: 4px;
+    }
+    .table-responsive-custom::-webkit-scrollbar-thumb {
+        background: #c1c1c1; 
+        border-radius: 4px;
+    }
+    .table-responsive-custom::-webkit-scrollbar-thumb:hover {
+        background: #a8a8a8; 
+    }
+</style>
+
+<div class="container-fluid p-3 p-md-4">
+
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h3 class="text-primary fw-bold">Create Bill</h3>
+    <a href="{% url 'billing_list' %}" class="btn btn-outline-primary shadow-sm bg-white">
+      <i class="fas fa-history me-1"></i> Billing History
     </a>
   </div>
 
-  <form method="post" id="billingForm" class="bg-white p-3 rounded shadow-sm">
+  <form method="post" id="billingForm" class="card border-0 shadow-lg rounded-3">
     {% csrf_token %}
 
-    <!-- Payment Type -->
-    <div class="mb-3">
-      <label class="form-label fw-semibold">Payment Type</label>
-      <select name="payment_type"
-              class="form-select"
-              onchange="toggleCustomer()"
-              required>
-        <option value="PAID">Cash</option>
-        <option value="PARTIAL">Partial Payment</option>
-        <option value="CREDIT">Credit</option>
-      </select>
+    <div class="card-body p-3 p-md-4">
+        
+        <div class="row g-3 mb-4">
+            <div class="col-12 col-md-3">
+                <label class="form-label">Payment Type</label>
+                <select name="payment_type" class="form-select bg-light" onchange="toggleCustomer()" required>
+                    <option value="PAID">Cash</option>
+                    <option value="PARTIAL">Partial Payment</option>
+                    <option value="CREDIT">Credit</option>
+                </select>
+            </div>
+            <div class="col-12 col-md-5" id="customerNameBox">
+                <label class="form-label">Customer Name</label>
+                <input type="text" name="customer_name" id="customerNameInput" class="form-control" placeholder="Enter name" value="Walk-in Customer" required>
+            </div>
+            <div class="col-12 col-md-5 d-none" id="customerBox">
+                <label class="form-label">Select Customer</label>
+                <select name="customer" class="form-select">
+                    <option value="">-- Select Customer --</option>
+                    {% for c in customers %}
+                    <option value="{{ c.id }}">{{ c.name }} ({{ c.phone }})</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-12 col-md-4">
+                <label class="form-label">Attended Staff</label>
+                <select name="attended_staff" class="form-select bg-light">
+                    <option value="">-- Select Staff --</option>
+                    {% for s in staff_list %}
+                    <option value="{{ s.id }}">{{ s.user.username }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <div class="table-responsive-custom mb-2"> 
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="table-header-custom text-center">
+                        <tr>
+                            <th class="col-product text-start ps-3">Product Details</th>
+                            <th class="col-price">Price (₹)</th>
+                            <th class="col-qty">Qty</th>
+                            <th class="col-total text-end pe-3">Total</th>
+                            <th class="col-action"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="rows">
+                        </tbody>
+                </table>
+            </div>
+            
+            <button type="button" class="btn btn-primary w-100 fw-bold py-2 shadow-sm" onclick="addRow()">
+                <i class="fas fa-plus-circle me-1"></i> Add New Product Line
+            </button>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6"></div>
+            <div class="col-md-6">
+                <div class="bg-light p-3 rounded border">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <label class="mb-0 fw-bold">Labor Amount (₹)</label>
+                        <input type="number" name="labor_amount" class="form-control form-control-sm w-50 text-end" value="0" min="0" oninput="calcTotal()">
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <label class="mb-0 fw-bold">Discount (₹)</label>
+                        <input type="number" name="discount_amount" class="form-control form-control-sm w-50 text-end text-danger" value="0" min="0" oninput="calcTotal()">
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2 d-none" id="paidBox">
+                        <label class="mb-0 fw-bold text-primary">Paid Amount (₹)</label>
+                        <input type="number" name="paid_amount" class="form-control form-control-sm w-50 text-end border-primary" value="0" min="0">
+                    </div>
+                    <div class="border-top my-2"></div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="mb-0 fw-bold text-dark">Total:</h4>
+                        <h3 class="mb-0 fw-bold text-success">₹ <span id="grandTotal">0.00</span></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    <!-- Customer Name -->
-
-    <div class="mb-3" id="customerNameBox">
-      <label class="form-label fw-semibold">Customer Name</label>
-      <input type="text"
-            name="customer_name"
-            id="customerNameInput"
-            class="form-control"
-            placeholder="Enter customer name"
-            value="Walk-in Customer"
-            required>
-    </div>
-
-
-    <!-- Customer Dropdown -->
-    <div class="mb-3 d-none" id="customerBox">
-      <label class="form-label fw-semibold">Select Existing Customer</label>
-      <select name="customer" class="form-select">
-        <option value="">-- Select Customer --</option>
-        {% for c in customers %}
-          <option value="{{ c.id }}">{{ c.name }} ({{ c.phone }})</option>
-        {% endfor %}
-      </select>
-    </div>
-
-    <!-- Paid Amount -->
-    <div class="mb-3 d-none" id="paidBox">
-      <label class="form-label fw-semibold">Paid Amount</label>
-      <input type="number"
-             name="paid_amount"
-             class="form-control"
-             placeholder="Enter paid amount"
-             value="0"
-             min="0">
-    </div>
-
-    <!-- Attended Staff -->
-    <div class="mb-3">
-      <label class="form-label fw-semibold">Attended Staff</label>
-      <select name="attended_staff" class="form-select">
-        <option value="">-- Select Staff --</option>
-        {% for s in staff_list %}
-          <option value="{{ s.id }}">
-            {{ s.user.username }} ({{ s.get_role_display }})
-          </option>
-        {% endfor %}
-      </select>
-    </div>
-
-    <!-- Labor Amount -->
-    <div class="mb-3">
-      <label class="form-label fw-semibold">Labor Amount (₹)</label>
-      <input type="number"
-             name="labor_amount"
-             class="form-control"
-             placeholder="Enter labor charges"
-             value="0"
-             min="0"
-             oninput="calcTotal()">
-    </div>
-
-    <!-- Discount -->
-    <div class="mb-3">
-      <label class="form-label fw-semibold">Discount Amount (₹)</label>
-      <input type="number"
-             name="discount_amount"
-             class="form-control"
-             placeholder="Enter discount (if any)"
-             value="0"
-             min="0"
-             oninput="calcTotal()">
-    </div>
-
-    <!-- Products -->
-    <div class="table-responsive mb-3">
-      <table class="table table-bordered align-middle">
-        <thead class="table-light">
-          <tr>
-            <th>Product</th>
-            <th width="120">Price</th>
-            <th width="100">Qty</th>
-            <th width="120">Total</th>
-            <th width="40"></th>
-          </tr>
-        </thead>
-        <tbody id="rows"></tbody>
-      </table>
-
-      <button type="button"
-              class="btn btn-outline-secondary btn-sm"
-              onclick="addRow()">
-        + Add Product
-      </button>
-    </div>
-
-    <!-- Grand Total -->
-    <div class="border-top pt-3">
-      <div class="d-flex justify-content-between align-items-center">
-        <h5 class="mb-0">
-          Total: ₹ <span id="grandTotal" class="fw-bold">0</span>
-        </h5>
-        <button class="btn btn-success px-4">
-          Save & Print
+    <div class="card-footer bg-white p-3 text-end">
+        <button class="btn btn-success btn-lg px-5 fw-bold shadow">
+             Save & Print Bill
         </button>
-      </div>
     </div>
-
   </form>
 </div>
 
@@ -146,65 +189,53 @@ const products = {{ products_json|safe }};
 
 function toggleCustomer() {
   const type = document.querySelector('[name="payment_type"]').value;
-
   const customerBox = document.getElementById('customerBox');
   const paidBox = document.getElementById('paidBox');
   const customerNameBox = document.getElementById('customerNameBox');
   const customerNameInput = document.getElementById('customerNameInput');
 
   if (type === 'PAID') {
-    // Cash payment
     customerBox.classList.add('d-none');
     paidBox.classList.add('d-none');
-
     customerNameBox.classList.remove('d-none');
     customerNameInput.required = true;
-
   } else {
-    // PARTIAL or CREDIT
     customerBox.classList.remove('d-none');
     customerNameBox.classList.add('d-none');
-
     customerNameInput.value = "Walk-in Customer";
     customerNameInput.required = false;
-
     paidBox.classList.toggle('d-none', type !== 'PARTIAL');
   }
 }
 
-
 function addRow() {
   const row = document.createElement('tr');
-
   let options = '<option value="">Select product</option>';
   products.forEach(p => {
     options += `<option value="${p.id}" data-price="${p.price}">${p.name}</option>`;
   });
 
   row.innerHTML = `
-    <td>
-      <select name="product[]" class="form-select product" onchange="setPrice(this)">
+    <td class="ps-3">
+      <select name="product[]" class="form-select" onchange="setPrice(this)">
         ${options}
       </select>
     </td>
     <td>
-      <input name="price[]" class="form-control price" readonly>
+      <input name="price[]" class="form-control price text-center bg-white" readonly>
     </td>
     <td>
-      <input name="quantity[]" type="number"
-             class="form-control qty"
-             value="1" min="1" oninput="calcTotal()">
+      <input name="quantity[]" type="number" class="form-control qty text-center fw-bold" value="1" min="1" oninput="calcTotal()">
     </td>
-    <td class="rowTotal text-end">0</td>
+    <td class="text-end pe-3 fw-bold">
+        <span class="rowTotal">0.00</span>
+    </td>
     <td class="text-center">
-      <button type="button"
-              class="btn btn-danger btn-sm"
-              onclick="this.closest('tr').remove(); calcTotal()">
-        ×
+      <button type="button" class="btn btn-danger btn-sm rounded-circle shadow-sm" onclick="this.closest('tr').remove(); calcTotal()">
+        <i class="fas fa-trash-alt"></i>
       </button>
     </td>
   `;
-
   document.getElementById('rows').appendChild(row);
 }
 
@@ -217,19 +248,17 @@ function setPrice(select) {
 
 function calcTotal() {
   let total = 0;
-
   document.querySelectorAll('#rows tr').forEach(row => {
     const price = parseFloat(row.querySelector('.price').value || 0);
     const qty = parseInt(row.querySelector('.qty').value || 0);
-    total += price * qty;
+    const rowSum = price * qty;
+    row.querySelector('.rowTotal').innerText = rowSum.toFixed(2);
+    total += rowSum;
   });
-
   const labor = parseFloat(document.querySelector('[name="labor_amount"]').value || 0);
   const discount = parseFloat(document.querySelector('[name="discount_amount"]').value || 0);
-
   total = total + labor - discount;
   if (total < 0) total = 0;
-
   document.getElementById('grandTotal').innerText = total.toFixed(2);
 }
 

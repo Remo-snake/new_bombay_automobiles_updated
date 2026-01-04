@@ -437,12 +437,12 @@ def billing_create(request):
                     qty = int(qty)
                     price = float(price)
 
-                    if product.stock < qty:
-                        messages.error(
-                            request,
-                            f"Insufficient stock for {product.name}"
-                        )
-                        raise Exception("Stock error")
+                    # if product.stock < qty:
+                    #     messages.error(
+                    #         request,
+                    #         f"Insufficient stock for {product.name}"
+                    #     )
+                    #     raise Exception("Stock error")
 
                     BillItem.objects.create(
                         bill=bill,
@@ -1428,25 +1428,46 @@ from datetime import date
 
 from .models import Billing, Purchase, Profile
 from django.http import Http404
+from datetime import datetime, date, time
+from django.utils import timezone
+from django.http import Http404
+from django.db.models import Sum
+
 @login_required
 def audit_report(request):
     if request.user.profile.role != 'AD':
         raise Http404("Page not found")
 
-    start_date = request.GET.get('start')
-    end_date = request.GET.get('end')
+    start = request.GET.get('start')
+    end = request.GET.get('end')
 
-    # Default = current month
-    if not start_date or not end_date:
-        today = date.today()
+    # ------------------------
+    # PARSE DATES SAFELY
+    # ------------------------
+    if start and end:
+        start_date = datetime.strptime(start, "%Y-%m-%d").date()
+        end_date = datetime.strptime(end, "%Y-%m-%d").date()
+    else:
+        today = timezone.localdate()
         start_date = today.replace(day=1)
         end_date = today
+
+    # ------------------------
+    # MAKE DATETIME RANGE (FULL DAY)
+    # ------------------------
+    start_dt = timezone.make_aware(
+        datetime.combine(start_date, time.min)
+    )
+
+    end_dt = timezone.make_aware(
+        datetime.combine(end_date, time.max)
+    )
 
     # ------------------------
     # SALES (INCOME)
     # ------------------------
     billings = Billing.objects.filter(
-        date__date__range=[start_date, end_date]
+        date__range=(start_dt, end_dt)
     )
 
     total_sales = billings.aggregate(
@@ -1457,7 +1478,7 @@ def audit_report(request):
     # PURCHASES (EXPENSE)
     # ------------------------
     purchases = Purchase.objects.filter(
-        invoice_date__range=[start_date, end_date]
+        invoice_date__range=(start_date, end_date)
     )
 
     total_purchases = purchases.aggregate(
@@ -1471,7 +1492,7 @@ def audit_report(request):
         Billing.objects
         .filter(
             attended_staff__isnull=False,
-            date__date__range=[start_date, end_date]
+            date__range=(start_dt, end_dt)
         )
         .values(
             'attended_staff__user__username',
@@ -1491,17 +1512,16 @@ def audit_report(request):
     context = {
         'start_date': start_date,
         'end_date': end_date,
-
         'total_sales': total_sales,
         'total_purchases': total_purchases,
         'net_profit': net_profit,
-
         'billings': billings,
         'purchases': purchases,
         'staff_sales': staff_sales,
     }
 
     return render(request, 'store/audit_report.html', context)
+
 
 
 from openpyxl import Workbook
