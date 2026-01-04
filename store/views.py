@@ -1433,6 +1433,99 @@ from django.utils import timezone
 from django.http import Http404
 from django.db.models import Sum
 
+# @login_required
+# def audit_report(request):
+#     if request.user.profile.role != 'AD':
+#         raise Http404("Page not found")
+
+#     start = request.GET.get('start')
+#     end = request.GET.get('end')
+
+#     # ------------------------
+#     # PARSE DATES SAFELY
+#     # ------------------------
+#     if start and end:
+#         start_date = datetime.strptime(start, "%Y-%m-%d").date()
+#         end_date = datetime.strptime(end, "%Y-%m-%d").date()
+#     else:
+#         today = timezone.localdate()
+#         start_date = today.replace(day=1)
+#         end_date = today
+
+#     # ------------------------
+#     # MAKE DATETIME RANGE (FULL DAY)
+#     # ------------------------
+#     start_dt = timezone.make_aware(
+#         datetime.combine(start_date, time.min)
+#     )
+
+#     end_dt = timezone.make_aware(
+#         datetime.combine(end_date, time.max)
+#     )
+
+#     # ------------------------
+#     # SALES (INCOME)
+#     # ------------------------
+#     billings = Billing.objects.filter(
+#         date__range=(start_dt, end_dt)
+#     )
+
+#     total_sales = billings.aggregate(
+#         total=Sum('total_amount')
+#     )['total'] or 0
+
+#     # ------------------------
+#     # PURCHASES (EXPENSE)
+#     # ------------------------
+#     purchases = Purchase.objects.filter(
+#         invoice_date__range=(start_date, end_date)
+#     )
+
+#     total_purchases = purchases.aggregate(
+#         total=Sum('total_amount')
+#     )['total'] or 0
+
+#     # ------------------------
+#     # STAFF CONTRIBUTION
+#     # ------------------------
+#     staff_sales = (
+#         Billing.objects
+#         .filter(
+#             attended_staff__isnull=False,
+#             date__range=(start_dt, end_dt)
+#         )
+#         .values(
+#             'attended_staff__user__username',
+#             'attended_staff__role'
+#         )
+#         .annotate(
+#             total=Sum('total_amount')
+#         )
+#         .order_by('-total')
+#     )
+
+#     # ------------------------
+#     # NET PROFIT
+#     # ------------------------
+#     net_profit = total_sales - total_purchases
+
+#     context = {
+#         'start_date': start_date,
+#         'end_date': end_date,
+#         'total_sales': total_sales,
+#         'total_purchases': total_purchases,
+#         'net_profit': net_profit,
+#         'billings': billings,
+#         'purchases': purchases,
+#         'staff_sales': staff_sales,
+#     }
+
+#     return render(request, 'store/audit_report.html', context)
+
+
+from django.db.models import Sum
+from .models import Expense  # Make sure to import Expense
+
 @login_required
 def audit_report(request):
     if request.user.profile.role != 'AD':
@@ -1462,67 +1555,71 @@ def audit_report(request):
     end_dt = timezone.make_aware(
         datetime.combine(end_date, time.max)
     )
-
     # ------------------------
     # SALES (INCOME)
     # ------------------------
     billings = Billing.objects.filter(
         date__range=(start_dt, end_dt)
     )
-
-    total_sales = billings.aggregate(
-        total=Sum('total_amount')
-    )['total'] or 0
+    total_sales = billings.aggregate(total=Sum('total_amount'))['total'] or 0
 
     # ------------------------
-    # PURCHASES (EXPENSE)
+    # PURCHASES (INVENTORY COST)
     # ------------------------
     purchases = Purchase.objects.filter(
         invoice_date__range=(start_date, end_date)
     )
-
-    total_purchases = purchases.aggregate(
-        total=Sum('total_amount')
-    )['total'] or 0
+    total_purchases = purchases.aggregate(total=Sum('total_amount'))['total'] or 0
 
     # ------------------------
-    # STAFF CONTRIBUTION
+    # [NEW] OPERATIONAL EXPENSES
     # ------------------------
-    staff_sales = (
-        Billing.objects
-        .filter(
-            attended_staff__isnull=False,
-            date__range=(start_dt, end_dt)
-        )
-        .values(
-            'attended_staff__user__username',
-            'attended_staff__role'
-        )
-        .annotate(
-            total=Sum('total_amount')
-        )
+    expenses = Expense.objects.filter(
+        date__range=(start_date, end_date)
+    )
+    
+    # 1. Total Expenses amount
+    total_expenses = expenses.aggregate(total=Sum('amount'))['total'] or 0
+    
+    # 2. Expenses grouped by Category (for the pie chart or summary table)
+    expenses_by_category = (
+        expenses.values('category')
+        .annotate(total=Sum('amount'))
         .order_by('-total')
     )
 
     # ------------------------
-    # NET PROFIT
+    # STAFF CONTRIBUTION (Keep existing)
     # ------------------------
-    net_profit = total_sales - total_purchases
+    staff_sales = (
+        Billing.objects
+        .filter(attended_staff__isnull=False, date__range=(start_dt, end_dt))
+        .values('attended_staff__user__username', 'attended_staff__role')
+        .annotate(total=Sum('total_amount'))
+        .order_by('-total')
+    )
+
+    # ------------------------
+    # [UPDATED] NET PROFIT
+    # ------------------------
+    # Profit = Revenue - (Inventory Purchases + Operational Expenses)
+    net_profit = total_sales - (total_purchases + total_expenses)
 
     context = {
         'start_date': start_date,
         'end_date': end_date,
         'total_sales': total_sales,
         'total_purchases': total_purchases,
+        'total_expenses': total_expenses,      # Add this
+        'expenses_by_category': expenses_by_category, # Add this
         'net_profit': net_profit,
         'billings': billings,
         'purchases': purchases,
+        'expenses': expenses,                  # Add this
         'staff_sales': staff_sales,
     }
 
     return render(request, 'store/audit_report.html', context)
-
-
 
 from openpyxl import Workbook
 from django.http import HttpResponse
@@ -1999,5 +2096,59 @@ def dealer_list(request):
     return render(request, "store/dealer/list.html", {
         "dealers": dealers
     })
+
+
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+from .models import Expense
+from .forms import ExpenseForm
+
+@login_required
+def expense_list(request):
+    # Get all expenses, ordered by latest date first
+    expenses = Expense.objects.all().order_by('-date')
+    return render(request, 'store/expenses/expense_list.html', {'expenses': expenses})
+
+@login_required
+def expense_create(request):
+    if request.method == 'POST':
+        form = ExpenseForm(request.POST, request.FILES)
+        if form.is_valid():
+            expense = form.save(commit=False)
+            expense.recorded_by = request.user  # Auto-assign current user
+            expense.save()
+            messages.success(request, "Expense added successfully!")
+            return redirect('expense_list')
+    else:
+        form = ExpenseForm()
+    
+    context = {'form': form, 'title': 'Add New Expense', 'btn_text': 'Save Expense'}
+    return render(request, 'store/expenses/expense_form.html', context)
+
+@login_required
+def expense_update(request, pk):
+    expense = get_object_or_404(Expense, pk=pk)
+    if request.method == 'POST':
+        form = ExpenseForm(request.POST, request.FILES, instance=expense)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Expense updated successfully!")
+            return redirect('expense_list')
+    else:
+        form = ExpenseForm(instance=expense)
+    
+    context = {'form': form, 'title': 'Edit Expense', 'btn_text': 'Update Expense'}
+    return render(request, 'store/expenses/expense_form.html', context)
+
+@login_required
+def expense_delete(request, pk):
+    expense = get_object_or_404(Expense, pk=pk)
+    if request.method == 'POST':
+        expense.delete()
+        messages.success(request, "Expense deleted successfully!")
+        return redirect('expense_list')
+    
+    return render(request, 'store/expenses/expense_confirm_delete.html', {'expense': expense})
 
 

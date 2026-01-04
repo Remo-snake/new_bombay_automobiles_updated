@@ -379,3 +379,49 @@ class PendingPayment(models.Model):
 
     def __str__(self):
         return f"Bill #{self.bill.id} - ₹{self.amount}"
+
+
+class Expense(models.Model):
+    CATEGORY_CHOICES = [
+        ('Rent', 'Rent'),
+        ('Salary', 'Salary'),
+        ('Electricity', 'Electricity Bill'),
+        ('Transport', 'Transport / Fuel'),
+        ('Tea', 'Tea / Snacks'),
+        ('Maintenance', 'Repairs & Maintenance'),
+        ('Other', 'Other'),
+    ]
+
+    PAYMENT_MODES = (
+        ('CASH', 'Cash'),
+        ('UPI', 'UPI'),
+        ('CARD', 'Card'),
+        ('BANK', 'Bank Transfer'),
+    )
+    
+    date = models.DateField()
+    category = models.CharField(max_length=50, choices=CATEGORY_CHOICES)
+    amount = models.DecimalField(max_digits=10, decimal_places=2)
+    description = models.CharField(max_length=200, blank=True)
+    
+    # New additions for better tracking
+    payment_mode = models.CharField(
+        max_length=10, 
+        choices=PAYMENT_MODES, 
+        default='CASH'
+    )
+    
+    recorded_by = models.ForeignKey(
+        User, 
+        on_delete=models.SET_NULL, 
+        null=True, 
+        blank=True
+    )
+    
+    receipt_image = models.ImageField(upload_to='expenses/', blank=True, null=True)
+
+    class Meta:
+        ordering = ['-date']  # Shows latest expenses first
+
+    def __str__(self):
+        return f"{self.category} - ₹{self.amount} ({self.date})"

@@ -6,97 +6,179 @@
 {% block content %}
 <div class="container-fluid p-4">
 
-  <div class="d-flex justify-content-between align-items-center mb-3">
-    <h4>📊 Audit Report</h4>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h4 class="fw-bold"><i class="fas fa-chart-line"></i> Audit Report</h4>
 
-    <div>
-      <a href="{% url 'audit_export_pdf' %}?start={{ start_date }}&end={{ end_date }}"
-         class="btn btn-danger btn-sm">
-        Export PDF
-      </a>
-
-      <a href="{% url 'audit_export_excel' %}?start={{ start_date }}&end={{ end_date }}"
-         class="btn btn-success btn-sm">
-        Export Excel
-      </a>
-    </div>
-  </div>
-
-  <!-- FILTER -->
-  <form class="row g-2 mb-4">
-    <div class="col-md-3">
-  <input type="date" name="start" value="{{ start_date }}"
-         class="form-control" style="border: 1px solid #000;">
-</div>
-
-<div class="col-md-3">
-  <input type="date" name="end" value="{{ end_date }}"
-         class="form-control" style="border: 1px solid #000;">
-</div>
-
-    <div class="col-md-2">
-      <button class="btn btn-primary w-100">Filter</button>
-    </div>
-  </form>
-
-  <!-- SUMMARY -->
-  <div class="row mb-4">
-    <div class="col-md-4">
-      <div class="card text-center shadow">
-        <div class="card-body">
-          <h6>Total Revenue</h6>
-          <h4 class="text-success">₹ {{ total_sales|intcomma }}</h4>
+        <div class="btn-group">
+            <a href="{% url 'audit_export_pdf' %}?start={{ start_date|date:'Y-m-d' }}&end={{ end_date|date:'Y-m-d' }}" 
+               class="btn btn-danger btn-sm">
+                <i class="fas fa-file-pdf"></i> Export PDF
+            </a>
+            <a href="{% url 'audit_export_excel' %}?start={{ start_date|date:'Y-m-d' }}&end={{ end_date|date:'Y-m-d' }}" 
+               class="btn btn-success btn-sm">
+                <i class="fas fa-file-excel"></i> Export Excel
+            </a>
         </div>
-      </div>
     </div>
 
-    <div class="col-md-4">
-      <div class="card text-center shadow">
-        <div class="card-body">
-          <h6>Total Purchases</h6>
-          <h4 class="text-danger">₹ {{ total_purchases|intcomma }}</h4>
+    <div class="card shadow-sm mb-4 border-0">
+        <div class="card-body bg-light rounded">
+            <form class="row g-3 align-items-end">
+                <div class="col-md-3">
+                    <label class="form-label fw-bold text-muted small">Start Date</label>
+                    <input type="date" name="start" value="{{ start_date|date:'Y-m-d' }}" 
+                           class="form-control shadow-none border-secondary">
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label fw-bold text-muted small">End Date</label>
+                    <input type="date" name="end" value="{{ end_date|date:'Y-m-d' }}" 
+                           class="form-control shadow-none border-secondary">
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-primary w-100 fw-bold">
+                        <i class="fas fa-filter"></i> Filter
+                    </button>
+                </div>
+            </form>
         </div>
-      </div>
     </div>
 
-    <div class="col-md-4">
-      <div class="card text-center shadow">
-        <div class="card-body">
-          <h6>Net Profit</h6>
-          <h4 class="{% if net_profit >= 0 %}text-success{% else %}text-danger{% endif %}">
-            ₹ {{ net_profit|intcomma }}
-          </h4>
+    <div class="row g-3 mb-4">
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm border-start border-success border-4 h-100">
+                <div class="card-body">
+                    <h6 class="text-uppercase text-muted small fw-bold">Total Revenue</h6>
+                    <h3 class="text-success fw-bold">₹ {{ total_sales|intcomma }}</h3>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- STAFF CONTRIBUTION -->
-  <div class="card mb-4">
-    <div class="card-header fw-bold">👨‍🔧 Staff Contribution</div>
-    <table class="table table-striped mb-0">
-      <thead>
-        <tr>
-          <th>Staff</th>
-          <th>Role</th>
-          <th>Total Sales</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for s in staff_sales %}
-        <tr>
-          <td>{{ s.attended_staff__user__username }}</td>
-          <td>{{ s.attended_staff__role }}</td>
-          <td>₹ {{ s.total|intcomma }}</td>
-        </tr>
-        {% empty %}
-        <tr>
-          <td colspan="3" class="text-center">No data</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm border-start border-warning border-4 h-100">
+                <div class="card-body">
+                    <h6 class="text-uppercase text-muted small fw-bold">Inventory Purchases</h6>
+                    <h3 class="text-warning fw-bold">₹ {{ total_purchases|intcomma }}</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm border-start border-danger border-4 h-100">
+                <div class="card-body">
+                    <h6 class="text-uppercase text-muted small fw-bold">Operating Expenses</h6>
+                    <h3 class="text-danger fw-bold">₹ {{ total_expenses|intcomma }}</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm border-start border-primary border-4 h-100 bg-primary text-white">
+                <div class="card-body">
+                    <h6 class="text-uppercase text-white-50 small fw-bold">Net Profit</h6>
+                    <h3 class="fw-bold">₹ {{ net_profit|intcomma }}</h3>
+                    <small class="text-white-50">(Sales - Purchases - Expenses)</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 mb-4">
+        
+        <div class="col-md-7">
+            <div class="card shadow-sm h-100 border-0">
+                <div class="card-header bg-white fw-bold py-3">
+                    <i class="fas fa-user-friends text-primary me-2"></i> Staff Performance
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Staff Name</th>
+                                <th>Role</th>
+                                <th class="text-end">Sales Generated</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for s in staff_sales %}
+                            <tr>
+                                <td class="fw-bold">{{ s.attended_staff__user__username|title }}</td>
+                                <td><span class="badge bg-secondary">{{ s.attended_staff__role }}</span></td>
+                                <td class="text-end text-success fw-bold">₹ {{ s.total|intcomma }}</td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="3" class="text-center text-muted py-4">No staff sales recorded.</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-5">
+            <div class="card shadow-sm h-100 border-0">
+                <div class="card-header bg-white fw-bold py-3">
+                    <i class="fas fa-wallet text-danger me-2"></i> Expense Breakdown
+                </div>
+                <ul class="list-group list-group-flush">
+                    {% for item in expenses_by_category %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span>{{ item.category }}</span>
+                        <span class="badge rounded-pill bg-danger">₹ {{ item.total|intcomma }}</span>
+                    </li>
+                    {% empty %}
+                    <li class="list-group-item text-center text-muted py-4">No expenses recorded.</li>
+                    {% endfor %}
+                </ul>
+                <div class="card-footer bg-light d-flex justify-content-between fw-bold">
+                    <span>Total Operational Cost</span>
+                    <span class="text-danger">₹ {{ total_expenses|intcomma }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card shadow-sm border-0 mb-5">
+        <div class="card-header bg-white fw-bold py-3 d-flex justify-content-between align-items-center">
+            <span><i class="fas fa-list text-muted me-2"></i> Detailed Expense Log</span>
+            <span class="badge bg-light text-dark border">{{ expenses.count }} Records</span>
+        </div>
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-striped table-hover mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Date</th>
+                            <th>Category</th>
+                            <th>Description</th>
+                            <th>Recorded By</th>
+                            <th>Mode</th>
+                            <th class="text-end">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for expense in expenses %}
+                        <tr>
+                            <td>{{ expense.date|date:"d M Y" }}</td>
+                            <td>
+                                <span class="badge bg-info text-dark">{{ expense.category }}</span>
+                            </td>
+                            <td class="small text-muted">{{ expense.description|default:"-" }}</td>
+                            <td class="small">{{ expense.recorded_by.username|default:"Admin" }}</td>
+                            <td><small class="border px-2 py-1 rounded">{{ expense.payment_mode }}</small></td>
+                            <td class="text-end fw-bold text-danger">- {{ expense.amount|intcomma }}</td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="6" class="text-center py-4 text-muted">No expenses found for this date range.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 
 </div>
 {% endblock %}

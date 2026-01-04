@@ -23,6 +23,10 @@ from store.views import (
     dealer_delete,
     dealer_list,
     dealer_update,
+    expense_create,
+    expense_delete,
+    expense_list,
+    expense_update,
     maintenance,
     mark_bill_paid,
     pay_salary,
@@ -122,6 +126,12 @@ urlpatterns = [
     path("dealers/add/", dealer_create, name="dealer_create"),
     path("dealers/<int:pk>/edit/", dealer_update, name="dealer_update"),
     path("dealers/<int:pk>/delete/", dealer_delete, name="dealer_delete"),
+
+    # Expense Management
+    path('expenses/', expense_list, name='expense_list'),
+    path('expenses/add/', expense_create, name='expense_create'),
+    path('expenses/edit/<int:pk>/', expense_update, name='expense_update'),
+    path('expenses/delete/<int:pk>/', expense_delete, name='expense_delete'),
 
 
     ]

@@ -4,90 +4,88 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
 <style>
-/* ===== SIDEBAR ===== */
-.sidebar {
-    width: 250px;
-    background-color: #212529;
-    color: #fff;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    z-index: 1000;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-}
-
-/* ===== WRAPPER ===== */
-#wrapper {
-    margin-left: 250px;
-    transition: margin-left 0.3s ease;
-}
-
-/* ===== COLLAPSED ===== */
-.sidebar.toggled {
-    left: -250px;
-}
-
-#wrapper.toggled {
-    margin-left: 0;
-}
-
-/* ===== MOBILE ===== */
-@media (max-width: 768px) {
+    /* ===== SIDEBAR ===== */
     .sidebar {
+        width: 250px;
+        background-color: #212529;
+        color: #fff;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1000;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* ===== WRAPPER ===== */
+    #wrapper {
+        margin-left: 250px;
+        transition: margin-left 0.3s ease;
+    }
+
+    /* ===== COLLAPSED ===== */
+    .sidebar.toggled {
         left: -250px;
     }
 
-    .sidebar.toggled {
-        left: 0;
-    }
-
-    #wrapper {
+    #wrapper.toggled {
         margin-left: 0;
     }
-}
 
-/* ===== LINKS ===== */
-.nav-link {
-    color: #adb5bd;
-}
+    /* ===== MOBILE ===== */
+    @media (max-width: 768px) {
+        .sidebar {
+            left: -250px;
+        }
 
-.nav-link:hover,
-.nav-link.active {
-    background-color: #495057;
-    color: #fff;
-}
+        .sidebar.toggled {
+            left: 0;
+        }
 
-/* ===== DROPDOWN ===== */
-.dropdown-menu {
-    background-color: #495057;
-}
+        #wrapper {
+            margin-left: 0;
+        }
+    }
 
-.dropdown-item {
-    color: #adb5bd;
-}
+    /* ===== LINKS ===== */
+    .nav-link {
+        color: #adb5bd;
+    }
 
-.dropdown-item:hover {
-    background-color: #6c757d;
-    color: #fff;
-}
+    .nav-link:hover,
+    .nav-link.active {
+        background-color: #495057;
+        color: #fff;
+    }
+
+    /* ===== DROPDOWN ===== */
+    .dropdown-menu {
+        background-color: #495057;
+    }
+
+    .dropdown-item {
+        color: #adb5bd;
+    }
+
+    .dropdown-item:hover {
+        background-color: #6c757d;
+        color: #fff;
+    }
 </style>
 
 <!-- ===== SIDEBAR ===== -->
 <aside class="sidebar" id="show-side-navigation1">
 
     <!-- Close Button (Mobile) -->
-    <button class="btn btn-dark d-md-none position-absolute top-0 end-0 m-2"
-            data-close="show-side-navigation1">
+    <button class="btn btn-dark d-md-none position-absolute top-0 end-0 m-2" data-close="show-side-navigation1">
         <i class="fa fa-times"></i>
     </button>
 
     <!-- Header -->
     <div class="d-flex align-items-center px-3 py-4 border-bottom">
-        <img class="rounded-circle" width="45"
-             src="{% if request.user.profile.profile_picture %}
+        <img class="rounded-circle" width="45" src="{% if request.user.profile.profile_picture %}
                     {{ request.user.profile.profile_picture }}
                   {% else %}
                     {% static 'profiles/default.png' %}
@@ -106,28 +104,28 @@
 
             <li class="nav-item">
                 <a class="nav-link {% if request.resolver_match.url_name == 'dashboard' %}active{% endif %}"
-                   href="{% url 'dashboard' %}">
+                    href="{% url 'dashboard' %}">
                     <i class="fa fa-tachometer-alt me-2"></i> Dashboard
                 </a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link {% if 'customer' in request.resolver_match.url_name %}active{% endif %}"
-                   href="{% url 'customer_list' %}">
+                    href="{% url 'customer_list' %}">
                     <i class="fa fa-user me-2"></i> Customers
                 </a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link {% if 'category' in request.resolver_match.url_name %}active{% endif %}"
-                   href="{% url 'category_list' %}">
+                    href="{% url 'category_list' %}">
                     <i class="fa fa-tags me-2"></i> Categories
                 </a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link {% if 'product' in request.resolver_match.url_name %}active{% endif %}"
-                   href="{% url 'product_list' %}">
+                    href="{% url 'product_list' %}">
                     <i class="fa fa-box me-2"></i> Products
                 </a>
             </li>
@@ -145,18 +143,18 @@
             {% if request.user.profile.role == 'AD' %}
             <li class="nav-item">
                 <a class="nav-link {% if 'purchase' in request.resolver_match.url_name %}active{% endif %}"
-                   href="{% url 'purchase_list' %}">
+                    href="{% url 'purchase_list' %}">
                     <i class="fa fa-shopping-cart me-2"></i> Purchases
                 </a>
             </li>
             {% endif %}
-                      <!-- Dealers -->
+            <!-- Dealers -->
             {% if request.user.profile.role == 'AD' %}
             <li class="nav-item">
-            <a class="nav-link {% if 'dealer' in request.resolver_match.url_name %}bg-primary text-dark{% endif %}"
-                href="{% url 'dealer_list' %}">
-                <i class="fa fa-exclamation-circle me-2"></i> Dealers
-            </a>
+                <a class="nav-link {% if 'dealer' in request.resolver_match.url_name %}bg-primary text-dark{% endif %}"
+                    href="{% url 'dealer_list' %}">
+                    <i class="fa fa-exclamation-circle me-2"></i> Dealers
+                </a>
             </li>
             {% endif %}
 
@@ -165,28 +163,28 @@
             <!-- Attendance -->
 
             <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle {% if 'attendance_mark' in request.resolver_match.url_name %}bg-primary text-dark{% endif %}"
-                href="#" data-bs-toggle="dropdown">
-                <i class="fa fa-wallet me-2"></i> Attendance
-            </a>    
-            <ul class="dropdown-menu border-0">
-                <li><a class="dropdown-item" href="{% url 'attendance_mark' %}">Add Daily Attendance</a></li>
-                <!-- <li><a class="dropdown-item" href="{% url 'attendance_monthly_mark' %}">Add Monthly Attendance</a></li> -->
-            </ul>
+                <a class="nav-link dropdown-toggle {% if 'attendance_mark' in request.resolver_match.url_name %}bg-primary text-dark{% endif %}"
+                    href="#" data-bs-toggle="dropdown">
+                    <i class="fa fa-wallet me-2"></i> Attendance
+                </a>
+                <ul class="dropdown-menu border-0">
+                    <li><a class="dropdown-item" href="{% url 'attendance_mark' %}">Add Daily Attendance</a></li>
+                    <!-- <li><a class="dropdown-item" href="{% url 'attendance_monthly_mark' %}">Add Monthly Attendance</a></li> -->
+                </ul>
             </li>
 
             <!-- Staff Advance -->
 
             {% if request.user.profile.role == 'AD' %}
             <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle {% if 'staff' in request.resolver_match.url_name %}bg-primary text-dark{% endif %}"
-                href="#" data-bs-toggle="dropdown">
-                <i class="fa fa-wallet me-2"></i> Staff
-            </a>
-            <ul class="dropdown-menu border-0">
-                <li><a class="dropdown-item" href="{% url 'staff_details' %}">Staff Details</a></li>
-                <li><a class="dropdown-item" href="{% url 'staff_advance_create' %}">Staff Advance</a></li>
-            </ul>
+                <a class="nav-link dropdown-toggle {% if 'staff' in request.resolver_match.url_name %}bg-primary text-dark{% endif %}"
+                    href="#" data-bs-toggle="dropdown">
+                    <i class="fa fa-wallet me-2"></i> Staff
+                </a>
+                <ul class="dropdown-menu border-0">
+                    <li><a class="dropdown-item" href="{% url 'staff_details' %}">Staff Details</a></li>
+                    <li><a class="dropdown-item" href="{% url 'staff_advance_create' %}">Staff Advance</a></li>
+                </ul>
             </li>
             {% endif %}
 
@@ -195,34 +193,45 @@
             <!-- Salary -->
             {% if request.user.profile.role == 'AD' %}
             <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle {% if 'salary' in request.resolver_match.url_name %}bg-primary text-dark{% endif %}"
-                href="#" data-bs-toggle="dropdown">
-                <i class="fa fa-wallet me-2"></i> Salary
-            </a>
-            <ul class="dropdown-menu border-0">
-                <li><a class="dropdown-item" href="{% url 'salary_history' %}">Salary History</a></li>
-                <li><a class="dropdown-item" href="{% url 'salary_expectation' %}">Salary Calculation</a></li>
-            </ul>
+                <a class="nav-link dropdown-toggle {% if 'salary' in request.resolver_match.url_name %}bg-primary text-dark{% endif %}"
+                    href="#" data-bs-toggle="dropdown">
+                    <i class="fa fa-wallet me-2"></i> Salary
+                </a>
+                <ul class="dropdown-menu border-0">
+                    <li><a class="dropdown-item" href="{% url 'salary_history' %}">Salary History</a></li>
+                    <li><a class="dropdown-item" href="{% url 'salary_expectation' %}">Salary Calculation</a></li>
+                </ul>
             </li>
             {% endif %}
 
 
+            <!-- Expense Management -->
+            {% if request.user.profile.role == 'AD' %}
+            <li class="nav-item">
+                <a class="nav-link {% if 'expense' in request.resolver_match.url_name %}bg-primary text-dark{% endif %}"
+                    href="{% url 'expense_list' %}">
+                    <i class="fa fa-chart-line me-2"></i> Expense Management
+                </a>
+            </li>
+            {% endif %}
+
             <!-- ✅ AUDIT (ADMIN ONLY) -->
-             {% if request.user.profile.role == 'AD' %}
+            {% if request.user.profile.role == 'AD' %}
             <li class="nav-item">
                 <a class="nav-link {% if 'audit' in request.resolver_match.url_name %}bg-primary text-dark{% endif %}"
-                   href="{% url 'audit_report' %}">
+                    href="{% url 'audit_report' %}">
                     <i class="fa fa-chart-line me-2"></i> Audit Report
                 </a>
             </li>
             {% endif %}
-            
+
+            <!-- Pending Payments -->
             {% if request.user.profile.role == 'AD' %}
             <li class="nav-item">
-            <a class="nav-link {% if 'credit' in request.resolver_match.url_name %}bg-primary text-dark{% endif %}"
-                href="{% url 'credit_bills' %}">
-                <i class="fa fa-exclamation-circle me-2"></i> Pending Payments
-            </a>
+                <a class="nav-link {% if 'credit' in request.resolver_match.url_name %}bg-primary text-dark{% endif %}"
+                    href="{% url 'credit_bills' %}">
+                    <i class="fa fa-exclamation-circle me-2"></i> Pending Payments
+                </a>
             </li>
             {% endif %}
 
@@ -242,36 +251,36 @@
 </aside>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const sidebar = document.getElementById("show-side-navigation1");
-    const wrapper = document.getElementById("wrapper");
-    const toggleBtn = document.getElementById("sidebarToggle");
-    const closeBtn = document.querySelector('[data-close="show-side-navigation1"]');
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebar = document.getElementById("show-side-navigation1");
+        const wrapper = document.getElementById("wrapper");
+        const toggleBtn = document.getElementById("sidebarToggle");
+        const closeBtn = document.querySelector('[data-close="show-side-navigation1"]');
 
-    function toggleSidebar() {
-        sidebar.classList.toggle("toggled");
-        wrapper.classList.toggle("toggled");
-    }
+        function toggleSidebar() {
+            sidebar.classList.toggle("toggled");
+            wrapper.classList.toggle("toggled");
+        }
 
-    toggleBtn?.addEventListener("click", function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        toggleSidebar();
-    });
+        toggleBtn?.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleSidebar();
+        });
 
-    closeBtn?.addEventListener("click", function () {
-        sidebar.classList.remove("toggled");
-        wrapper.classList.remove("toggled");
-    });
-
-    document.addEventListener("click", function (e) {
-        if (window.innerWidth <= 768 &&
-            sidebar.classList.contains("toggled") &&
-            !sidebar.contains(e.target) &&
-            !toggleBtn.contains(e.target)) {
+        closeBtn?.addEventListener("click", function () {
             sidebar.classList.remove("toggled");
             wrapper.classList.remove("toggled");
-        }
+        });
+
+        document.addEventListener("click", function (e) {
+            if (window.innerWidth <= 768 &&
+                sidebar.classList.contains("toggled") &&
+                !sidebar.contains(e.target) &&
+                !toggleBtn.contains(e.target)) {
+                sidebar.classList.remove("toggled");
+                wrapper.classList.remove("toggled");
+            }
+        });
     });
-});
 </script>
